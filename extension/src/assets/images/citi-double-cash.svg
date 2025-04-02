@@ -1,0 +1,14 @@
+<svg width="300" height="180" viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="citi-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#007DC3" />
+      <stop offset="100%" stop-color="#004F7C" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="180" rx="10" fill="url(#citi-grad)"/>
+  <path d="M240,40 a30,30 0 1,0 0,60 a30,30 0 1,0 0,-60" fill="#ffffff" fill-opacity="0.1"/>
+  <text x="25" y="50" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">CITI</text>
+  <text x="25" y="100" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">DOUBLE CASH</text>
+  <text x="25" y="120" font-family="Arial" font-size="12" fill="#ffffff">1% WHEN YOU BUY + 1% WHEN YOU PAY</text>
+  <rect x="25" y="135" width="40" height="30" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+</svg> 

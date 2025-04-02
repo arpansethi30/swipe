@@ -1,0 +1,14 @@
+<svg width="300" height="180" viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="disc-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F68121" />
+      <stop offset="100%" stop-color="#E3650E" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="180" rx="10" fill="url(#disc-grad)"/>
+  <path d="M180,0 L300,0 L300,70 L180,70 Q160,70 160,50 L160,20 Q160,0 180,0" fill="#000000" fill-opacity="0.2"/>
+  <text x="25" y="50" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">DISCOVER</text>
+  <text x="25" y="100" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">IT CASH BACK</text>
+  <text x="25" y="120" font-family="Arial" font-size="12" fill="#ffffff">5% CASH BACK IN ROTATING CATEGORIES</text>
+  <rect x="25" y="135" width="40" height="30" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+</svg> 

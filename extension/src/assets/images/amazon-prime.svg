@@ -1,0 +1,15 @@
+<svg width="300" height="180" viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="amazon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#232F3E" />
+      <stop offset="100%" stop-color="#131921" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="180" rx="10" fill="url(#amazon-grad)"/>
+  <circle cx="240" cy="50" r="30" fill="#ffffff" fill-opacity="0.05"/>
+  <path d="M 30,40 C 50,25 80,25 100,40" stroke="#FF9900" stroke-width="3" fill="none"/>
+  <text x="25" y="70" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">AMAZON</text>
+  <text x="25" y="100" font-family="Arial" font-size="18" font-weight="bold" fill="#FF9900">PRIME REWARDS</text>
+  <text x="25" y="120" font-family="Arial" font-size="12" fill="#ffffff">5% BACK AT AMAZON.COM</text>
+  <rect x="25" y="135" width="40" height="30" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+</svg> 

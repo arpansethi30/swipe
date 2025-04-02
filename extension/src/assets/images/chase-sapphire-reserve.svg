@@ -1,0 +1,15 @@
+<svg width="300" height="180" viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="csr-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A4B9D" />
+      <stop offset="100%" stop-color="#0B2F62" />
+    </linearGradient>
+  </defs>
+  <rect width="300" height="180" rx="10" fill="url(#csr-grad)"/>
+  <circle cx="240" cy="50" r="30" fill="#ffffff" fill-opacity="0.1"/>
+  <circle cx="250" cy="40" r="25" fill="#ffffff" fill-opacity="0.05"/>
+  <text x="25" y="50" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">CHASE</text>
+  <text x="25" y="100" font-family="Arial" font-size="18" font-weight="bold" fill="#ffffff">SAPPHIRE RESERVE</text>
+  <rect x="25" y="120" width="40" height="30" rx="4" fill="#ffffff" fill-opacity="0.2"/>
+  <text x="25" y="160" font-family="Arial" font-size="12" fill="#ffffff">VALID THRU 01/28</text>
+</svg> 
