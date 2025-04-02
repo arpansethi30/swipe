@@ -78,7 +78,7 @@ function createRecommendationPopup() {
     swipePopup.innerHTML = ''; // Clear any existing content
     
     // Define selected card 
-    const selectedCard = 'Wells Fargo Active Cash';
+    const selectedCard = 'American Express Gold';
 
     // Create close button
     const closeBtn = document.createElement('button');
@@ -96,10 +96,48 @@ function createRecommendationPopup() {
     // Card image
     const cardImage = document.createElement('div');
     cardImage.className = 'card-image';
+    cardImage.style.width = '120px';
+    cardImage.style.height = '75px';
+    cardImage.style.backgroundColor = '#f8f8f8';
+    cardImage.style.padding = '6px';
+    cardImage.style.border = '1px solid #d0d0d0';
+    cardImage.style.boxShadow = '0 2px 6px rgba(0,0,0,0.2)';
     
     const cardImg = document.createElement('img');
-    cardImg.src = 'https://via.placeholder.com/80x48?text=VISA';
+    // Replace placeholder with actual card image
+    let cardImagePath = '';
+    
+    if (selectedCard === 'Wells Fargo Active Cash') {
+        cardImagePath = 'images/wells-fargo-active-cash.png';
+    } else if (selectedCard === 'Chase Sapphire Reserve') {
+        cardImagePath = 'images/chase-sapphire-reserve.png';
+    } else if (selectedCard === 'American Express Gold') {
+        cardImagePath = 'images/amex-gold.png';
+    } else if (selectedCard === 'Citi Double Cash') {
+        cardImagePath = 'images/citi-double-cash.png';
+    } else if (selectedCard === 'Amazon Prime Rewards') {
+        cardImagePath = 'images/amazon-prime.png';
+    } else if (selectedCard === 'Discover it Cash Back') {
+        cardImagePath = 'images/discover-it.png';
+    }
+    
     cardImg.alt = selectedCard;
+    cardImg.src = cardImagePath;
+    
+    // Apply enhanced styling directly
+    cardImg.style.width = '90%';
+    cardImg.style.height = '90%';
+    cardImg.style.objectFit = 'contain';
+    cardImg.style.display = 'block';
+    
+    // Add onload and onerror handlers to debug image loading
+    cardImg.onload = () => console.log("Card image loaded successfully:", cardImg.src);
+    cardImg.onerror = () => {
+        console.error("Failed to load card image:", cardImg.src);
+        // Set a placeholder image if the actual image fails to load
+        cardImg.src = 'https://via.placeholder.com/100x60?text=' + encodeURIComponent(selectedCard);
+    };
+    
     cardImage.appendChild(cardImg);
     
     // Card verification checkmark
@@ -135,10 +173,44 @@ function createRecommendationPopup() {
     cardsList.className = 'cards-list';
     
     // Add 3 mini card thumbnails
+    const cardNames = ['Chase Sapphire Reserve', 'American Express Gold', 'Citi Double Cash'];
+    const cardImagePaths = ['chase-sapphire-reserve', 'amex-gold', 'citi-double-cash'];
+    
     for (let i = 0; i < 3; i++) {
         const miniCard = document.createElement('div');
         miniCard.className = 'mini-card';
-        miniCard.style.backgroundColor = i === 0 ? '#000' : i === 1 ? '#1a478d' : '#333';
+        
+        // Apply enhanced styling directly
+        miniCard.style.width = '45px';
+        miniCard.style.height = '30px';
+        miniCard.style.backgroundColor = '#f8f8f8';
+        miniCard.style.padding = '4px';
+        miniCard.style.border = '1px solid #d0d0d0';
+        miniCard.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
+        miniCard.style.display = 'flex';
+        miniCard.style.alignItems = 'center';
+        miniCard.style.justifyContent = 'center';
+        
+        const miniCardImg = document.createElement('img');
+        miniCardImg.src = `images/${cardImagePaths[i]}.png`;
+        miniCardImg.alt = cardNames[i];
+        miniCardImg.className = 'mini-card-img';
+        
+        // Apply enhanced styling directly
+        miniCardImg.style.width = '90%';
+        miniCardImg.style.height = '90%';
+        miniCardImg.style.objectFit = 'contain';
+        miniCardImg.style.display = 'block';
+        
+        // Add debug handlers
+        miniCardImg.onload = () => console.log(`Mini card ${i+1} loaded:`, miniCardImg.src);
+        miniCardImg.onerror = () => {
+            console.error(`Mini card ${i+1} failed to load:`, miniCardImg.src);
+            // Use a placeholder image if the actual image fails to load
+            miniCardImg.src = `https://via.placeholder.com/40x25?text=${encodeURIComponent(cardNames[i].substring(0, 3))}`;
+        };
+        
+        miniCard.appendChild(miniCardImg);
         cardsList.appendChild(miniCard);
     }
     
@@ -210,7 +282,40 @@ function showSuccessNotification(cardName) {
         document.body.appendChild(notification);
     }
     
-    notification.textContent = `✓ ${cardName} details auto-filled!`;
+    // Clear previous content
+    notification.innerHTML = '';
+    
+    // Add card image
+    const cardImg = document.createElement('img');
+    if (cardName === 'Wells Fargo Active Cash') {
+        cardImg.src = 'images/wells-fargo-active-cash.png';
+    } else if (cardName === 'Chase Sapphire Reserve') {
+        cardImg.src = 'images/chase-sapphire-reserve.png';
+    } else if (cardName === 'American Express Gold') {
+        cardImg.src = 'images/amex-gold.png';
+    } else if (cardName === 'Citi Double Cash') {
+        cardImg.src = 'images/citi-double-cash.png';
+    } else if (cardName === 'Amazon Prime Rewards') {
+        cardImg.src = 'images/amazon-prime.png';
+    } else if (cardName === 'Discover it Cash Back') {
+        cardImg.src = 'images/discover-it.png';
+    } else {
+        cardImg.src = 'https://via.placeholder.com/40x24?text=CARD';
+    }
+    cardImg.alt = cardName;
+    cardImg.className = 'notification-card-img';
+    
+    // Add check mark and text
+    const checkmark = document.createElement('span');
+    checkmark.innerHTML = '✓';
+    checkmark.className = 'notification-checkmark';
+    
+    const text = document.createElement('span');
+    text.textContent = `${cardName} details auto-filled!`;
+    
+    notification.appendChild(cardImg);
+    notification.appendChild(checkmark);
+    notification.appendChild(text);
     
     // Show notification
     setTimeout(() => {
