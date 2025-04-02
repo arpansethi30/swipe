@@ -43,7 +43,7 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# Byte-compiled / optimized / DLL files
+# C extensions
 *.so
 
 # Distribution / packaging
