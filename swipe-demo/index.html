@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipe Demo Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <div class="checkout-container">
+            <div class="checkout-form">
+                <h1>Payment</h1>
+                <p class="secure-text">All transactions are secure and encrypted.</p>
+                
+                <div class="payment-options">
+                    <div class="payment-option active">
+                        <div class="option-left">
+                            <input type="radio" id="credit-card" name="payment-method" checked>
+                            <label for="credit-card">Credit card</label>
+                        </div>
+                        <div class="card-icons">
+                            <img src="https://cdn.jsdelivr.net/gh/colebemis/payment-icons/min/flat/visa.svg" alt="Visa">
+                            <img src="https://cdn.jsdelivr.net/gh/colebemis/payment-icons/min/flat/mastercard.svg" alt="Mastercard">
+                            <img src="https://cdn.jsdelivr.net/gh/colebemis/payment-icons/min/flat/amex.svg" alt="Amex">
+                            <img src="https://cdn.jsdelivr.net/gh/colebemis/payment-icons/min/flat/discover.svg" alt="Discover">
+                            <span class="more-cards">+4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card-details">
+                    <div class="form-group">
+                        <label for="card-number">Card number</label>
+                        <div class="input-icon">
+                            <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lock-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="expiry-date">Expiration date (MM / YY)</label>
+                            <input type="text" id="expiry-date" placeholder="MM / YY">
+                        </div>
+                        <div class="form-group half">
+                            <label for="security-code">Security code</label>
+                            <div class="input-icon">
+                                <input type="text" id="security-code" placeholder="123">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="help-icon"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name-on-card">Name on card</label>
+                        <input type="text" id="name-on-card" placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="shipping-billing" checked>
+                        <label for="shipping-billing">Use shipping address as billing address</label>
+                    </div>
+                </div>
+                
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <div class="option-left">
+                            <input type="radio" id="paypal" name="payment-method">
+                            <label for="paypal">PayPal</label>
+                        </div>
+                        <img src="https://cdn.jsdelivr.net/gh/colebemis/payment-icons/min/flat/paypal.svg" alt="PayPal" class="payment-logo">
+                    </div>
+                    
+                    <div class="payment-option">
+                        <div class="option-left">
+                            <input type="radio" id="afterpay" name="payment-method">
+                            <label for="afterpay">Afterpay</label>
+                        </div>
+                        <img src="https://cdn.jsdelivr.net/gh/colebemis/payment-icons/min/mono/afterpay.svg" alt="Afterpay" class="payment-logo">
+                    </div>
+                    
+                    <div class="payment-option">
+                        <div class="option-left">
+                            <input type="radio" id="shop-pay" name="payment-method">
+                            <label for="shop-pay">Shop Pay | Pay in full or in installments</label>
+                        </div>
+                        <img src="https://cdn.shopify.com/shopifycloud/shopify/assets/checkout/shop-pay-logo-5e915f96229d60d627cdebb3929beeaf7a3c1acddc2e21f5093a18232fbafe36.svg" alt="Shop Pay" class="payment-logo">
+                    </div>
+                </div>
+                
+                <div class="save-info">
+                    <h2>Remember me</h2>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="save-info" checked>
+                        <label for="save-info">Save my information for a faster checkout with a Shop account</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-summary">
+                <div class="product">
+                    <div class="product-image">
+                        <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="Mens Cotton Jacket">
+                        <span class="quantity">1</span>
+                    </div>
+                    <div class="product-details">
+                        <h3>Mens Cotton Jacket</h3>
+                        <p>Size L / Black</p>
+                        <span class="price">$40.00</span>
+                    </div>
+                </div>
+                
+                <div class="discount-code">
+                    <input type="text" placeholder="Discount code or gift card">
+                    <button>Apply</button>
+                </div>
+                
+                <div class="donation">
+                    <div class="donation-check">
+                        <input type="checkbox" id="donate">
+                        <label for="donate">Donate $1 USD to support SeekHer Foundation</label>
+                    </div>
+                    <div class="donation-info">
+                        <div class="donation-logo">
+                            <img src="https://via.placeholder.com/50?text=S" alt="SeekHer">
+                        </div>
+                        <div class="donation-text">
+                            <p class="donation-amount">$1.00</p>
+                            <p class="small-text">Join us in supporting SeekHer Foundation as they bridge the gender gap in mental health through advocacy, research, and empowering leaders who guide women through life's vulnerable seasons.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-totals">
+                    <div class="total-row">
+                        <span>Subtotal</span>
+                        <span>$40.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Shipping</span>
+                        <span class="shipping-info">Enter shipping address</span>
+                    </div>
+                    <div class="total-row grand-total">
+                        <span>Total</span>
+                        <span class="currency">USD <strong>$40.00</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- This div will simulate the Swipe extension popup that appears on checkout pages -->
+    <div id="swipe-popup" class="hidden">
+        <!-- The popup content will be populated by JavaScript -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

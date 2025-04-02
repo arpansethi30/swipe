@@ -1,0 +1,20 @@
+{
+  "name": "swipe-demo",
+  "version": "1.0.0",
+  "description": "Demo of the Swipe extension for credit card rewards",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve"
+  },
+  "keywords": [
+    "swipe",
+    "credit-card",
+    "rewards",
+    "demo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+} 
