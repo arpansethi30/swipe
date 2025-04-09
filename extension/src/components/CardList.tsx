@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { Card, Offer } from '../types';
 
-function CardList({ cards, compareMode = false, selectedForComparison = [], onToggleComparison = () => {}, limitedOffers = {} }) {
-  const [expandedCard, setExpandedCard] = useState(null);
-  const [animationClass, setAnimationClass] = useState(false);
+interface CardListProps {
+  cards: Card[];
+  compareMode?: boolean;
+  selectedForComparison?: number[];
+  onToggleComparison?: (cardId: number) => void;
+  limitedOffers?: Record<number, Offer[]>;
+}
+
+const CardList: React.FC<CardListProps> = ({ 
+  cards, 
+  compareMode = false, 
+  selectedForComparison = [], 
+  onToggleComparison = () => {}, 
+  limitedOffers = {} 
+}) => {
+  const [expandedCard, setExpandedCard] = useState<number | null>(null);
+  const [animationClass, setAnimationClass] = useState<boolean>(false);
 
   // Handle card expansion with animation timing
   useEffect(() => {
@@ -27,13 +42,13 @@ function CardList({ cards, compareMode = false, selectedForComparison = [], onTo
   }
 
   // Get correct image path based on the environment
-  const getImagePath = (imageName) => {
+  const getImagePath = (imageName: string): string => {
     // Check if it's an SVG file
     const isSvg = imageName.endsWith('.svg');
     const filename = isSvg ? imageName : imageName.replace('.png', '');
     
     // For production build
-    if (import.meta.env.PROD) {
+    if (import.meta.env?.PROD) {
       return `/assets/images/${filename}${isSvg ? '' : '.png'}`;
     }
     // For development
@@ -41,7 +56,7 @@ function CardList({ cards, compareMode = false, selectedForComparison = [], onTo
   };
 
   // Toggle expanded card view
-  const toggleCardExpand = (cardId) => {
+  const toggleCardExpand = (cardId: number): void => {
     if (compareMode) return; // Don't expand in compare mode
     
     if (expandedCard === cardId) {
@@ -64,7 +79,7 @@ function CardList({ cards, compareMode = false, selectedForComparison = [], onTo
   };
 
   // Get top reward categories for a card
-  const getTopRewards = (card, limit = 3) => {
+  const getTopRewards = (card: Card, limit = 3): [string, number][] => {
     return Object.entries(card.rewards)
       .filter(([category, _]) => category !== 'general')
       .sort((a, b) => b[1] - a[1])
@@ -72,7 +87,7 @@ function CardList({ cards, compareMode = false, selectedForComparison = [], onTo
   };
 
   // Handle card selection for comparison
-  const handleCardClick = (card) => {
+  const handleCardClick = (card: Card): void => {
     if (compareMode) {
       onToggleComparison(card.id);
     } else {
@@ -81,17 +96,17 @@ function CardList({ cards, compareMode = false, selectedForComparison = [], onTo
   };
 
   // Check if a card is selected for comparison
-  const isCardSelected = (cardId) => {
+  const isCardSelected = (cardId: number): boolean => {
     return selectedForComparison.includes(cardId);
   };
 
   // Get number of offers for a card
-  const getCardOfferCount = (cardId) => {
+  const getCardOfferCount = (cardId: number): number => {
     return limitedOffers[cardId] ? limitedOffers[cardId].length : 0;
   };
 
   // Check if a card has any new offers
-  const hasNewOffers = (cardId) => {
+  const hasNewOffers = (cardId: number): boolean => {
     return limitedOffers[cardId] ? limitedOffers[cardId].some(offer => offer.isNew) : false;
   };
 
@@ -116,9 +131,9 @@ function CardList({ cards, compareMode = false, selectedForComparison = [], onTo
                 src={getImagePath(card.image)} 
                 alt={card.name}
                 className="mini-card-img"
-                onError={(e) => {
-                  console.error(`Failed to load card image: ${e.target.src}`);
-                  e.target.src = `https://via.placeholder.com/45x30?text=${encodeURIComponent(card.name.substring(0, 3))}`;
+                onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
+                  console.error(`Failed to load card image: ${e.currentTarget.src}`);
+                  e.currentTarget.src = `https://via.placeholder.com/45x30?text=${encodeURIComponent(card.name.substring(0, 3))}`;
                 }}
               />
             </div>
@@ -255,10 +270,10 @@ function CardList({ cards, compareMode = false, selectedForComparison = [], onTo
       <button className="add-card-btn">+ Add a New Card</button>
     </div>
   );
-}
+};
 
 // Helper function to format category names
-function formatCategory(category) {
+const formatCategory = (category: string): string => {
   if (category === 'rotatingCategories') return 'Rotating Categories';
   if (category === 'general') return 'Everything';
   if (category === 'wholeFoods') return 'Whole Foods';
@@ -266,6 +281,6 @@ function formatCategory(category) {
   if (category === 'airlines') return 'Airlines';
   
   return category.charAt(0).toUpperCase() + category.slice(1);
-}
+};
 
-export default CardList; 
+export default CardList;

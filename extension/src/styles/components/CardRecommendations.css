@@ -1,0 +1,200 @@
+.recommendations {
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations h2 {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-item {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.card-item.best-card {
+  border: 2px solid #4CAF50;
+}
+
+.best-card-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.limited-time-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: #FF9800;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-image {
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  color: #666;
+  font-weight: bold;
+}
+
+.card-title h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.card-issuer {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reward-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.reward-percentage {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2196F3;
+}
+
+.reward-type {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.estimated-reward {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.estimated-reward .amount {
+  font-weight: bold;
+  color: #2196F3;
+}
+
+.points-value {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.reward-reason {
+  font-size: 0.875rem;
+  color: #666;
+  font-style: italic;
+}
+
+.card-meta {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.annual-fee {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.annual-credits {
+  color: #4CAF50;
+}
+
+.sign-up-bonus {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.bonus-value {
+  color: #4CAF50;
+}
+
+.card-benefits {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.benefits-label {
+  font-weight: bold;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.credit-score {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.card-network {
+  width: 24px;
+  height: 24px;
+}
+
+.card-network img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+} 

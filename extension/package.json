@@ -5,17 +5,22 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build && npx esbuild src/content.ts src/background.ts --outdir=dist --platform=browser --bundle --minify",
+    "check": "tsc",
+    "preview": "vite preview",
+    "build:chrome": "tsc && vite build && node scripts/prepare-chrome-extension.js"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.313",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
+    "esbuild": "^0.25.2",
+    "typescript": "^5.8.3",
     "vite": "^4.4.5"
   }
 }
