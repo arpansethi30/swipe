@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Checkout Page - Swipe Credit Card Recommender</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .checkout-container {
+      display: flex;
+      gap: 40px;
+    }
+    .checkout-form {
+      flex: 3;
+    }
+    .order-summary {
+      flex: 2;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .expiry-cvc {
+      display: flex;
+      gap: 20px;
+    }
+    .expiry-cvc > div {
+      flex: 1;
+    }
+    .card-expiry-group {
+      display: flex;
+      gap: 10px;
+    }
+    .card-expiry-group select {
+      flex: 1;
+    }
+    .btn {
+      background-color: #0066FF;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-top: 1px solid #eee;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .product-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    h1, h2 {
+      margin-top: 0;
+    }
+    .card-icons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .card-icons img {
+      height: 30px;
+      opacity: 0.6;
+    }
+    #test-controls {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+    }
+    #test-controls button {
+      background-color: #0066FF;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      margin-right: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Checkout</h1>
+  
+  <div class="checkout-container">
+    <div class="checkout-form">
+      <h2>Payment Information</h2>
+      
+      <div class="card-icons">
+        <span>⎙⎙⎙⎙</span>
+        <span>⎙⎙⎙⎙</span>
+        <span>⎙⎙⎙⎙</span>
+        <span>⎙⎙⎙⎙</span>
+      </div>
+      
+      <form id="payment-form">
+        <div class="form-group">
+          <label for="card-name">Name on Card</label>
+          <input type="text" id="card-name" name="card-name" placeholder="John Smith">
+        </div>
+        
+        <div class="form-group">
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+        </div>
+        
+        <div class="form-group expiry-cvc">
+          <div>
+            <label for="card-expiry-month">Expiration Date</label>
+            <div class="card-expiry-group">
+              <select id="card-expiry-month" name="card-expiry-month">
+                <option value="">Month</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+              <select id="card-expiry-year" name="card-expiry-year">
+                <option value="">Year</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="card-cvc">CVC</label>
+            <input type="text" id="card-cvc" name="card-cvc" placeholder="123">
+          </div>
+        </div>
+        
+        <button type="submit" class="btn">Place Order - $75.25</button>
+      </form>
+    </div>
+    
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      
+      <div class="product-row">
+        <div>Premium Headphones</div>
+        <div>$49.99</div>
+      </div>
+      
+      <div class="product-row">
+        <div>Phone Case</div>
+        <div>$19.99</div>
+      </div>
+      
+      <div class="product-row">
+        <div>Shipping</div>
+        <div>$5.27</div>
+      </div>
+      
+      <div class="total-row">
+        <div>Total</div>
+        <div id="total-amount">$75.25</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="test-controls">
+    <h2>Extension Test Controls</h2>
+    <button id="force-popup">Force Show Popup</button>
+    <button id="debug-info">Show Debug Info</button>
+  </div>
+
+  <script>
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('This is a test checkout page. No actual purchase will be made.');
+    });
+
+    // Extension test controls
+    document.getElementById('force-popup').addEventListener('click', function() {
+      try {
+        chrome.runtime.sendMessage({action: 'forceShowRecommendations'}, function(response) {
+          console.log('Force popup response:', response);
+        });
+      } catch (e) {
+        console.error('Error sending message to extension:', e);
+        alert('Error: ' + e.message + '\n\nMake sure the extension is installed and enabled.');
+      }
+    });
+
+    document.getElementById('debug-info').addEventListener('click', function() {
+      try {
+        chrome.runtime.sendMessage({action: 'logDebugInfo'}, function(response) {
+          console.log('Debug info response:', response);
+        });
+      } catch (e) {
+        console.error('Error sending message to extension:', e);
+        alert('Error: ' + e.message + '\n\nMake sure the extension is installed and enabled.');
+      }
+    });
+  </script>
+</body>
+</html> 

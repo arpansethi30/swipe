@@ -1,0 +1,23 @@
+2025-04-14 18:09:03,636 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-14 18:09:03,636 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-14 18:09:03,637 - werkzeug - INFO -  * Restarting with stat
+2025-04-14 18:09:03,726 - werkzeug - WARNING -  * Debugger is active!
+2025-04-14 18:09:03,730 - werkzeug - INFO -  * Debugger PIN: 505-836-202
+2025-04-14 18:09:41,877 - swipe-api - INFO - Received request: <Request 'http://localhost:5001/api/recommend' [POST]>
+2025-04-14 18:09:41,878 - swipe-api - INFO - Request JSON: {'merchant': 'Swipe Credit Card Recommender', 'amount': 75.25}
+2025-04-14 18:09:41,878 - swipe-api - INFO - Processing request for merchant: swipe credit card recommender, amount: 75.25
+2025-04-14 18:09:41,878 - swipe-api - INFO - Sending response: {'merchant': 'swipe credit card recommender', 'category': 'other', 'purchase_amount': 75.25, 'recommendations': [{'id': 3, 'name': 'Citi Double Cash', 'image': 'citi_double_cash.png', 'reward_percentage': 2, 'cashback': 1.5}, {'id': 4, 'name': 'Capital One Venture', 'image': 'capital_one_venture.png', 'reward_percentage': 2, 'cashback': 1.5}, {'id': 9, 'name': 'Wells Fargo Active Cash', 'image': 'wells_fargo_active_cash.png', 'reward_percentage': 2, 'cashback': 1.5}, {'id': 1, 'name': 'Chase Sapphire Preferred', 'image': 'chase_sapphire_preferred.png', 'reward_percentage': 1, 'cashback': 0.75}, {'id': 2, 'name': 'Amex Gold Card', 'image': 'amex_gold.png', 'reward_percentage': 1, 'cashback': 0.75}]}
+2025-04-14 18:09:41,879 - werkzeug - INFO - 127.0.0.1 - - [14/Apr/2025 18:09:41] "POST /api/recommend HTTP/1.1" 200 -
+2025-04-14 18:55:24,606 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-14 18:55:24,606 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-14 18:55:24,606 - werkzeug - INFO -  * Restarting with stat
+2025-04-14 18:55:24,703 - werkzeug - WARNING -  * Debugger is active!
+2025-04-14 18:55:24,707 - werkzeug - INFO -  * Debugger PIN: 505-836-202
+2025-04-14 19:17:06,230 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-14 19:17:06,230 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-14 19:17:06,231 - werkzeug - INFO -  * Restarting with stat
+2025-04-14 19:17:06,324 - werkzeug - WARNING -  * Debugger is active!
+2025-04-14 19:17:06,329 - werkzeug - INFO -  * Debugger PIN: 505-836-202

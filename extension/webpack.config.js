@@ -3,10 +3,12 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devtool: 'source-map',
   entry: {
-    background: './src/background.ts',
+    popup: './src/popup.ts',
     content: './src/content.ts',
-    popup: './src/popup.ts'
+    background: './src/background.ts',
+    dashboard: './src/dashboard.ts'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -15,21 +17,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
+        exclude: /node_modules/
+      }
+    ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.js']
   },
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: "public", to: "." },
-      ],
-    }),
-  ],
-  devtool: 'source-map'
+        { from: 'public', to: '.' }
+      ]
+    })
+  ]
 }; 

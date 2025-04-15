@@ -1,7 +1,7 @@
 {
   "name": "Swipe Credit Card Recommender",
   "version": "1.0.0",
-  "description": "Recommends the best credit card at checkout to maximize rewards",
+  "description": "Get personalized credit card recommendations for each purchase",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js",
@@ -15,6 +15,7 @@
       "128": "icons/icon128.png"
     }
   },
+  "options_page": "dashboard.html",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -36,5 +37,14 @@
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
 } 

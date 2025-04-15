@@ -1,0 +1,2462 @@
+[
+  {
+    "name": "Blue Business Cash",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_blue_business_cash.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Blue Business Plus",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_blue_business_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Blue Cash Everyday",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_blue_cash_everyday.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Blue Cash Preferred",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_blue_cash_preferred.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Blue Cash Preferred (Morgan Stanley)",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_blue_cash_preferred_(morgan_stanley).png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Gold",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_business_gold.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Green",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_business_green.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Platinum",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_business_platinum.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Cash Magnet",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_cash_magnet.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Delta SkyMiles Blue",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_delta_skymiles_blue.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Delta SkyMiles Gold",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_delta_skymiles_gold.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Delta SkyMiles Gold Business",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_delta_skymiles_gold_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Delta SkyMiles Platinum",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_delta_skymiles_platinum.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Delta SkyMiles Platinum Business",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_delta_skymiles_platinum_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Delta SkyMiles Reserve",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_delta_skymiles_reserve.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Delta SkyMiles Reserve Business",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_delta_skymiles_reserve_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Everyday",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_everyday.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Everyday Preferred",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_everyday_preferred.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Gold",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_gold.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Green",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_green.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Hilton Honors",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_hilton_honors.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Hilton Honors Aspire",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_hilton_honors_aspire.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Hilton Honors Business",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_hilton_honors_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Hilton Honors Surpass",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_hilton_honors_surpass.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Marriott Bonvoy Brilliant",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_marriott_bonvoy_brilliant.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Marriott Bonvoy Business",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_marriott_bonvoy_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Platinum",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_platinum.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Platinum (Schwab)",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_platinum_(schwab).png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Platinum (Morgan Stanley)",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_platinum_(morgan_stanley).png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Marriott Bonvoy Bevy",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_marriott_bonvoy_bevy.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Lowes",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_lowes.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Schwab Investor",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_schwab_investor.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Amazon Business",
+    "issuer": "AMERICAN_EXPRESS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "american_express_amazon_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Air France KLM",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_air_france_klm.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Alaska Airlines",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_alaska_airlines.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Alaska Airlines Business",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_alaska_airlines_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Customized Cash Rewards",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_customized_cash_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Premium Rewards",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_premium_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Premium Rewards Elite",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_premium_rewards_elite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Travel Rewards",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_travel_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Unlimited Cash Rewards",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_unlimited_cash_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Advantage Customized Cash",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_business_advantage_customized_cash.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Advantage Unlimited Cash",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_business_advantage_unlimited_cash.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Advantage Travel Rewards",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_business_advantage_travel_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Platinum Plus",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_platinum_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Free Spirit",
+    "issuer": "BANK_OF_AMERICA",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "bank_of_america_free_spirit.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AAdvantage Aviator Red World Elite",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_aadvantage_aviator_red_world_elite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AAdvantage Aviator World Elite Business",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_aadvantage_aviator_world_elite_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AARP Essential Rewards",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_aarp_essential_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AARP Travel Rewards",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_aarp_travel_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Carnival World Mastercard",
+    "issuer": "BARCLAYS",
+    "network": "Mastercard",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_carnival_world_mastercard.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Emirates Skywards Premium World Elite",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_emirates_skywards_premium_world_elite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Emirates Skywards Rewards World Elite",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_emirates_skywards_rewards_world_elite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Frontier Airlines World",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_frontier_airlines_world.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Hawaiian Airlines World Elite",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_hawaiian_airlines_world_elite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "JetBlue",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_jetblue.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "JetBlue Business",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_jetblue_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "JetBlue Plus",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_jetblue_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "JetBlue Premier",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_jetblue_premier.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Lufthansa Miles & More",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_lufthansa_miles_&_more.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Upromise",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_upromise.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Wyndham Rewards Earner",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_wyndham_rewards_earner.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Wyndham Rewards Earner Business",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_wyndham_rewards_earner_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Wyndham Rewards Earner Plus",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_wyndham_rewards_earner_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Hawaiian Airlines World Elite Business",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_hawaiian_airlines_world_elite_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Breeze",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_breeze.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Xbox",
+    "issuer": "BARCLAYS",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "barclays_xbox.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Brex",
+    "issuer": "BREX",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "brex_brex.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Marriott Bonvoy Bountiful",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_marriott_bonvoy_bountiful.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Aer Lingus Signature",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_aer_lingus_signature.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Aeroplan",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_aeroplan.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "British Airways Signature",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_british_airways_signature.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Disney Premier",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_disney_premier.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Disney",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_disney.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Freedom Flex",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_freedom_flex.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Freedom Unlimited",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_freedom_unlimited.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Iberia Signature",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_iberia_signature.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "IHG Rewards Premier",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_ihg_rewards_premier.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "IHG Rewards Premier Business",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_ihg_rewards_premier_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "IHG Rewards Traveler",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_ihg_rewards_traveler.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Ink Business Cash",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_ink_business_cash.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Ink Business Preferred",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_ink_business_preferred.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Ink Business Unlimited",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_ink_business_unlimited.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Ink Business Premier",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_ink_business_premier.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Marriott Bonvoy Bold",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_marriott_bonvoy_bold.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Marriott Bonvoy Boundless",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_marriott_bonvoy_boundless.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Sapphire Preferred",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_sapphire_preferred.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Sapphire Reserve",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_sapphire_reserve.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Southwest Rapid Rewards Performance Business",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_southwest_rapid_rewards_performance_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Southwest Rapid Rewards Plus",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_southwest_rapid_rewards_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Southwest Rapid Rewards Premier",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_southwest_rapid_rewards_premier.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Southwest Rapid Rewards Premier Business",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_southwest_rapid_rewards_premier_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Southwest Rapid Rewards Priority",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_southwest_rapid_rewards_priority.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "United Business",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_united_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "United Club Infinite",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_united_club_infinite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "United Club Business",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_united_club_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "United Explorer",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_united_explorer.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "United Gateway",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_united_gateway.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "United Quest",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_united_quest.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "World of Hyatt",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_world_of_hyatt.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "World of Hyatt Business",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_world_of_hyatt_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Amazon Prime",
+    "issuer": "CHASE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.0125,
+    "image": "chase_amazon_prime.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Quicksilver",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_quicksilver.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Savor",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_savor.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Spark 1.5% Cash Select",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_spark_1.5%_cash_select.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Spark 1.5% Miles Select",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_spark_1.5%_miles_select.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Spark 2% Cash Plus",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_spark_2%_cash_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Spark 2x Miles Plus",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_spark_2x_miles_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Venture Rewards",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_venture_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Venture X",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_venture_x.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Venture X Business",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_venture_x_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "VentureOne",
+    "issuer": "CAPITAL_ONE",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "capital_one_ventureone.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AAdvantage Executive",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_aadvantage_executive.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AAdvantage MileUp",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_aadvantage_mileup.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AAdvantage Platinum Select",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_aadvantage_platinum_select.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AAdvantage Platinum Select Business",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_aadvantage_platinum_select_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Double Cash",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_double_cash.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Custom Cash",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_custom_cash.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Strata Premier",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_strata_premier.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Rewards+",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_rewards+.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "AT&T Points Plus",
+    "issuer": "CITI",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "citi_at&t_points_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Discover It",
+    "issuer": "DISCOVER",
+    "network": "Discover",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "discover_discover_it.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "LATAM Airlines",
+    "issuer": "FIRST",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "first_latam_airlines.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "LATAM Airlines World Elite",
+    "issuer": "FIRST",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "first_latam_airlines_world_elite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Cardless Qatar Signature",
+    "issuer": "FIRST",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "first_cardless_qatar_signature.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Cardless Qatar Infinite",
+    "issuer": "FIRST",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "first_cardless_qatar_infinite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Avianca LifeMiles",
+    "issuer": "FIRST",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "first_avianca_lifemiles.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Avianca LifeMiles Elite",
+    "issuer": "FIRST",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "first_avianca_lifemiles_elite.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "ANA Card USA Plus",
+    "issuer": "FIRST",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "first_ana_card_usa_plus.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Amtrak Guest Rewards",
+    "issuer": "FNBO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "fnbo_amtrak_guest_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Amtrak Guest Rewards Preferred",
+    "issuer": "FNBO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "fnbo_amtrak_guest_rewards_preferred.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Best Western Rewards",
+    "issuer": "FNBO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "fnbo_best_western_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Best Western Rewards Premium",
+    "issuer": "FNBO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "fnbo_best_western_rewards_premium.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Power Cash Rewards",
+    "issuer": "PENFED",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "penfed_power_cash_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Platinum Rewards",
+    "issuer": "PENFED",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "penfed_platinum_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Pathfinder",
+    "issuer": "PENFED",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "penfed_pathfinder.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Cash Rewards Visa Signature Business",
+    "issuer": "PNC",
+    "network": "Visa",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "pnc_cash_rewards_visa_signature_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Cathay Pacific",
+    "issuer": "SYNCHRONY",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "synchrony_cathay_pacific.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Virgin Red Rewards",
+    "issuer": "SYNCHRONY",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "synchrony_virgin_red_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Altitude Power",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_business_altitude_power.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Altitude Connect",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_business_altitude_connect.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Altitude Connect",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_altitude_connect.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Altitude Reserve",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_altitude_reserve.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Altitude Go",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_altitude_go.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Cash+",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_cash+.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "FlexPerks Gold",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_flexperks_gold.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Leverage",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_business_leverage.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Business Triple Cash Rewards",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_business_triple_cash_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Skypass Blue",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_skypass_blue.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Skypass",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_skypass.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Skypass Select",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_skypass_select.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Skypass Business",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_skypass_business.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Shopper Cash Rewards",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_shopper_cash_rewards.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Smartly",
+    "issuer": "US_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "us_bank_smartly.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Signify Business Cash",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_signify_business_cash.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Active Cash",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_active_cash.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Autograph",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_autograph.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Autograph Journey",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_autograph_journey.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Choice Privileges",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_choice_privileges.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Choice Privileges Select",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_choice_privileges_select.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Bilt",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_bilt.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Expedia One Key",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_expedia_one_key.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Expedia One Key+",
+    "issuer": "WELLS_FARGO",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "wells_fargo_expedia_one_key+.png",
+    "url": "",
+    "external_id": ""
+  },
+  {
+    "name": "Gemini",
+    "issuer": "WEB_BANK",
+    "network": "Unknown",
+    "annual_fee": 0,
+    "intro_offer": "",
+    "bonus_value": 0,
+    "categories": {
+      "other": 1
+    },
+    "point_value": 0.01,
+    "image": "web_bank_gemini.png",
+    "url": "",
+    "external_id": ""
+  }
+]

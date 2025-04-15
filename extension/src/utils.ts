@@ -1,173 +1,270 @@
 // Shared utility functions
 
+// Declare global window interface with content script functions
+declare global {
+  interface Window {
+    isCheckoutPage?: () => boolean;
+    getMerchantName?: () => string;
+    getPurchaseAmount?: () => number;
+    fillCardDetails?: (details: CardDetails | string) => any;
+  }
+}
+
 /**
  * Get CSS class for card styling based on card name
  */
 export function getCardClass(cardName: string): string {
-  const cardNameLower = cardName.toLowerCase();
-  if (cardNameLower.includes('wells fargo')) return 'wells-fargo';
-  if (cardNameLower.includes('citi')) return 'citi';
-  if (cardNameLower.includes('chase')) return 'chase';
-  if (cardNameLower.includes('amex') || cardNameLower.includes('american express')) return 'amex';
-  if (cardNameLower.includes('discover')) return 'discover';
+  const lowerCaseName = (cardName || '').toLowerCase();
+  
+  if (lowerCaseName.includes('wells fargo')) {
+    return 'wells-fargo';
+  } else if (lowerCaseName.includes('citi')) {
+    return 'citi';
+  } else if (lowerCaseName.includes('chase')) {
+    return 'chase';
+  } else if (lowerCaseName.includes('amex') || lowerCaseName.includes('american express')) {
+    return 'amex';
+  } else if (lowerCaseName.includes('discover')) {
+    return 'discover';
+  }
+  
   return '';
 }
 
 /**
- * Get dummy card details for demonstration purposes
+ * Debug logger that also outputs to console
  */
-export function getCardDetails(cardName: string) {
-  const cardNameLower = cardName.toLowerCase();
+export function debugLog(message: string, data?: any) {
+  const timestamp = new Date().toISOString();
+  const logMsg = `[SWIPE ${timestamp}] ${message}`;
   
-  // Demo credit card information (these are fake numbers)
-  if (cardNameLower.includes('wells fargo')) {
-    return {
-      number: '4123456789012345',
-      name: 'John Doe',
-      expiry: '12/25',
-      cvv: '123',
-      type: 'visa'
-    };
+  console.log(logMsg);
+  if (data !== undefined) {
+    console.log(data);
   }
   
-  if (cardNameLower.includes('citi')) {
-    return {
-      number: '5123456789012345',
-      name: 'Jane Smith',
-      expiry: '11/26',
-      cvv: '456',
-      type: 'mastercard'
-    };
-  }
-  
-  if (cardNameLower.includes('chase')) {
-    return {
-      number: '4987654321098765',
-      name: 'Chris Johnson',
-      expiry: '06/27',
-      cvv: '789',
-      type: 'visa'
-    };
-  }
-  
-  if (cardNameLower.includes('amex') || cardNameLower.includes('american express')) {
-    return {
-      number: '347123456789012',
-      name: 'Emily Wilson',
-      expiry: '09/26',
-      cvv: '1234',
-      type: 'amex'
-    };
-  }
-  
-  if (cardNameLower.includes('discover')) {
-    return {
-      number: '6011123456789012',
-      name: 'Michael Brown',
-      expiry: '03/28',
-      cvv: '321',
-      type: 'discover'
-    };
-  }
-  
-  // Default card
-  return {
-    number: '4111111111111111',
-    name: 'Demo User',
-    expiry: '12/25',
-    cvv: '999',
-    type: 'visa'
-  };
+  return { message: logMsg, data };
 }
 
 /**
- * Find form fields in the page that match credit card details
+ * Create a test request to check if backend is running
  */
-export function findFormFields() {
+export async function testBackendConnection(): Promise<{success: boolean, message: string}> {
+  try {
+    const response = await fetch('http://localhost:5001/ping', { 
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' }
+    });
+    
+    if (response.ok) {
+      const data = await response.json();
+      return {
+        success: true,
+        message: `Backend connected: ${data.version} as of ${data.timestamp}`
+      };
+    } else {
+      return {
+        success: false,
+        message: `Backend error: ${response.status} ${response.statusText}`
+      };
+    }
+  } catch (error) {
+    return {
+      success: false,
+      message: `Backend connection failed: ${error instanceof Error ? error.message : String(error)}`
+    };
+  }
+}
+
+/**
+ * Interface for credit card form fields found on a page
+ */
+export interface CardFormFields {
+  cardNumberField: HTMLInputElement | null;
+  cardNameField: HTMLInputElement | null;
+  expiryField: HTMLInputElement | null;
+  expiryMonthField: HTMLInputElement | HTMLSelectElement | null;
+  expiryYearField: HTMLInputElement | HTMLSelectElement | null;
+  cvcField: HTMLInputElement | null;
+}
+
+/**
+ * Interface for credit card details
+ */
+export interface CardDetails {
+  cardNumber: string;
+  cardName: string;
+  expiryMonth: string;
+  expiryYear: string;
+  cvc: string;
+}
+
+/**
+ * Find credit card form fields on the current page
+ */
+export function findFormFields(): CardFormFields {
+  const fields: CardFormFields = {
+    cardNumberField: null,
+    cardNameField: null,
+    expiryField: null,
+    expiryMonthField: null,
+    expiryYearField: null,
+    cvcField: null
+  };
+  
+  // Common selectors for credit card fields
   const selectors = {
     cardNumber: [
-      // Card number selectors
-      'input[name*="card"][name*="number"]',
-      'input[id*="card"][id*="number"]',
+      'input[name="card-number"]',
+      'input[name="cardNumber"]',
+      'input[name="card_number"]',
+      'input[name="number"]',
       'input[autocomplete="cc-number"]',
-      'input[name*="cardnumber"]',
-      'input[id*="cardnumber"]',
-      'input[name*="creditcard"]',
-      'input[placeholder*="card"][placeholder*="number"]',
-      // Generic credit card field patterns
-      'input[name*="cc-number"]',
-      'input[id*="cc-number"]',
-      'input[name*="ccnumber"]',
-      'input[id*="ccnumber"]'
+      'input[name*="creditCard"]',
+      'input[id*="cardNumber"]',
+      'input[data-cy="card-number-input"]',
+      '[name="cardnumber"]'
     ],
     cardName: [
-      // Cardholder name selectors
-      'input[name*="card"][name*="name"]',
-      'input[id*="card"][id*="name"]',
+      'input[name="card-name"]',
+      'input[name="cardName"]',
+      'input[name="card_name"]',
+      'input[name="name"]',
+      'input[name="ccname"]',
       'input[autocomplete="cc-name"]',
-      'input[name*="cardholder"]',
-      'input[id*="cardholder"]',
-      'input[name*="name"][name*="card"]',
-      'input[id*="name"][id*="card"]',
-      'input[placeholder*="name"][placeholder*="card"]'
+      'input[name*="nameOnCard"]',
+      'input[id*="cardholderName"]'
+    ],
+    expiry: [
+      'input[name="card-expiry"]',
+      'input[name="cardExpiry"]',
+      'input[name="expiry"]',
+      'input[name="cc-exp"]',
+      'input[autocomplete="cc-exp"]',
+      'input[id*="expiration"]',
+      'input[id*="expiry"]',
+      'input[name="exp-date"]'
     ],
     expiryMonth: [
-      // Expiry month selectors
-      'select[name*="month"]',
-      'select[id*="month"]',
-      'input[name*="month"]',
-      'input[id*="month"]',
-      'select[name*="exp"][name*="month"]',
-      'select[id*="exp"][id*="month"]',
-      'input[autocomplete="cc-exp-month"]'
+      'select[name="card-expiry-month"]',
+      'select[name="cardExpiryMonth"]',
+      'select[name="month"]',
+      'select[name="expiryMonth"]',
+      'select[id*="expiryMonth"]',
+      'select[data-cy="expiry-month"]',
+      'input[name="exp-month"]'
     ],
     expiryYear: [
-      // Expiry year selectors
-      'select[name*="year"]',
-      'select[id*="year"]',
-      'input[name*="year"]',
-      'input[id*="year"]',
-      'select[name*="exp"][name*="year"]',
-      'select[id*="exp"][id*="year"]',
-      'input[autocomplete="cc-exp-year"]'
+      'select[name="card-expiry-year"]',
+      'select[name="cardExpiryYear"]',
+      'select[name="year"]',
+      'select[name="expiryYear"]',
+      'select[id*="expiryYear"]',
+      'select[data-cy="expiry-year"]',
+      'input[name="exp-year"]'
     ],
-    expiryDate: [
-      // Combined expiry date selectors
-      'input[name*="expiry"]',
-      'input[id*="expiry"]',
-      'input[name*="expiration"]',
-      'input[id*="expiration"]',
-      'input[autocomplete="cc-exp"]',
-      'input[placeholder*="MM"][placeholder*="YY"]',
-      'input[placeholder*="MM"][placeholder*="/"][placeholder*="YY"]'
-    ],
-    cvv: [
-      // CVV/CVC selectors
-      'input[name*="cvv"]',
-      'input[id*="cvv"]',
-      'input[name*="cvc"]',
-      'input[id*="cvc"]',
-      'input[name*="security"][name*="code"]',
-      'input[id*="security"][id*="code"]',
+    cvc: [
+      'input[name="card-cvc"]',
+      'input[name="cardCvc"]',
+      'input[name="cvc"]',
+      'input[name="cvv"]',
+      'input[name="csc"]',
       'input[autocomplete="cc-csc"]',
-      'input[placeholder*="cvv"]',
-      'input[placeholder*="cvc"]',
-      'input[placeholder*="security code"]'
+      'input[name*="securityCode"]',
+      'input[id*="cvv"]'
     ]
   };
   
-  const formFields: Record<string, HTMLElement | null> = {};
-  
-  // Find each field in the document
-  for (const [fieldType, selectorList] of Object.entries(selectors)) {
-    for (const selector of selectorList) {
-      const field = document.querySelector(selector) as HTMLElement;
-      if (field) {
-        formFields[fieldType] = field;
-        break; // Use the first matching field
-      }
+  // Find each field
+  for (const selector of selectors.cardNumber) {
+    const field = document.querySelector(selector) as HTMLInputElement;
+    if (field) {
+      fields.cardNumberField = field;
+      break;
     }
   }
   
-  return formFields;
+  for (const selector of selectors.cardName) {
+    const field = document.querySelector(selector) as HTMLInputElement;
+    if (field) {
+      fields.cardNameField = field;
+      break;
+    }
+  }
+  
+  for (const selector of selectors.expiry) {
+    const field = document.querySelector(selector) as HTMLInputElement;
+    if (field) {
+      fields.expiryField = field;
+      break;
+    }
+  }
+  
+  for (const selector of selectors.expiryMonth) {
+    const field = document.querySelector(selector) as HTMLInputElement | HTMLSelectElement;
+    if (field) {
+      fields.expiryMonthField = field;
+      break;
+    }
+  }
+  
+  for (const selector of selectors.expiryYear) {
+    const field = document.querySelector(selector) as HTMLInputElement | HTMLSelectElement;
+    if (field) {
+      fields.expiryYearField = field;
+      break;
+    }
+  }
+  
+  for (const selector of selectors.cvc) {
+    const field = document.querySelector(selector) as HTMLInputElement;
+    if (field) {
+      fields.cvcField = field;
+      break;
+    }
+  }
+  
+  return fields;
+}
+
+/**
+ * Get test card details based on card name
+ */
+export function getCardDetails(cardName: string): CardDetails {
+  const lowerCaseName = cardName.toLowerCase();
+  
+  // Default card details
+  const defaultDetails: CardDetails = {
+    cardNumber: '4242 4242 4242 4242',
+    cardName: 'John Doe',
+    expiryMonth: '12',
+    expiryYear: '2030',
+    cvc: '123'
+  };
+  
+  // Card specific details
+  if (lowerCaseName.includes('visa') || lowerCaseName.includes('chase') || lowerCaseName.includes('wells fargo')) {
+    return {
+      ...defaultDetails,
+      cardNumber: '4242 4242 4242 4242' // Visa format
+    };
+  } else if (lowerCaseName.includes('mastercard') || lowerCaseName.includes('citi')) {
+    return {
+      ...defaultDetails,
+      cardNumber: '5555 5555 5555 4444' // Mastercard format
+    };
+  } else if (lowerCaseName.includes('amex') || lowerCaseName.includes('american express')) {
+    return {
+      ...defaultDetails,
+      cardNumber: '3782 822463 10005', // Amex format
+      cvc: '1234' // Amex has 4-digit CVC
+    };
+  } else if (lowerCaseName.includes('discover')) {
+    return {
+      ...defaultDetails,
+      cardNumber: '6011 1111 1111 1117' // Discover format
+    };
+  }
+  
+  return defaultDetails;
 } 
