@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swipe Credit Card Recommender</title>
+  <style>
+    body {
+      width: 340px;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #333;
+      margin: 0;
+      background-color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .popup-container {
+      position: relative;
+      padding: 24px;
+    }
+    
+    .close-button {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #555;
+      padding: 4px;
+      line-height: 1;
+    }
+    
+    .card-display {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    
+    .card-image {
+      width: 80px;
+      height: 50px;
+      border-radius: 6px;
+      margin-right: 16px;
+      background-color: #f0f0f0;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .selected-indicator {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 24px;
+      height: 24px;
+      background: #0066FF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 14px;
+    }
+    
+    .card-info {
+      flex: 1;
+    }
+    
+    .cashback-amount {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 0 4px 0;
+    }
+    
+    .card-name {
+      font-size: 16px;
+      color: #333;
+      margin: 0;
+    }
+    
+    .alternative-cards {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 12px 0;
+      padding-top: 12px;
+      border-top: 1px solid #eee;
+    }
+    
+    .card-thumbnails {
+      display: flex;
+    }
+    
+    .card-thumbnail {
+      width: 40px;
+      height: 28px;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+      margin-right: 6px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .more-cards {
+      font-size: 14px;
+      color: #888;
+      margin-left: 6px;
+    }
+    
+    .see-all {
+      color: #888;
+      font-size: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .see-all::after {
+      content: "›";
+      margin-left: 4px;
+      font-size: 18px;
+    }
+    
+    .pay-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 15px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    
+    .pay-button svg {
+      margin-right: 10px;
+    }
+    
+    .loading {
+      text-align: center;
+      padding: 32px;
+      color: #777;
+    }
+    
+    /* Card visuals */
+    .wells-fargo {
+      background: linear-gradient(135deg, #b71c1c 0%, #7f0000 100%);
+    }
+    
+    .citi {
+      background-color: #222;
+    }
+    
+    .chase {
+      background: linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%);
+    }
+    
+    .amex {
+      background-color: #006fcf;
+    }
+    
+    .discover {
+      background: linear-gradient(135deg, #ff6f00 0%, #e65100 100%);
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <div class="loading">Loading recommendations...</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 
