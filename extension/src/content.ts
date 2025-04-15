@@ -1,5 +1,5 @@
 // List of common checkout page indicators
-import { getCardClass, getCardDetails, findFormFields } from './utils';
+import { getCardClass, getCardDetails, findFormFields, getCardImageUrl } from './utils';
 
 // No need to redeclare Window interface as it's now in utils.ts
 
@@ -358,7 +358,7 @@ function showRecommendationPopup() {
       
       // Create header for branding
       const header = document.createElement('div');
-      header.style.backgroundColor = '#0066FF';
+      header.style.backgroundColor = '#000000';
       header.style.color = 'white';
       header.style.padding = '12px 16px';
       header.style.display = 'flex';
@@ -471,21 +471,13 @@ function showRecommendationPopup() {
       cardImage.style.overflow = 'hidden';
       cardImage.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
       
-      // Set card background based on card type
-      const cardClass = getCardClass(bestCard.name);
-      if (cardClass === 'wells-fargo') {
-        cardImage.style.background = 'linear-gradient(135deg, #b71c1c 0%, #7f0000 100%)';
-      } else if (cardClass === 'citi') {
-        cardImage.style.backgroundColor = '#222';
-      } else if (cardClass === 'chase') {
-        cardImage.style.background = 'linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%)';
-      } else if (cardClass === 'amex') {
-        cardImage.style.backgroundColor = '#006fcf';
-      } else if (cardClass === 'discover') {
-        cardImage.style.background = 'linear-gradient(135deg, #ff6f00 0%, #e65100 100%)';
-      } else {
-        cardImage.style.backgroundColor = '#f0f0f0';
-      }
+      // Add card image
+      const cardImg = document.createElement('img');
+      cardImg.src = getCardImageUrl(bestCard.name);
+      cardImg.style.width = '100%';
+      cardImg.style.height = '100%';
+      cardImg.style.objectFit = 'cover';
+      cardImage.appendChild(cardImg);
       
       // Add checkmark indicator
       const selectedIndicator = document.createElement('div');
@@ -590,21 +582,13 @@ function showRecommendationPopup() {
           thumbnail.style.cursor = 'pointer';
           thumbnail.style.transition = 'transform 0.2s ease';
           
-          // Set card background based on card type
-          const cardClass = getCardClass(card.name);
-          if (cardClass === 'wells-fargo') {
-            thumbnail.style.background = 'linear-gradient(135deg, #b71c1c 0%, #7f0000 100%)';
-          } else if (cardClass === 'citi') {
-            thumbnail.style.backgroundColor = '#222';
-          } else if (cardClass === 'chase') {
-            thumbnail.style.background = 'linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%)';
-          } else if (cardClass === 'amex') {
-            thumbnail.style.backgroundColor = '#006fcf';
-          } else if (cardClass === 'discover') {
-            thumbnail.style.background = 'linear-gradient(135deg, #ff6f00 0%, #e65100 100%)';
-          } else {
-            thumbnail.style.backgroundColor = '#f0f0f0';
-          }
+          // Add card image
+          const thumbImg = document.createElement('img');
+          thumbImg.src = getCardImageUrl(card.name);
+          thumbImg.style.width = '100%';
+          thumbImg.style.height = '100%';
+          thumbImg.style.objectFit = 'cover';
+          thumbnail.appendChild(thumbImg);
           
           // Add tooltip with card name and cashback
           thumbnail.title = `${card.name}: $${card.cashback.toFixed(2)} cashback`;
@@ -654,17 +638,6 @@ function showRecommendationPopup() {
         alternativeCards.appendChild(seeAll);
         contentContainer.appendChild(alternativeCards);
       }
-      
-      // Add marketing message
-      const marketingMessage = document.createElement('div');
-      marketingMessage.style.backgroundColor = '#f8f9fa';
-      marketingMessage.style.padding = '10px 12px';
-      marketingMessage.style.borderRadius = '6px';
-      marketingMessage.style.fontSize = '12px';
-      marketingMessage.style.color = '#666';
-      marketingMessage.style.margin = '16px 0';
-      marketingMessage.innerHTML = '<strong>Swipe tip:</strong> Using the recommended card will save you <strong>$27.30</strong> more per year on average';
-      contentContainer.appendChild(marketingMessage);
       
       // Add "pay with selected card" button
       const payButton = document.createElement('button');
@@ -724,15 +697,6 @@ function showRecommendationPopup() {
       `;
       
       contentContainer.appendChild(payButton);
-      
-      // Add "Powered by" footer
-      const footer = document.createElement('div');
-      footer.style.fontSize = '11px';
-      footer.style.color = '#999';
-      footer.style.textAlign = 'center';
-      footer.style.marginTop = '12px';
-      footer.textContent = 'Powered by Swipe Credit Card Recommender';
-      contentContainer.appendChild(footer);
       
       // Add container to popup
       popup.appendChild(contentContainer);

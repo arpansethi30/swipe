@@ -1,0 +1,2142 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    
+    
+    <meta name="template" content="content-page-template"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
+    
+    
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-16-16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-32-32.png"/>
+    <link rel="icon" type="image/png" sizes="48x48" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-48-48.png"/>
+    <link rel="icon" type="image/png" sizes="64x64" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-64-64.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/images/icon-fav-96-96.png"/>
+    
+        <link rel="canonical"/>
+        <script type="text/javascript">
+            var aflag = "true";
+            aflag = "true";
+        </script>
+    
+	<input type="hidden" name="search-region" value="Prod" aria-hidden="true"/>
+    <script type="text/javascript">
+        var enableEdsKey = "false";
+        enableEdsKey = "false";
+        var overrideLogin = "false";
+        overrideLogin = "false";
+        var applyNowText ="";
+        applyNowText = "";
+        var applyNowURL = "";
+        applyNowURL = "";
+        var logoURL = "";
+        logoURL = "";
+        var analyticsLabel = "";
+        analyticsLabel = "";
+        var autoDateJs = "false";
+        autoDateJs = "false";
+        var subNavigation = "false";
+        subNavigation = "false";
+    </script>
+    
+    
+        <meta property="og:image" content="https://www.discover.com/discover/ico/share-image.jpg"/>
+    
+    
+
+    
+        
+    
+        
+            
+                <meta name="ROBOTS" content="NOINDEX, NOFOLLOW"/>
+            
+        
+    
+
+    
+        
+    
+        
+    
+
+    
+        
+    
+        
+    
+    <link href="https://assets.adobedtm.com" rel="preconnect"/>
+    <link href="https://s.go-mpulse.net" rel="preconnect"/>
+    <link href="https://discover.sv.rkdms.com" rel="preconnect"/>
+    <link href="https://dpm.demdex.net" rel="preconnect"/>
+    <link href="https://www.googletagmanager.com" rel="preconnect"/>
+    <link href="https://s.btstatic.com" rel="preconnect"/>
+    
+    
+    
+    
+
+    
+
+    
+    <script>
+        //Set analytics values from page properties
+        window.pageType = '';
+        window.pageVariation = '';
+        window.pageName = '';
+    </script>
+    <!-- DL Script Starts -->
+	<script>
+	var adobeDataLayer = adobeDataLayer || [];		
+	var pageName = window.pageName ? window.pageName : window.location.pathname.replace(/^\/|\/$/g, '');	
+		if(pageName === "/credit-cards/homepage" && getQueryParameterExists('defaultoffer','yes')){
+			pageName = '/credit-cards/highAvailability';
+		}
+		if(pageName === "/credit-cards/homepage" && getQueryParameterExists('icmpgn','acq_dma_oaa_creditcards')){
+			pageName = '/credit-cards/dmareferrers';
+		}
+	var pageUrl = window.location.href;
+	var urlwithoutQuery = window.location.protocol+"//"+window.location.hostname+window.location.pathname;
+	var pathwithoutQuery =  window.location.pathname.replace(/^\/|\/$/g, '');
+	var previouspathwithoutQuery = "";
+	var debugQuery = window.location.search.replace(/\?/, '');
+	var pageInstance = "";
+	var siteDomain = "";
+	var siteName = window.location.pathname.split('/')[1];
+	var siteSection = "";
+    var siteSubsection = "";
+	var searchTerm ="";
+	var searchType ="";
+	var searchTypeClicked ="";
+	var resultType ="";
+	var searchResultTypeClicked ="";
+	var searchResultTypes = "";
+	var serverHost = window.location.hostname;
+		if (serverHost != undefined) {
+			pageInstance = serverHost.substring(0, serverHost.indexOf('-')); 
+			if (pageInstance == undefined || pageInstance == ''){
+			pageInstance = 'prod';
+			}
+		}	
+		if (window.location.hostname.includes('dev') || window.location.hostname.includes('stage')) {
+			siteDomain = window.location.hostname;
+		}
+		else {
+			siteDomain = window.location.hostname.split('.')[1] + "." + window.location.hostname.split('.')[2];
+		}	
+		siteSection =(( window.location.pathname.split('/').length >= 3 && window.location.pathname.includes("html")) || window.location.pathname.split('/').length >= 4) ? window.location.pathname.split('/')[1] + "/" + window.location.pathname.split('/')[2]: ""; 
+		siteSubsection = ((window.location.pathname.split('/').length >= 4 && window.location.pathname.includes("html")) || window.location.pathname.split('/').length >= 5) ? window.location.pathname.split('/')[1] + "/" + window.location.pathname.split('/')[2] + "/" + window.location.pathname.split('/')[3] : "";
+
+		if(debugQuery.includes('q')) {
+			searchType = "public";
+			searchTerm = window.location.search.replace(/\?/,'').split('=')[1].split('&')[0].replace('+', ' ');
+		}	
+	if(debugQuery.includes("srchQ")){
+		searchType = "PublicSite";
+		searchTerm = window.location.search.replace(/\?/,'').split('&')[1].split('=')[1].replace(/%20/g, ' ');
+			if(window.location.search.replace(/\?/, '').split('=')[0] == "gcmpgn") {
+				searchTypeClicked = window.location.search.replace(/\?/,'').split('=')[1].split('&')[0];
+				resultType = window.location.search.replace(/\?/,'').split('=')[1].split('_')[3];
+			
+					if(resultType == "gsap") {
+						searchResultTypeClicked = "KeyMatch";
+					}
+					else if(resultType == "gsan") {
+						searchResultTypeClicked = "RegularResult";
+					}
+					else if(resultType == "sro") {
+						searchResultTypeClicked = "QuickResult";
+					}	
+					else{
+						searchResultTypeClicked = "UnknownResult";
+					}
+			}
+		}
+
+	var digitalData = {
+		page: {
+			pageInfo: {
+				pageName: pageName == '' ? "Home" : pageName,
+				pageUrl:pageUrl,
+				urlwithoutQuery:urlwithoutQuery,
+				pageInstanceId: pageInstance,
+				pathwithoutQuery:pathwithoutQuery == '' ? "Home" : pathwithoutQuery,
+				previouspathwithoutQuery:previouspathwithoutQuery,
+				debugQuery:debugQuery,
+				siteDomain:siteDomain,
+				siteName:siteName,
+				siteSection:siteSection,
+				siteSubsection:siteSubsection,
+				errorMessages:""
+			}
+		},
+		load: function() {
+			this.showResults = document.querySelector("leader-1.no-trailer :nth-child(3)").innerHTML; // get the results of the showing info from search page.
+			this.showResults.select();
+		},			
+		search: {
+			internalSearchTerm:searchTerm,
+			internalSearchTypeClicked:searchTypeClicked,
+			internalSearchResultTypeClicked:searchResultTypeClicked,
+			internalSearchType:searchType,
+			internalSearchResultTypes:searchResultTypes
+		},
+		target: {
+			webTargetAds: {
+				list: "",
+				event: 0
+			}
+		},		
+		user: {
+				customerType:"Prospect"
+			},
+		privacy: {
+			user: {
+					acceptance:"optIn"
+				}   
+			},
+		version: "1.0"
+		}
+
+	let readCookiePpwoq = function(name) {
+		let nameEQ = name + "=";
+		let ca = document.cookie.split(';');
+		for(let i=0;i < ca.length;i++) {
+			let c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1,c.length);
+			if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
+		}
+		return null;
+	};
+
+	let dfsedskey = readCookiePpwoq("dfsedskey"),
+		ppwoq = document.referrer.replace(/\?.*$/g,"").replace(/^[^:]+:\/\/[^/]+/, '').replace(/#.*/, '');
+	if(ppwoq == '/' && !dfsedskey) {
+		digitalData.page.pageInfo.previouspathwithoutQuery = "gateway/unk";
+	}
+	else if(ppwoq == '/' && dfsedskey) {
+		digitalData.page.pageInfo.previouspathwithoutQuery = "gateway/knw";
+	}
+	else {
+		digitalData.page.pageInfo.previouspathwithoutQuery = document.referrer.replace(/\?.*$/g, '').replace(/^[^:]+:\/\/[^/]+/, '').replace(/^\/|\/$/g, '');
+	}
+
+	digitalData.event = adobeDataLayer;
+	function dataLayerClickEventPush(eventObject) {
+		dataLayerEventPush('click', eventObject);
+	}
+		function dataLayerEventPush(eventType, eventObject) {
+			if (!eventObject) {
+				console.error("JSON object parameter has to be passed!");
+				return;
+			}
+			if (!eventObject.customLink) {
+				console.error("customLink attribute has to be defined!");
+				return;
+			}
+			adobeDataLayer.push({
+				event: eventType,
+				variables: eventObject
+			});
+		}		
+	window.onload = function() {    
+		var channelpageName = $(".channelpagename").length ? $(".channelpagename").text() : pageName;
+		var digitalData = {
+			page: {
+				pageInfo: {
+					pageName: channelpageName == '' ? "Home" : channelpageName,
+					pageUrl:pageUrl,
+					urlwithoutQuery:urlwithoutQuery,
+					pageInstanceId: "prod",
+					pathwithoutQuery:pathwithoutQuery == '' ? "Home" : pathwithoutQuery,
+					previouspathwithoutQuery: previouspathwithoutQuery,
+					debugQuery:debugQuery,
+					siteDomain:siteDomain,
+					siteName:siteName,
+					siteSection:siteSection,
+					siteSubsection:siteSubsection
+				}
+			}
+		} 
+	}
+		function getQueryParameterExists(paramName,value) {
+		  var url = window.location.href.toLowerCase();
+		  if(url.indexOf('?' + paramName + '='+value) !== -1 || url.indexOf('&' + paramName + '='+value) !== -1)
+			return true;
+		  return false;
+		}	
+	</script>
+	<!-- DL Script Ends -->
+<script src="https://assets.adobedtm.com/1e5ef0994701/082ef47f9e7a/launch-118a6970f261.min.js" async></script>
+    
+    
+<link rel="stylesheet" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site.min.ACSHASH0a8545807e1263b68ae87d36c6b95e25.css" type="text/css">
+
+
+
+    
+    
+    
+<script src="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-header.min.ACSHASH31a65eefe4bbdafc5417745250cf6442.js"></script>
+
+
+
+    <link fetchpriority="high" rel="preload" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/fonts/DiscoverSans-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+    <link fetchpriority="high" rel="preload" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/fonts/DiscoverSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+    <link fetchpriority="high" rel="preload" href="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site/resources/fonts/DiscoverSans-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+
+    
+    
+    
+        
+    
+        
+    
+</head>
+    <body class="contentpage basepage page basicpage" itemscope>
+        <div id="siteframe">
+            <div>
+                
+<div class="root responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="rawHTML aem-GridColumn aem-GridColumn--default--12"><div class="cmp-rawhtml ">
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+        <div><style>
+.header-wrapper .header-content .left-panel.left-panel--right.header--variation--reskin.newsubnav .side-navigation li:first-child .credit-card-list li a img {
+    height: 60.5px !important;
+    padding-top: 5px  !important;
+}
+.header-wrapper .header-content .left-panel.left-panel--right.header--variation--reskin.newsubnav .side-navigation li:first-child .credit-card-list li:nth-child(2) a img{
+padding-top: 0px !important;
+}
+@media(min-width:992px){
+	#navTabs #tab1 .nav_element.allCardDesktop .nav_element-img img{
+		width: 67px !important;
+		height: 60px !important;
+		margin-left: 7pt !important;
+	}	
+   #navTabs #tab1 .nav_element-img img {       
+        height: 50px !important;
+        margin-top: 5px !important;
+    }
+	#navTabs .one-column__container .tabs #tab2 .nav_element-img img,
+	#navTabs .one-column__container .tabs #tab3 .nav_element-img img{
+			width: 28px !important;
+			height: 24px !important;
+	}
+	@media (min-width: 992px) {
+    #navTabs .one-column__container .navTabSection .innerList {
+		text-align: left;		
+	}		
+}
+@media(max-width:767px){
+	.header-wrapper .header-content .left-panel.left-panel--right.header--variation--reskin.newsubnav .side-navigation li:first-child .credit-card-list li a img,
+	.header-wrapper .header-content .left-panel.left-panel--right.header--variation--reskin.newsubnav .side-navigation .credit-card-list img.allCardImg.cardImg{
+		width: 67px !important;
+		height: 53px !important;
+		margin-left: 7pt !important;
+	}	
+	.header-wrapper .header-content .left-panel.left-panel--right.header--variation--reskin.newsubnav .side-navigation li:nth-child(2) .credit-card-list li:nth-child(2) img{
+		width: 40px !important;
+		height: 40px !important;
+		margin-left: 0 !important;
+	} 
+	.header-wrapper .header-content .left-panel.left-panel--right.header--variation--reskin.newsubnav .side-navigation li:nth-child(3) .credit-card-list li:nth-child(2) img{
+		width: 40px !important;
+		height: 40px !important;
+		margin-left: 5px !important;
+	}
+}
+#disclosure__cchp .notes-component .footnotes__container li, #disclosure__cchp .notes-component .footnotes__container p {
+    font-size: 14px !important;
+}
+.cmp-reviews .cmp-ratingsreviews__content .conversation-value p a{
+    color: #3057b9 !important;
+}
+</style></div>
+    
+    
+        
+        
+    
+
+    
+    
+    
+
+</div>
+</div>
+<div class="header aem-GridColumn aem-GridColumn--default--12">
+
+<header class="mobile-responsive" role="banner">
+	<div class="header-wrapper theme-background theme-white-background-gradient animation js_disabledflyout md-header-wrapper scrolltracking">
+		<div class="branch-journeys-top"></div>
+		
+		
+		
+		
+		<div class="alert-danger tls-message-alert hide" role="alert" id="tls-message-alert">
+			<div class="alert-content">
+				<div class="alert-wrapper">
+					<span class="alert-icon"><em class="svg-error-alert"></em></span>
+					<div class="alert-container">
+						
+						<p class="alert-heading text-bold">Action required: Update
+							your browser</p>
+						<p class="alert-body">
+							We noticed that you're using an old version of your internet
+							browser to access this page. To protect your account security,
+							you must update your browser as soon as possible. <strong>You'll
+							be unable to log in to Discover.com</strong> in the future if your
+							browser has not been updated. <a href="https://www.discover.com/credit-cards/browser-support/?ICMPGN=TLS_GLOBALALERT_HELPCENTER_TXT">Learn
+							more in the Discover Help Center</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<noscript>
+			<div class="alert alert-warning" role="alert" id="noscript-message">
+				<div class="alert-content">
+					<em class="icon-error-triangle"></em>
+					<p class="alert-body body-copy">
+						<strong>Please Note:</strong> JavaScript is not enabled in your
+						web browser. In order to enjoy the full experience of the Discover
+						website, please turn JavaScript on. If JavaScript is disabled,
+						some of the functionality on our website will not work, such as
+						the display of rates and APRs.
+					</p>
+				</div>
+			</div>
+		</noscript>
+		<div id="newHeader" class="header-content section-container">
+			<div class="logo-container" style="text-align : center">
+				<div class="opener-container hidden-md hidden-lg">
+					<a href="#" class="dropdown-toggle panel-opener" aria-haspopup="true" aria-expanded="false" role="button">
+						<span class="device-menu hidden-md hidden-lg">
+						<em class="icon-toggle"></em>Menu</span>
+					</a>
+				</div>
+				<a href="https://www.discover.com/credit-cards/?ICMPGN=ACQ_NAV_DLOGO" class="discover-logo"> <img class="flag" src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-discover-logo-136-23.png" alt="discover logo" width="96" height="16"/>
+				</a>
+				
+			</div>
+			<div class="navbar-wrapper" role="navigation">
+				<ul class="right-nav nav navbar-nav">
+					<li class="dropdown tab-help">
+						<a href="#" data-analytics-label="Discover Home:Header:Help Expand Menu" class="dropdown-toggle mobile-accessibility preventDefaultBehaviour" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+							<em class="icon-help"></em>
+							<span>Help</span>
+						</a>
+						<div class="fly-out-wrapper help-tab-nav">
+							<div class="dropdown-menu help-dropdown">
+								<div class="dropdown-wrapper">
+									<ul class="links-list" aria-labelledby="menubutton" role="menu">
+										
+										<li role="presentation"><a role="menuitem" href="/credit-cards/contact-us/?ICMPGN=PUB_HDR_HELP_CC">Card Help Center</a></li>
+									
+										
+										<li role="presentation"><a role="menuitem" href="https://www.discover.com/credit-cards/card-smarts/?ICMPGN=PUB_HDR_HELP_CRC">Card Smarts</a></li>
+									
+										
+										<li role="presentation"><a role="menuitem" href="/online-banking/contact-us/?ICMPGN=PUB_HDR_HELP_BANK">Banking Help Center</a></li>
+									
+										
+										<li role="presentation"><a role="menuitem" href="https://www.discover.com/home-loans/help-center/?sc=HC492&ICMPGN=PUB_HDR_HELP_HL">Home Loans Help Center</a></li>
+									
+										
+										<li role="presentation"><a role="menuitem" href="/student-loans/help/customer-service?acmpgn=O_DIS_DCOM_XS_X_HELP&ICMPGN=PUB_HDR_HELP_DSL">Student Loans Help</a></li>
+									
+										
+										<li role="presentation"><a role="menuitem" href="https://www.discover.com/personal-loans/contact-us/?ICMPGN=PUB_HDR_HELP_DPL">Personal Loans Help</a></li>
+									
+										
+										<li role="presentation"><a role="menuitem" href="/credit-cards/contact-us/?ICMPGN=PUB_HDR_HELP_GIFTCRD">Gift Card Help</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown search-tab">
+						<a href="#" data-analytics-label="Discover Home:Header:Search Expand" id="mobile-search-btn" class="dropdown-toggle mobile-accessibility preventDefaultBehaviour" data-toggle="dropdown" role="button" aria-expanded="false">
+							<em class="icon-search"></em>
+							<span>Search</span>
+						</a>
+						<div id="search_overlay">
+							<div class="search-container">
+								<form id="suggestion_form" class="suggestion_form" name="search" role="search" data-url="/acnav/scripts/suggestion_form.php?search=" action="https://www.discover.com/search/search.html" method="get" autocomplete="off">
+									<label for="predict-input" class="sr-only">Search Discover</label> <span id="initInstr" style="display: none;">When
+										autocomplete results are available use up and down arrows to
+										review and enter to select. Touch device users, explore by
+										touch or with swipe gestures.</span>
+									<div aria-live="assertive" class="sr-only"></div>
+									<input type="text" placeholder="Search" autocomplete="off" class="search-box predict-input" id="predict-input" maxlength="256" name="q" aria-describedby="initInstr"/>
+									
+										<ul role="menu" id="search-suggestions">
+										</ul>
+									
+									<input type="hidden" name="proxystylesheet" value="internet_cm_fe"/>
+									<button id="predict-submit" class="search-btn predict-submit"/>
+								</form>
+							</div>
+						</div></li>
+					<li class="desktop-extra-links">
+						<a id="login-known" data-analytics-label="Discover Home:Header:Login" href="https://portal.discover.com/customersvcs/universalLogin/signin" class="log-in-link btn-primary" role="button">Log In<span class="sr-only">Opens modal dialog</span></a>
+						<div class="cta" id="login-unknown">
+							<div class="cmp-button--cta cmp-button--cta--opaque-orange">
+								<a class="cmp-button" data-analytics-label="APPLY_NOW_HEADER_BTN" href="#" aria-label="" target="_self"><span class="cmp-button__text"></span></a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- Tab Nav Component :: MOBILE :: Start -->
+			
+				<nav class="left-panel left-panel--right header--variation--reskin newsubnav" aria-hidden="false">
+					<a href="#" class="custom-focus panel-ax-top">.</a>
+					<ul id="side-navigation" class="side-navigation" role="list">
+						
+							<li class="heading_li withArrow" data-src="cards-1">
+								<a href="javascript:void(0)" class="credit-list-opener new_menu preventDefaultBehaviour" data-analytics-label="subnav_ccp" id="expand_menu_icon" aria-expanded="false">
+									<span>Credit Card Products</span><em class="plus-icon"></em></a>
+								<ul class="credit-card-list sec-nav-mobile" role="list">
+									
+										
+											<li class="preapprovedImg">
+												<a href="https://www.discovercard.com/application/preapproval/initial?ICMPGN=SUBNAV_CCP_PQ" data-lazy="true" target="_self">
+													<img class="panel-banner-image" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-small-card-351-103.png?imbypass=true" alt="Click this banner to see if you&#39;re Pre-approved"/></a>
+											</li>
+										
+										
+									
+										
+										
+											<li>
+												<a href="/credit-cards/?ICMPGN=SUBNAV_CCP_ALL" target="_self" data-lazy="true">
+													<img alt="Multi Card Icon" class="allCardImg cardImg" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-ccpn-cards-67-60.png"/>
+													<div>All Credit Cards</div>
+												</a>
+											</li>
+										
+									
+									
+										
+											<li>
+												<a href="https://www.discover.com/credit-cards/cash-back/it-card.html?ICMPGN=SUBNAV_CCP_IT" target="_self" data-lazy="true">
+													<img class="cardImg" alt="Discover it Cash Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-cash-back-it-67-60.webp"/>
+													<div>Discover it® Cash Back<span class="short_disc">Earn cash back rewards</span>
+													</div>
+												</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://www.discover.com/credit-cards/student-credit-card/it-card.html?ICMPGN=SUBNAV_CCP_STUDENT_IT" target="_self" data-lazy="true">
+													<img class="cardImg" alt="Discover it Student Cash Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-student-it-67-60.webp"/>
+													<div>Discover it® Student Cash Back<span class="short_disc">Start building credit in college</span>
+													</div>
+												</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://www.discover.com/credit-cards/student-credit-card/chrome-card.html?ICMPGN=SUBNAV_CCP_STUDENT_CHROME" target="_self" data-lazy="true">
+													<img class="cardImg" alt="Discover it Student Chrome Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-student-chrome-67-60.webp"/>
+													<div>Discover it® Student Chrome<span class="short_disc">Earn restaurant &amp; gas rewards as a student</span>
+													</div>
+												</a>
+												
+											</li>
+										
+									
+										
+											<li>
+												<a href="/credit-cards/secured-credit-card/?ICMPGN=SUBNAV_CCP_SECURED" target="_self" data-lazy="true">
+													<img class="cardImg" alt="Discover it Secured Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-secured-it-67-60.webp"/>
+													<div>Discover it® Secured<span class="short_disc">Build or rebuild your credit</span>
+													</div>
+												</a>
+												
+											</li>
+										
+											<li>
+												<a href="/credit-cards/travel/?ICMPGN=SUBNAV_CCP_MILES" target="_self" data-lazy="true">
+													<img class="cardImg" alt="Discover it Miles Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-miles-67-60.webp"/>
+													<div>Discover it® Miles<span class="short_disc">Explore with the travel rewards credit card</span>
+													</div>
+												</a>
+												
+											</li>
+										
+											<li>
+												<a href="https://www.discover.com/credit-cards/cash-back/chrome.html?ICMPGN=SUBNAV_CCP_IT_CHROME" target="_self" data-lazy="true">
+													<img class="cardImg" alt="Discover it Chrome Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-chrome-it-67-60.webp"/>
+													<div>Discover it® Chrome<span class="short_disc">Earn restaurant &amp; gas rewards</span>
+													</div>
+												</a>
+												
+											</li>
+										
+									
+										
+											<li>
+												<a href="https://www.discover.com/credit-cards/cash-back/nhl-card.html?ICMPGN=SUBNAV_CCP_NHL" target="_self" data-lazy="true">
+													<img class="cardImg" alt="Discover it NHL Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-nhl-67-60.webp"/>
+													<div>NHL Credit Card<span class="short_disc">Represent your team &amp; earn cash back</span>
+													</div>
+												</a>
+												
+											</li>
+										
+									
+								</ul>
+							</li>
+						
+							<li class="heading_li withArrow" data-src="cards-1">
+								<a href="javascript:void(0)" class="credit-list-opener new_menu preventDefaultBehaviour" data-analytics-label="subnav_ccf" id="expand_menu_icon" aria-expanded="false">
+									<span>Credit Cards by Feature</span><em class="plus-icon"></em></a>
+								<ul class="credit-card-list sec-nav-mobile" role="list">
+									
+										
+											<li class="preapprovedImg">
+												<a href="https://www.discovercard.com/application/preapproval/initial?ICMPGN=SUBNAV_CCF_PQ" data-lazy="true" target="_self">
+													<img class="panel-banner-image" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-small-card-351-103.png?imbypass=true" alt="Click this banner to see if you&#39;re Pre-approved"/></a>
+											</li>
+										
+										
+									
+										
+										
+											<li>
+												<a href="https://www.discover.com/credit-cards/?ICMPGN=SUBNAV_CCF_ALL" target="_self" data-lazy="true">
+													<img alt="Multi Card Icon" class="allCardImg cardImg" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-three-cards-32-25.svg"/>
+													<div>All Credit Cards</div>
+												</a>
+											</li>
+										
+									
+									
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/cash-back/?ICMPGN=SUBNAV_CCF_CASHBACK" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Cash Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-dollor-match-28-24.svg"/>
+													<div>Cash Back Credit Cards
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/balance-transfer-credit-cards/?ICMPGN=SUBNAV_CCF_BALANCE_TRANSFER" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Two Way Arrow Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-transfer-32-25.svg"/>
+													<div>Balance Transfer Credit Card Offers
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/student-credit-card/?ICMPGN=SUBNAV_CCF_COLLEGE_STUDENTS" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Graduation Cap Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-student-32-25.svg"/>
+													<div> Credit Cards for College Students
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/credit-cards-for-no-credit/?ICMPGN=SUBNAV_CCF_CREDIT_CARDS_FOR_NO_CREDIT" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Checkmark Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-checkmark-28-24.svg"/>
+													<div>Credit Cards for No Credit History
+													</div>
+												</a>
+												
+											</li>
+										
+									
+										
+											<li class="cardImgli">
+												<a href="/credit-cards/secured-credit-card/credit-cards-to-build-credit/?ICMPGN=SUBNAV_CCF_BUILD_CREDIT" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Meter Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-fico-32-25.svg"/>
+													<div>Credit Cards to Build Credit
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/no-annual-fee-credit-cards/?ICMPGN=SUBNAV_CCF_NO_ANNUAL_FEE" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="$0 Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-zero-32-25.svg"/>
+													<div>No Annual Fee Credit Cards
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/rewards-credit-cards/?ICMPGN=SUBNAV_CCF_REWARS_CREDIT_CARDS" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Ribbon Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-rewards-32-25.svg"/>
+													<div>Rewards Credit Cards
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/low-intro-apr-credit-cards/?ICMPGN=SUBNAV_CCF_LOW_INTEREST" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Low Percent Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-rate-down-32-25.svg"/>
+													<div> Low Interest Credit Cards
+													</div>
+												</a>
+												
+											</li>
+										
+									
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/gas-credit-cards/?ICMPGN=SUBNAV_CCF_GAS_CREDIT_CARDS" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Gas Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-gas-32-25.svg"/>
+													<div>Gas Credit Cards
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/instant-use-credit-cards/?ICMPGN=SUBNAV_CCF_INSTANT_USE_CREDIT_CARDS" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Mobile Phone with Card Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-instant-use-24-26.svg"/>
+													<div>Instant Use Credit Cards
+													</div>
+												</a>
+												
+											</li>
+										
+									
+								</ul>
+							</li>
+						
+							<li class="heading_li withArrow" data-src="cards-1">
+								<a href="javascript:void(0)" class="credit-list-opener new_menu preventDefaultBehaviour" data-analytics-label="subnav_tar" id="expand_menu_icon" aria-expanded="false">
+									<span>Tools and Resources</span><em class="plus-icon"></em></a>
+								<ul class="credit-card-list sec-nav-mobile" role="list">
+									
+										
+											<li class="preapprovedImg">
+												<a href="https://www.discovercard.com/application/preapproval/initial?ICMPGN=SUBNAV_TAR_PQ" data-lazy="true" target="_self">
+													<img class="panel-banner-image" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-small-card-351-103.png?imbypass=true" alt="Click this banner to see if you&#39;re Pre-approved"/></a>
+											</li>
+										
+										
+									
+										
+										
+											<li>
+												<a href="https://www.discover.com/credit-cards/?ICMPGN=SUBNAV_TAR_ALL" target="_self" data-lazy="true">
+													<img alt="Multi Card Icon" class="allCardImg cardImg" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-three-cards-32-25.svg"/>
+													<div>All Credit Cards</div>
+												</a>
+											</li>
+										
+									
+									
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/credit-card-calculator/?ICMPGN=SUBNAV_TAR_CALCULATOR" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Calculator Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-calculator-28-24.svg"/>
+													<div>Credit Card Calculators
+													</div>
+												</a>
+												
+													<ul>
+														
+															<li class="card_indent">
+																<a href="https://www.discover.com/credit-cards/credit-card-calculator/credit-card-interest-calculator/?ICMPGN=SUBNAV_CC_INTEREST_CALCULATOR" target="_self">- Credit Card Interest Calculator</a>
+															</li>
+														
+															<li class="card_indent">
+																<a href="https://www.discover.com/credit-cards/credit-card-calculator/balance-transfer-calculator/?ICMPGN=SUBNAV_BT_CALCULATOR" target="_self">- Balance Transfer Calculator</a>
+															</li>
+														
+													</ul>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discovercard.com/application/website/invite?ICMPGN=SUBNAV_TAR_RESPOND_MAIL_OFFER&flavor=it&fpp=true&_ga=2.50907437.584696215.1676279870-557086243.1675411694" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Mail Envelope Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-mail-28-24.svg"/>
+													<div>Respond to Mail Offer
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discovercard.com/application/self-service/?page=check-status&ICMPGN=SUBNAV_TAR_CHECK_APPLICATION_STATUS" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Laptop and Phone Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-device-28-24.svg"/>
+													<div>Check Application Status
+													</div>
+												</a>
+												
+											</li>
+										
+									
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/card-smarts/?ICMPGN=SUBNAV_TAR_CARD_SMARTS" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Paper and Pencil Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-paper-pen-28-24.svg"/>
+													<div>Card Smarts Articles
+													</div>
+												</a>
+												
+													<ul>
+														
+															<li class="card_indent">
+																<a href="https://www.discover.com/credit-cards/card-smarts/getting-a-credit-card/?ICMPGN=SUBNAV_TAR_GETTING_A_CARD" target="_self">- Getting a credit card</a>
+															</li>
+														
+															<li class="card_indent">
+																<a href="https://www.discover.com/credit-cards/card-smarts/using-your-credit-card/?ICMPGN=SUBNAV_TAR_USING_YOUR_CARD" target="_self">- Using your credit card</a>
+															</li>
+														
+															<li class="card_indent">
+																<a href="https://www.discover.com/credit-cards/card-smarts/credit-card-rewards/?ICMPGN=SUBNAV_TAR_CARD_REWARDS" target="_self">- Credit card rewards</a>
+															</li>
+														
+													</ul>
+												
+											</li>
+										
+									
+										
+											<li class="cardImgli">
+												<a href="https://discover.promo.eprize.com/discoversweeps24/?ICMPGNid=site-sch-pro-dis-nav&affiliate_id=site-sch-pro-dis-nav" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Graduation Cap Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-student-32-25.svg"/>
+													<div>Discover®  Scholarship Sweepstakes
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/free-credit-score/?ICMPGN=SUBNAV_TAR_FREE_CREDIT_SCORE#fico-score" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Meter Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-fico-32-25.svg"/>
+													<div>Free Credit Score for Cardmembers
+													</div>
+												</a>
+												
+											</li>
+										
+											<li class="cardImgli">
+												<a href="https://www.discover.com/credit-cards/compare/?ICMPGN=SUBNAV_TAR_COMPARE" target="_self" data-lazy="true">
+													<img class="cardImgf" alt="Card Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-two-cards-32-25.svg"/>
+													<div>Compare Credit Cards
+													</div>
+												</a>
+												
+											</li>
+										
+									
+								</ul>
+							</li>
+						
+					</ul>
+					<a href="#" class="custom-focus panel-ax-bottom">.</a>
+				</nav>
+			
+			<!-- Tab Nav Component :: MOBILE :: End -->
+		</div>
+	</div>
+</header>
+
+	<section id="navTabs" class="one-column-new earn-cashBack-comp scrolltracking">
+		<div class="one-column__background theme-background" style="opacity: calc(100 / 100)"></div>
+		<div class="one-column__container">
+			<div class="one-column__container__parsys parsys-content">
+				<!-- Tab structure start-->
+				<div class="tabs">
+					<ul class="tabs-list">
+						
+							<li>
+								<div class="titleWrapper">
+									<a href="javascript:void(0)" data-analytics-label="subnav_ccp" data-href="#tab1">Credit Card Products</a>
+									<div id="tab1" class="tab">
+										<div class="navTabContent">
+											<!-- Content Block Items -->
+											<div class="navTabSection">
+												
+													
+														<a aria-label="Credit Card Pre-approval" href="https://www.discovercard.com/application/preapproval/initial?ICMPGN=SUBNAV_CCP_PQ" target="_self" data-lazy="true">
+															<img class="panel-banner-image" alt="Click this banner to see if you&#39;re Pre-approved" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-small-cards-266-102.png?imbypass=true"/>
+														</a>
+													
+													
+												
+													
+													
+														<ul class="nav_element allCardDesktop">
+															<li class="nav_element-img card" data-lazy="true">
+																<img alt="Multi Card Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-ccpn-cards-67-60.png"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="/credit-cards/?ICMPGN=SUBNAV_CCP_ALL" target="_self">All Credit Cards</a>
+															</li>
+														</ul>
+													
+												
+											</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img cardart" data-lazy="true">
+																<img alt="Discover it Cash Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-cash-back-it-67-60.webp"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/cash-back/it-card.html?ICMPGN=SUBNAV_CCP_IT" target="_self">Discover it® Cash Back</a>
+																<span class="short_disc">Earn cash back rewards</span>
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img cardart" data-lazy="true">
+																<img alt="Discover it Student Cash Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-student-it-67-60.webp"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/student-credit-card/it-card.html?ICMPGN=SUBNAV_CCP_STUDENT_IT" target="_self">Discover it® Student Cash Back</a>
+																<span class="short_disc">Start building credit in college</span>
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img cardart" data-lazy="true">
+																<img alt="Discover it Student Chrome Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-student-chrome-67-60.webp"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/student-credit-card/chrome-card.html?ICMPGN=SUBNAV_CCP_STUDENT_CHROME" target="_self">Discover it® Student Chrome</a>
+																<span class="short_disc">Earn restaurant &amp; gas rewards as a student</span>
+															</li>
+														</ul>
+														
+													
+												</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img cardart" data-lazy="true">
+																<img alt="Discover it Secured Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-secured-it-67-60.webp"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="/credit-cards/secured-credit-card/?ICMPGN=SUBNAV_CCP_SECURED" target="_self">Discover it® Secured</a>
+																<span class="short_disc">Build or rebuild your credit</span>
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img cardart" data-lazy="true">
+																<img alt="Discover it Miles Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-miles-67-60.webp"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="/credit-cards/travel/?ICMPGN=SUBNAV_CCP_MILES" target="_self">Discover it® Miles</a>
+																<span class="short_disc">Explore with the travel rewards credit card</span>
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img cardart" data-lazy="true">
+																<img alt="Discover it Chrome Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-chrome-it-67-60.webp"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/cash-back/chrome.html?ICMPGN=SUBNAV_CCP_IT_CHROME" target="_self">Discover it® Chrome</a>
+																<span class="short_disc">Earn restaurant &amp; gas rewards</span>
+															</li>
+														</ul>
+														
+													
+												</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img cardart" data-lazy="true">
+																<img alt="Discover it NHL Card Art" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-nhl-67-60.webp"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/cash-back/nhl-card.html?ICMPGN=SUBNAV_CCP_NHL" target="_self">NHL Credit Card</a>
+																<span class="short_disc">Represent your team &amp; earn cash back</span>
+															</li>
+														</ul>
+														
+													
+												</div>
+											
+										</div>
+									</div>
+								</div>
+							</li>
+						
+							<li>
+								<div class="titleWrapper">
+									<a href="javascript:void(0)" data-analytics-label="subnav_ccf" data-href="#tab2">Credit Cards by Feature</a>
+									<div id="tab2" class="tab">
+										<div class="navTabContent">
+											<!-- Content Block Items -->
+											<div class="navTabSection">
+												
+													
+														<a aria-label="Credit Card Pre-approval" href="https://www.discovercard.com/application/preapproval/initial?ICMPGN=SUBNAV_CCF_PQ" target="_self" data-lazy="true">
+															<img class="panel-banner-image" alt="Click this banner to see if you&#39;re Pre-approved" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-small-cards-266-102.png?imbypass=true"/>
+														</a>
+													
+													
+												
+													
+													
+														<ul class="nav_element allCardDesktop">
+															<li class="nav_element-img card" data-lazy="true">
+																<img alt="Multi Card Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-three-cards-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/?ICMPGN=SUBNAV_CCF_ALL" target="_self">All Credit Cards</a>
+															</li>
+														</ul>
+													
+												
+											</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Cash Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-dollor-match-28-24.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/cash-back/?ICMPGN=SUBNAV_CCF_CASHBACK" target="_self">Cash Back Credit Cards</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Two Way Arrow Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-transfer-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/balance-transfer-credit-cards/?ICMPGN=SUBNAV_CCF_BALANCE_TRANSFER" target="_self">Balance Transfer Credit Card Offers</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Graduation Cap Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-student-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/student-credit-card/?ICMPGN=SUBNAV_CCF_COLLEGE_STUDENTS" target="_self"> Credit Cards for College Students</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Checkmark Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-checkmark-28-24.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/credit-cards-for-no-credit/?ICMPGN=SUBNAV_CCF_CREDIT_CARDS_FOR_NO_CREDIT" target="_self">Credit Cards for No Credit History</a>
+																
+															</li>
+														</ul>
+														
+													
+												</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Meter Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-fico-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="/credit-cards/secured-credit-card/credit-cards-to-build-credit/?ICMPGN=SUBNAV_CCF_BUILD_CREDIT" target="_self">Credit Cards to Build Credit</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="$0 Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-zero-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/no-annual-fee-credit-cards/?ICMPGN=SUBNAV_CCF_NO_ANNUAL_FEE" target="_self">No Annual Fee Credit Cards</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Ribbon Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-rewards-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/rewards-credit-cards/?ICMPGN=SUBNAV_CCF_REWARS_CREDIT_CARDS" target="_self">Rewards Credit Cards</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Low Percent Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-rate-down-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/low-intro-apr-credit-cards/?ICMPGN=SUBNAV_CCF_LOW_INTEREST" target="_self"> Low Interest Credit Cards</a>
+																
+															</li>
+														</ul>
+														
+													
+												</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Gas Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-gas-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/gas-credit-cards/?ICMPGN=SUBNAV_CCF_GAS_CREDIT_CARDS" target="_self">Gas Credit Cards</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Mobile Phone with Card Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-instant-use-24-26.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/instant-use-credit-cards/?ICMPGN=SUBNAV_CCF_INSTANT_USE_CREDIT_CARDS" target="_self">Instant Use Credit Cards</a>
+																
+															</li>
+														</ul>
+														
+													
+												</div>
+											
+										</div>
+									</div>
+								</div>
+							</li>
+						
+							<li>
+								<div class="titleWrapper">
+									<a href="javascript:void(0)" data-analytics-label="subnav_tar" data-href="#tab3">Tools and Resources</a>
+									<div id="tab3" class="tab">
+										<div class="navTabContent">
+											<!-- Content Block Items -->
+											<div class="navTabSection">
+												
+													
+														<a aria-label="Credit Card Pre-approval" href="https://www.discovercard.com/application/preapproval/initial?ICMPGN=SUBNAV_TAR_PQ" target="_self" data-lazy="true">
+															<img class="panel-banner-image" alt="Click this banner to see if you&#39;re Pre-approved" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/cardart/cardart-header-small-cards-266-102.png?imbypass=true"/>
+														</a>
+													
+													
+												
+													
+													
+														<ul class="nav_element allCardDesktop">
+															<li class="nav_element-img card" data-lazy="true">
+																<img alt="Multi Card Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-three-cards-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/?ICMPGN=SUBNAV_TAR_ALL" target="_self">All Credit Cards</a>
+															</li>
+														</ul>
+													
+												
+											</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Calculator Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-calculator-28-24.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/credit-card-calculator/?ICMPGN=SUBNAV_TAR_CALCULATOR" target="_self">Credit Card Calculators</a>
+																
+															</li>
+														</ul>
+														
+															
+																<ul class="innerList">
+																	<li>
+																		<a href="https://www.discover.com/credit-cards/credit-card-calculator/credit-card-interest-calculator/?ICMPGN=SUBNAV_CC_INTEREST_CALCULATOR" target="_self">- Credit Card Interest Calculator</a>
+																	</li>
+																</ul>
+															
+																<ul class="innerList">
+																	<li>
+																		<a href="https://www.discover.com/credit-cards/credit-card-calculator/balance-transfer-calculator/?ICMPGN=SUBNAV_BT_CALCULATOR" target="_self">- Balance Transfer Calculator</a>
+																	</li>
+																</ul>
+															
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Mail Envelope Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-mail-28-24.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discovercard.com/application/website/invite?ICMPGN=SUBNAV_TAR_RESPOND_MAIL_OFFER&flavor=it&fpp=true&_ga=2.50907437.584696215.1676279870-557086243.1675411694" target="_self">Respond to Mail Offer</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Laptop and Phone Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-device-28-24.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discovercard.com/application/self-service/?page=check-status&ICMPGN=SUBNAV_TAR_CHECK_APPLICATION_STATUS" target="_self">Check Application Status</a>
+																
+															</li>
+														</ul>
+														
+													
+												</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Paper and Pencil Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-paper-pen-28-24.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/card-smarts/?ICMPGN=SUBNAV_TAR_CARD_SMARTS" target="_self">Card Smarts Articles</a>
+																
+															</li>
+														</ul>
+														
+															
+																<ul class="innerList">
+																	<li>
+																		<a href="https://www.discover.com/credit-cards/card-smarts/getting-a-credit-card/?ICMPGN=SUBNAV_TAR_GETTING_A_CARD" target="_self">- Getting a credit card</a>
+																	</li>
+																</ul>
+															
+																<ul class="innerList">
+																	<li>
+																		<a href="https://www.discover.com/credit-cards/card-smarts/using-your-credit-card/?ICMPGN=SUBNAV_TAR_USING_YOUR_CARD" target="_self">- Using your credit card</a>
+																	</li>
+																</ul>
+															
+																<ul class="innerList">
+																	<li>
+																		<a href="https://www.discover.com/credit-cards/card-smarts/credit-card-rewards/?ICMPGN=SUBNAV_TAR_CARD_REWARDS" target="_self">- Credit card rewards</a>
+																	</li>
+																</ul>
+															
+														
+													
+												</div>
+											
+												<div class="navTabSection ">
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Graduation Cap Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-student-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://discover.promo.eprize.com/discoversweeps24/?ICMPGNid=site-sch-pro-dis-nav&affiliate_id=site-sch-pro-dis-nav" target="_self">Discover®  Scholarship Sweepstakes</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Meter Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-fico-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/free-credit-score/?ICMPGN=SUBNAV_TAR_FREE_CREDIT_SCORE#fico-score" target="_self">Free Credit Score for Cardmembers</a>
+																
+															</li>
+														</ul>
+														
+													
+														<ul class="nav_element">
+															<li class="nav_element-img icon" data-lazy="true">
+																<img alt="Card Icon" data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-header-two-cards-32-25.svg"/>
+															</li>
+															<li class="nav_element-text">
+																<a href="https://www.discover.com/credit-cards/compare/?ICMPGN=SUBNAV_TAR_COMPARE" target="_self">Compare Credit Cards</a>
+																
+															</li>
+														</ul>
+														
+													
+												</div>
+											
+										</div>
+									</div>
+								</div>
+							</li>
+						
+					</ul>
+				</div>
+				<!-- Tab structure End-->
+			</div>
+		</div>
+	</section>
+</div>
+
+    
+</div>
+</div>
+
+    
+</div>
+
+</div>
+</div>
+<div class="emergencybanner aem-GridColumn aem-GridColumn--default--12">
+
+</div>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="onecolumntile cmp-alignment--left light-theme cmp-p-50 aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+<div class="stylesystemclass">
+    <section class="one-column          scrolltracking">
+        
+        <div class='one-column__background theme-background' style="opacity: calc(100 / 100);">
+        </div>
+        <div class="one-column__container">
+            
+            
+            
+<div class="cmp-title theme-background    cmp-title_text-calheadingcontent     ">
+    
+        
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        <h1 id="title--367029256" class="cmp-title__text">Looking for something on Discover's site?</h1>
+    
+    
+        
+        
+    
+
+    
+</div>
+
+    
+
+            
+
+
+    
+
+            
+<div class="cmp-text      ">
+    
+    
+        
+    
+    
+    
+    
+    
+    <p>The page you requested was not found. The link may be outdated or you may have typed the page address (URL) incorrectly.&nbsp;</p>
+<p><a href="/site-map/">Use the site map</a> or the links below to find what you need, and don't forget to update your bookmarks.</p>
+<p>&nbsp;</p>
+<p><a href="/">Discover Home</a> | <a href="/credit-cards/">Credit Cards</a> | <a href="https://www.discoverbank.com/">Banking</a> | <a href="https://www.discover.com/business" title="Small Business "><span class="sr-only">Open Discover Business Card application page</span>Small Business</a> | <a href="https://www.discover.com/home-loans/home-equity-loan/">Home Equity Loans</a> | <a href="https://www.discover.com/home-loans/refinance/?sc=HC499">Mortgage Refinance</a> | <a href="https://www.discoverpersonalloans.com/ploans/html/ac_main_login.shtml">Personal Loans</a> | <a href="https://www.discoverstudentloans.com/">Student Loans</a></p>
+<p>&nbsp;</p>
+
+    
+    
+        
+        
+    
+
+    
+</div>
+
+    
+
+
+            <div class="one-column__container__parsys parsys-content">
+                
+
+
+
+
+
+            </div>
+            
+        </div>
+    </section>
+</div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="rawHTML aem-GridColumn aem-GridColumn--default--12"><div class="cmp-rawhtml ">
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+        <div><style>
+@media (min-width:992px){
+	.cmp-category-filter--sticky {
+		top: 135px;
+	}
+	.cardsmartsheader {     
+		height: 108px; 
+	} 
+      .verticalTabsAccordionWrap .tabContent .tabContentWrap{
+            border-top-right-radius: 105px;
+      }
+ .backToArticleBtn{        
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 991px) {
+	.cmp-p-50-0 .two-column {
+		padding: 50px 0 0;
+	}    
+    .backToArticleBtn{        
+        margin-bottom: 10px;
+    }
+}
+#productDetails__table .cards-table thead th:first-child.newActive{  
+       position: relative;
+}
+@media (max-width: 991px) {
+    .verticalTabsAccordionWrap .verticalTabs .tab-link .tabIcon .hovericon, .verticalTabsAccordionWrap .verticalTabs .tab-link:hover .tabIcon .defaulticon {
+        display: block;
+    }
+}
+@media(max-width:991px){
+  .cmp-ratings .conversation-api .conversation-value {
+        font-size: 16px;
+    }
+#productDetails__table .feature-wrapper .feature-text {
+font-size:14px !important;
+}
+#productDetails__table .cards-table tbody th, #productDetails__table .cards-table tbody th a{
+font-size:14px;
+}
+#productDetails__table .cards-table thead th.discover-miles.newActive p.talign{
+	font-size: 12px  !important;   
+	font-family: 'DiscoverSans-Medium'  !important;
+}
+#productDetails__table .cards-table thead th p.head__first{
+font-size: 12px  !important;
+	font-family: 'DiscoverSans-Medium'  !important;
+}
+ #login-unknown .cmp-button--cta .cmp-button {       
+        font-size: 19px !important;
+    }
+}
+.cmp-button--cta.cmp-button--cta--opaque-orange .cmp-button-new{
+	font-family: 'DiscoverSans-Bold';
+	font-size: 19px;
+}
+.header-wrapper #newHeader .right-nav .log-in-link{
+font-family: 'DiscoverSans-Bold';
+font-size: 19px;
+}
+#disclosure__cchp .notes-component .footnotes__container .footnotes__holder .footnotes-list__container .footnotes-none-reference p{
+font-size: 14px !important;
+}
+.articledetailspage .cmp-button--text-link--chevron-down .cmp-button span{
+font-family: DiscoverSans-Bold, Arial, Helvetica, sans-serif !important;
+}
+.one-column .cmp-title p {
+    font-family: 'DiscoverSans-Medium';
+}
+.cmp-article-card__text{
+  font-family: 'DiscoverSans-Medium';
+}
+.cmp-article-section__btn{
+font-family: 'DiscoverSans-Bold';
+font-size: 19px;
+}
+.cmp-cta__container .cmp-button--cta a.cmp-button span{
+font-size: 19px;
+}
+.cmp-article-feedback__button{
+font-size: 19px;
+}
+.dark-theme div a.disclosurelink{
+color: #fff;
+}
+</style></div>
+    
+    
+        
+        
+    
+
+    
+    
+    
+
+</div>
+</div>
+<div class="footer aem-GridColumn aem-GridColumn--default--12">
+
+<footer role="contentinfo">
+  <div class="footer__container  scrolltracking" data-analytics="CC_SCROLL:SECTION:FOOTER">
+    
+    <div class="footer__links">
+      <div class="panel-group footer__column">
+        <div id="quick-links-panel" class="collapse in">
+          <div class="footer__nav">
+            
+              <div class="content-width">
+                <div class="no-heading">
+                  <span role="heading">Credit Card Quick Links</span>
+                </div>
+                <div class="content">
+                  <ul>
+                    
+                      
+                        <li>
+                          
+                            <a href="/credit-cards/?ICMPGN=PUB_FTR_QL_ALL_CREDIT_CARDS">All Credit Cards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discovercard.com/application/preapproval/initial?ICMPGN=PUB_FTR_QL_PRE_QUALIFIED">See if you're prequalified</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discovercard.com/application/website/invite?ICMPGN=ALL_CC_DM_INVITE_ICON&flavor=it&fpp=true&passro=true">Respond to Mail Offer</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discovercard.com/application/self-service/?page=check-status&ICMPGN=PUB_FTR_QL_MODERN_CHECK_STATUS">Check Application Status </a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/cardmember-agreement/?ICMPGN=PUB_FTR_QL_CARD_AGREEMENT">Cardmember Agreement</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/member-benefits/?ICMPGN=PUB_FTR_QL_MEMBER_BENEFITS">Credit Card Benefits</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/online-banking/?ICMPGN=PUB_FTR_QL_ATM_LOCATOR#ATMFinder">ATM Locator</a>
+                          
+                        </li>
+                      
+                    
+                  </ul>
+                </div>
+              </div>
+<div class="content-width">
+                <div class="no-heading">
+                  <span role="heading">Credit Card Categories</span>
+                </div>
+                <div class="content">
+                  <ul>
+                    
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/cash-back/?ICMPGN=PUB_FTR_CCC_CB_CARD">Cash Back Credit Cards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/student-credit-card/?ICMPGN=PUB_FTR_CCC_STUDENT_CARD">Student Credit Cards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/secured-credit-card/?ICMPGN=PUB_FTR_CCC_SECURED_CARD">Secured Credit Card</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/travel/?ICMPGN=PUB_FTR_CCC_TRAVEL_CARD">Travel Credit Card</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="/credit-cards/compare/?ICMPGN=PUB_FTR_CCC_COMPARE_CARDS">Compare Credit Cards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/gas-credit-cards/?ICMPGN=PUB_FTR_CCC_GAS_CREDIT_CARDS">Gas Credit Cards</a>
+                          
+                        </li>
+                      
+                    
+                  </ul>
+                </div>
+              </div>
+<div class="content-width">
+                <div class="no-heading">
+                  <span role="heading">Credit Card Features</span>
+                </div>
+                <div class="content">
+                  <ul>
+                    
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/balance-transfer-credit-cards/?ICMPGN=PUB_FTR_CCF_BALANCE_TRANSFER">Balance Transfer Credit Cards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/secured-credit-card/credit-cards-to-build-credit/?ICMPGN=PUB_FTR_CCF_CARDS_TO_BUILD_CREDIT">Credit Cards to Build Credit</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/no-annual-fee-credit-cards/?ICMPGN=PUB_FTR_CCF_NAF">No Annual Fee Credit Cards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/low-intro-apr-credit-cards/?ICMPGN=PUB_FTR_CCF_LOW_INTRO_APR">Intro APR Credit Cards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="/credit-cards/credit-cards-for-no-credit/?ICMPGN=PUB_FTR_CCF_CARDS_FOR_NO_CREDIT">Credit Cards for No Credit</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/instant-use-credit-cards/?ICMPGN=PUB_FTR_CCF_INSTANT_USE_CREDIT">Instant Use Credit Cards</a>
+                          
+                        </li>
+                      
+                    
+                  </ul>
+                </div>
+              </div>
+<div class="content-width">
+                <div class="no-heading">
+                  <span role="heading">Card Smarts &amp; More</span>
+                </div>
+                <div class="content">
+                  <ul>
+                    
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/card-smarts/?ICMPGN=PUB_FTR_CRC_CREDIT_RESOURCE_CENTER">Card Smarts</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/card-smarts/getting-a-credit-card/?ICMPGN=PUB_FTR_CRC_GETTING_CREDIT_CARD">Getting a Credit Card</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/card-smarts/using-your-credit-card/?ICMPGN=PUB_FTR_CRC_USING_CREDIT_CARD">Using a Credit Card</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/card-smarts/credit-card-rewards/?ICMPGN=PUB_FTR_CRC_CREDIT_CARD_REWARDS">Credit Card Rewards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/credit-card-calculator/credit-card-interest-calculator/?ICMPGN=PUB_FTR_CRC_INTEREST_CALCULATOR">Credit Card Interest Calculator</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/credit-card-calculator/balance-transfer-calculator/?ICMPGN=PUB_FTR_CRC_BT_CALCULATOR">Balance Transfer Calculator</a>
+                          
+                        </li>
+                      
+                    
+                  </ul>
+                </div>
+              </div>
+<div class="content-width">
+                <div class="no-heading">
+                  <span role="heading">Rewards</span>
+                </div>
+                <div class="content">
+                  <ul>
+                    
+                      
+                        <li>
+                          
+                            <a href="/credit-cards/rewards-credit-cards/?ICMPGN=PUB_FTR_CBR_REWARDS_CREDIT_CARDS">Rewards Credit Cards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/cash-back/cashback-bonus.html?ICMPGN=PUB_FTR_CBR_CASH_REWARDS">Cash Back Rewards</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/cash-back/cashback-calendar.html?ICMPGN=PUB_FTR_CBR_CASHBACK_CALENDAR">5% <em>Cashback Bonus</em><sup>®</sup></a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/cash-back/redeem-cashback.html?ICMPGN=PUB_FTR_CBR_REDEEM_CASHBACK">Redeem <em>Cashback Bonus</em></a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/exclusives/sharediscover/?ICMPGN=PUB_FTR_CBR_REFER_FRIEND">Refer a Friend</a>
+                          
+                        </li>
+                      
+                    
+                  </ul>
+                </div>
+              </div>
+<div class="content-width">
+                <div class="no-heading">
+                  <span role="heading">More Discover Products</span>
+                </div>
+                <div class="content">
+                  <ul>
+                    
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/online-banking/?ICMPGN=PUB_FTR_PRODUCTS_BANKING">Banking</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/home-loans/home-equity-loan/?ICMPGN=PUB_FTR_PRODUCTS_HOME_EQUITY">Home Equity Loans</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/home-loans/refinance/?ICMPGN=PUB_FTR_PRODUCTS_MORTGAGE">Mortgage Refinance</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/personal-loans/?ICMPGN=PUB_FTR_PRODUCTS_PERSONAL_LOANS">Personal Loans</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/student-loans/?ICMPGN=PUB_FTR_PRODUCTS_STUDENT_LOANS">Student Loans</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/personal-loans/debt-consolidation/?ICMPGN=PUB_FTR_PRODUCTS_DEBT_CONSOLIDATION">Debt Consolidation</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/protection-solutions/identity-theft-protection/product-details.html?ICMPGN=PUB_FTR_PRODUCTS_ITP">Identity Theft Protection</a>
+                          
+                        </li>
+                      
+                    
+                  </ul>
+                </div>
+              </div>
+<div class="content-width">
+                <div class="no-heading">
+                  <span role="heading">Quicklinks</span>
+                </div>
+                <div class="content">
+                  <ul>
+                    
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/site-map/?ICMPGN=PUB_FTR_QUICK_LINKS_SITEMAP">Sitemap</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/discover-terms-of-use/?ICMPGN=PUB_FTR_QUICK_LINKS_TERMS_OF_USE">Terms of Use</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/accessibility/?ICMPGN=PUB_FTR_QUICK_LINKS_ACCESSIBILITY">Accessibility</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/browser-support/?ICMPGN=PUB_FTR_QUICK_LINKS_BROWSER_SUPPORT">Browser Support</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/member-benefits/?ICMPGN=PUB_FTR_QUICK_LINKS_SECURITY">Security</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/privacy-statement/?ICMPGN=PUB_FTR_QUICK_LINKS_PRIVACY">Privacy</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/cpra/form"><div data-lazy="true">Your California Privacy Choices <img data-src="/content/dam/discover/en_us/credit-cards/card-acquisitions/grey-redesign/global/images/icons/icon-footer-privacyoptions-20-9.svg" style="max-width: 20.0px;" alt="Accept or Reject Icons"/></div></a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://info.evidon.com/pub_info/1142?v=1">AdChoices</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://discover.promo.eprize.com/discoversweeps24/?cmpgnid=site-sch-pro-dis-footer&affiliate_id=site-sch-pro-dis-footer">Discover® Scholarship Sweepstakes</a>
+                          
+                        </li>
+                      
+                    
+                  </ul>
+                </div>
+              </div>
+<div class="content-width">
+                <div class="no-heading">
+                  <span role="heading">About Us</span>
+                </div>
+                <div class="content">
+                  <ul>
+                    
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/credit-cards/contact-us/?ICMPGN=PUB_FTR_ABOUT_US_CONTACT_US">Contact Us</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/company/">About Discover </a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/company/impact/home/">ESG</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://investorrelations.discover.com/investor-relations/overview/default.aspx">Investor Relations</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/company/newsroom/">Newsroom</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://jobs.discover.com/">Careers</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discoverglobalnetwork.com/our-network/how-we-partner/">Accept Discover</a>
+                          
+                        </li>
+                      
+                        <li>
+                          
+                            <a href="https://www.discover.com/company/dei/home/">Diversity &amp; Inclusion</a>
+                          
+                        </li>
+                      
+                    
+                  </ul>
+                </div>
+              </div>
+
+            
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="footer__social">
+        <div class="social-wrap">
+          <a href="https://twitter.com/discover" target="_blank" rel="noopener">
+            <span class="sr-only"> Follow Us on Twitter opens in a new window</span><span class="twitter-icon"></span>
+          </a>
+        
+          <a href="https://www.facebook.com/discover" target="_blank" rel="noopener">
+            <span class="sr-only"> Like Us on Facebook opens in a new window</span><span class="facebook-icon"></span>
+          </a>
+        
+          <a href="https://www.instagram.com/discover/" target="_blank" rel="noopener">
+            <span class="sr-only"> Instagram opens in a new window</span><span class="instagram-icon"></span>
+          </a>
+        
+          <a href="https://www.linkedin.com/company/discover-financial-services" target="_blank" rel="noopener">
+            <span class="sr-only"> Contact with Us on LinkedIn opens in a new window</span><span class="linkedin-icon"></span>
+          </a>
+        </div>
+        <div class="mobile-app">
+          <a href="/credit-cards/member-benefits/mobile/?ICMPGN=FTR_ICON_MOBILE" class="footer__icon-mobile" target="_blank" rel="noopener">
+            <span class="mobile-app-discover"></span><span class="app-text">Discover Mobile App</span>
+          </a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer__certifications footer__column">
+      <ul>
+        <li>
+          <span class="sr-only">Equal Housing Lender</span><span class="equal-housing-lender"></span>
+        </li>
+        <li>
+          <a href="https://www.bbb.org/us/il/riverwoods/profile/credit-cards-and-plans/discover-financial-services-0654-1004324" target="_blank" rel="noopener" aria-label="ACCREDITED BUSINESS opens in a new tab (Opens in a new window)">
+            <span class="sr-only" id="read_fdic">ACCREDITED BUSINESS opens in a new tab Opens in a new window</span><span class="accredited-business-icon"></span>
+          </a>
+        </li>
+<li>
+          <a href="https://www.fdic.gov/" target="_blank" rel="noopener" aria-label="Member FDIC opens in a new tab (Opens in a new window)">
+            <span class="sr-only" id="read_fdic">Member FDIC opens in a new tab Opens in a new window</span><span class="member-fdic-icon"></span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    
+    <div class="footer__copyright footer__column">
+      <span>&#169;<span class="current-year"></span></span>
+      <span>Discover Bank, Member FDIC</span>
+    </div>
+    <div class="overlaycontent">
+        <div class="modal web-linking-modal" tabindex="-1" data-backdrop="static" data-keyboard="false" aria-hidden="false"  id="webLinkingBox">
+                    <div class="modal-dialog" style="margin-top: 90px; margin-bottom: 30px; overflow: auto;">
+                    <div class="modal-content"><div class="modal-body"><a href="#;" class="custom-focus preventDefaultBehaviour" aria-hidden="">.</a><div class="alignment-modal-body"><div><p class="modal-headline text-left" role="heading" tabindex="0">You are leaving Discover.com</p></div>
+                    <p class="content-modal-alignment">You are leaving Discover.com and entering a website operated by a third party. We are providing the link to this website for your convenience, or because we have a relationship with the third party. Discover Bank does not provide the products and services on the website. Please review the applicable privacy and security policies and terms and conditions for the website you are visiting. Discover Bank does not guarantee the accuracy of any financial tools that may be available on the website or their applicability to your circumstances. For personal advice regarding your financial situation, please consult with a financial advisor.</p>
+                    </div></div><div class="modal-footer"><a class="btn-continue btn-weblinking-continue" data-dismiss="modal">Continue<span class="sr-only">Leave Discover.com and continue to external website</span></a><a class="cancel-link btn-weblinking-cancel" data-dismiss="modal" href="#">Cancel <span class="chevron-icon">&#8250;</span><span class="sr-only">Cancel and return to Discover.com</span></a></div>
+                    <a class="close-link btn-weblinking-close" data-dismiss="modal" href="#">Close X<span class="sr-only">Close and return to Discover.com</span></a><a href="#" class="custom-focus preventDefaultBehaviour" aria-hidden="">.</a></div></div></div>
+    </div>
+  </div>
+</footer></div>
+
+    
+</div>
+</div>
+
+    
+</div>
+
+</div>
+</div>
+
+    
+</div>
+</div>
+
+
+                <div>
+    
+    
+<script src="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-dependencies.min.ACSHASH40f9e314d8651e3bb3e07d0b340a5ecc.js"></script>
+<script src="/etc.clientlibs/dfs-credit-cards-acquisition/clientlibs/clientlib-site.min.ACSHASHc292cf5d816c5f5adef0f3919b6d150d.js"></script>
+
+
+
+    
+
+
+    
+
+    
+
+    
+    
+        
+    
+        
+    
+<script type="text/javascript">
+		$(".faq").each(function(index,e) {    
+		$(this).find('h3.faq__question button').on('click tap', function(){			
+			if(!$(this).parents(".faq-list__items").find(".faq--active").length) {
+				accState = 'Expand:';
+			}else {        
+				accState = 'Collapse:';                   
+				}
+		var faqCount = index + 1;
+		var questionHeading = $(this).parents(".faq__question").find(".faq__header span").text();						
+		$("#faq-question-"+ faqCount).attr("data-analytics-label", questionHeading + ":" + accState + "Q"+faqCount);
+		}); 
+	});
+	$(".comp-accordian").each(function(index,e) {    
+		$(this).find('tr.comp-head-sec').on('click tap', function(){
+		var tabValue = $(this).find('.plusminus').text();
+			if(!$(".plusminus.active").length) {
+				accState = 'Expand:';
+			}else {        
+				accState = 'Collapse:';
+		}        
+		$(".comp-head-sec").attr("data-analytics-label","CC_COMPARE_STUDIT:LNK:"+ tabValue +":"+ accState +"SECTION:COMPARE");
+		}); 
+	});	
+		
+	$(document).ready(function () {
+		$("[data-analytics-label],.faq__header,tr").on("click", function (e) {			
+			let prop1_value = e.currentTarget.getAttribute("data-analytics-label");
+				dataLayerClickEventPush({ customLink: prop1_value });			
+		});
+	});					
+</script>
+</div>
+            </div>
+        </div>
+    </body>
+</html>

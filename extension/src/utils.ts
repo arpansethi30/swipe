@@ -14,21 +14,53 @@ declare global {
  * Get CSS class for card styling based on card name
  */
 export function getCardClass(cardName: string): string {
-  const lowerCaseName = (cardName || '').toLowerCase();
+  const name = cardName.toLowerCase();
   
-  if (lowerCaseName.includes('wells fargo')) {
+  if (name.includes('wells fargo') || name.includes('wellsfargo')) {
     return 'wells-fargo';
-  } else if (lowerCaseName.includes('citi')) {
+  } else if (name.includes('citi') || name.includes('citibank')) {
     return 'citi';
-  } else if (lowerCaseName.includes('chase')) {
+  } else if (name.includes('chase') || name.includes('freedom') || name.includes('sapphire')) {
     return 'chase';
-  } else if (lowerCaseName.includes('amex') || lowerCaseName.includes('american express')) {
+  } else if (name.includes('amex') || name.includes('american express')) {
     return 'amex';
-  } else if (lowerCaseName.includes('discover')) {
+  } else if (name.includes('discover')) {
     return 'discover';
+  } else if (name.includes('capital one') || name.includes('capitalOne')) {
+    return 'capital-one';
+  } else if (name.includes('bilt')) {
+    return 'bilt';
   }
   
   return '';
+}
+
+/**
+ * Get card image URL based on card name
+ */
+export function getCardImageUrl(cardName: string): string {
+  const name = cardName.toLowerCase();
+  
+  if (name.includes('wells fargo') || name.includes('wellsfargo') || name.includes('active cash')) {
+    return 'https://www.wellsfargo.com/assets/images/photography/product-photography/credit-cards/wf_propel_american_express_card_600x337.png';
+  } else if (name.includes('citi') || name.includes('citibank')) {
+    return 'https://www.citi.com/CRD/images/card-images/citi-double-cash-credit-card.jpg';
+  } else if (name.includes('freedom') || name.includes('flex')) {
+    return 'https://creditcards.chase.com/K-Marketplace/images/cards/cardart_freedom_flex.png';
+  } else if (name.includes('chase') || name.includes('sapphire')) {
+    return 'https://creditcards.chase.com/K-Marketplace/images/cards/cardart_sapphirepreferred.png';
+  } else if (name.includes('amex') || name.includes('american express')) {
+    return 'https://icm.aexp-static.com/Internet/Acquisition/US_en/AppContent/OneSite/category/cardarts/blue-cash-everyday.png';
+  } else if (name.includes('discover')) {
+    return 'https://www.discover.com/content/dam/discover/en_us/credit-cards/card-art/discover-it-card-img.png';
+  } else if (name.includes('capital one') || name.includes('capitalOne')) {
+    return 'https://ecm.capitalone.com/WCM/card/products/quicksilver-card-art.png';
+  } else if (name.includes('bilt')) {
+    return 'https://www.biltrewards.com/static/media/card-front.fca8eb64.png';
+  }
+  
+  // Default card image if no match
+  return 'https://www.creditcardinsider.com/wp-content/uploads/2019/09/generic-credit-card.png';
 }
 
 /**

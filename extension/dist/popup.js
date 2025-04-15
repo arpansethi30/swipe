@@ -14,6 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   findFormFields: () => (/* binding */ findFormFields),
 /* harmony export */   getCardClass: () => (/* binding */ getCardClass),
 /* harmony export */   getCardDetails: () => (/* binding */ getCardDetails),
+/* harmony export */   getCardImageUrl: () => (/* binding */ getCardImageUrl),
 /* harmony export */   testBackendConnection: () => (/* binding */ testBackendConnection)
 /* harmony export */ });
 // Shared utility functions
@@ -30,23 +31,61 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
  * Get CSS class for card styling based on card name
  */
 function getCardClass(cardName) {
-    const lowerCaseName = (cardName || '').toLowerCase();
-    if (lowerCaseName.includes('wells fargo')) {
+    const name = cardName.toLowerCase();
+    if (name.includes('wells fargo') || name.includes('wellsfargo')) {
         return 'wells-fargo';
     }
-    else if (lowerCaseName.includes('citi')) {
+    else if (name.includes('citi') || name.includes('citibank')) {
         return 'citi';
     }
-    else if (lowerCaseName.includes('chase')) {
+    else if (name.includes('chase') || name.includes('freedom') || name.includes('sapphire')) {
         return 'chase';
     }
-    else if (lowerCaseName.includes('amex') || lowerCaseName.includes('american express')) {
+    else if (name.includes('amex') || name.includes('american express')) {
         return 'amex';
     }
-    else if (lowerCaseName.includes('discover')) {
+    else if (name.includes('discover')) {
         return 'discover';
     }
+    else if (name.includes('capital one') || name.includes('capitalOne')) {
+        return 'capital-one';
+    }
+    else if (name.includes('bilt')) {
+        return 'bilt';
+    }
     return '';
+}
+/**
+ * Get card image URL based on card name
+ */
+function getCardImageUrl(cardName) {
+    const name = cardName.toLowerCase();
+    if (name.includes('wells fargo') || name.includes('wellsfargo') || name.includes('active cash')) {
+        return 'https://www.wellsfargo.com/assets/images/photography/product-photography/credit-cards/wf_propel_american_express_card_600x337.png';
+    }
+    else if (name.includes('citi') || name.includes('citibank')) {
+        return 'https://www.citi.com/CRD/images/card-images/citi-double-cash-credit-card.jpg';
+    }
+    else if (name.includes('freedom') || name.includes('flex')) {
+        return 'https://creditcards.chase.com/K-Marketplace/images/cards/cardart_freedom_flex.png';
+    }
+    else if (name.includes('chase') || name.includes('sapphire')) {
+        return 'https://creditcards.chase.com/K-Marketplace/images/cards/cardart_sapphirepreferred.png';
+    }
+    else if (name.includes('amex') || name.includes('american express')) {
+        return 'https://icm.aexp-static.com/Internet/Acquisition/US_en/AppContent/OneSite/category/cardarts/blue-cash-everyday.png';
+    }
+    else if (name.includes('discover')) {
+        return 'https://www.discover.com/content/dam/discover/en_us/credit-cards/card-art/discover-it-card-img.png';
+    }
+    else if (name.includes('capital one') || name.includes('capitalOne')) {
+        return 'https://ecm.capitalone.com/WCM/card/products/quicksilver-card-art.png';
+    }
+    else if (name.includes('bilt')) {
+        return 'https://www.biltrewards.com/static/media/card-front.fca8eb64.png';
+    }
+    // Default card image if no match
+    return 'https://www.creditcardinsider.com/wp-content/uploads/2019/09/generic-credit-card.png';
 }
 /**
  * Debug logger that also outputs to console
@@ -358,44 +397,22 @@ function extractMerchantFromUrl(url) {
 // Fill in credit card details on the active tab
 function fillCardDetails(cardName) {
     return __awaiter(this, void 0, void 0, function* () {
-        const tab = yield getActiveTab();
-        if (!tab || !tab.id)
-            return;
         try {
-            // Show loading notification in popup
-            showNotification(`Filling in ${cardName} details...`, 'info');
-            // Execute script in the active tab to fill card details
-            chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                func: (cardName) => {
-                    // Get the card details function from the injected content script
-                    // @ts-ignore - This function is defined in content.ts and exposed to window
-                    const fillCardDetailsFunc = window.fillCardDetails || function () {
-                        return { success: false, filledCount: 0, message: "Card detail filling is not available" };
-                    };
-                    // Call the function with the card name
-                    return fillCardDetailsFunc(cardName);
-                },
-                args: [cardName]
-            }).then((results) => {
-                var _a;
-                // Handle the results
-                const result = (_a = results[0]) === null || _a === void 0 ? void 0 : _a.result;
-                if (result === null || result === void 0 ? void 0 : result.success) {
-                    showNotification(result.message, 'success');
-                }
-                else {
-                    showNotification((result === null || result === void 0 ? void 0 : result.message) || 'Failed to fill card details', 'error');
-                }
-                console.log('Card filling results:', results);
-            }).catch((error) => {
-                showNotification(`Error: ${error.message}`, 'error');
-                console.error('Error filling card details:', error);
+            // Get active tab
+            const tabs = yield chrome.tabs.query({ active: true, currentWindow: true });
+            const tab = tabs[0];
+            if (!tab || !tab.id)
+                return;
+            // Execute content script function to fill details
+            chrome.tabs.sendMessage(tab.id, {
+                action: 'fillCardDetails',
+                cardName: cardName
             });
+            // Close the popup
+            window.close();
         }
         catch (error) {
-            showNotification(`Error: ${error instanceof Error ? error.message : String(error)}`, 'error');
-            console.error('Error in fillCardDetails:', error);
+            console.error('Error filling card details:', error);
         }
     });
 }
@@ -452,283 +469,99 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            // Setup tab navigation
-            setupTabs();
-            // Setup header buttons
-            setupHeaderButtons();
-            // Load user preferences
-            const preferences = yield loadUserPreferences();
-            // Update the preferences form with saved values
-            updatePreferencesForm(preferences);
-            // Test backend connection
-            const connectionStatus = yield (0,_utils__WEBPACK_IMPORTED_MODULE_0__.testBackendConnection)();
-            if (!connectionStatus.success) {
-                console.warn('Backend connection issue:', connectionStatus.message);
-            }
+            // Setup UI elements
+            setupEventListeners();
             // Check if we're on a checkout page
             chrome.runtime.sendMessage({ action: 'isCheckoutPage' }, (response) => __awaiter(this, void 0, void 0, function* () {
                 if (response && response.isCheckout) {
-                    // We're on a checkout page, get recommendations and switch to recommendations tab
-                    selectTab('recommendations');
+                    // We're on a checkout page, get recommendations
                     yield getRecommendations(response.merchant, response.amount);
                 }
                 else {
-                    // Show the homepage by default
-                    selectTab('home');
-                    // Load recommendation simulation in the background
-                    simulateRecommendations();
+                    // Show simulation
+                    yield simulateRecommendations();
                 }
             }));
-            // Set up preferences navigation
-            setupPreferencesNavigation();
-            // Setup preferences container
-            setupPreferencesContainer();
         }
         catch (error) {
             console.error('Error initializing popup:', error);
-            showError('An error occurred while initializing');
+            showError('Failed to initialize');
         }
     });
 }
-// Setup tab navigation
-function setupTabs() {
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const tabId = tab.getAttribute('data-tab');
-            if (tabId) {
-                selectTab(tabId);
+// Setup event listeners
+function setupEventListeners() {
+    // Header close button
+    const headerCloseBtn = document.getElementById('header-close');
+    if (headerCloseBtn) {
+        headerCloseBtn.addEventListener('click', () => window.close());
+    }
+    // Close buttons in detailed view
+    document.querySelectorAll('.close-button').forEach(button => {
+        button.addEventListener('click', () => window.close());
+    });
+    // Show detailed view
+    const showDetailedLink = document.getElementById('show-detailed');
+    if (showDetailedLink) {
+        showDetailedLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleDetailedView(true);
+        });
+    }
+    // Pay buttons
+    document.querySelectorAll('.pay-button').forEach(button => {
+        button.addEventListener('click', () => {
+            // Find the active card name (from either view)
+            let cardName = '';
+            const simpleView = document.getElementById('simple-view');
+            const detailedView = document.getElementById('detailed-view');
+            if (simpleView && window.getComputedStyle(simpleView).display !== 'none') {
+                const cardNameEl = simpleView.querySelector('.card-name');
+                if (cardNameEl)
+                    cardName = cardNameEl.textContent || '';
+            }
+            else if (detailedView && window.getComputedStyle(detailedView).display !== 'none') {
+                const cardNameEl = detailedView.querySelector('.card-name');
+                if (cardNameEl)
+                    cardName = cardNameEl.textContent || '';
+            }
+            if (cardName) {
+                fillCardDetails(cardName);
             }
         });
     });
 }
-// Select a tab programmatically
-function selectTab(tabId) {
-    // Remove active class from all tabs and tab contents
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.classList.remove('active');
-    });
-    document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
-    });
-    // Add active class to selected tab and content
-    const selectedTab = document.querySelector(`.tab[data-tab="${tabId}"]`);
-    const selectedContent = document.getElementById(tabId);
-    if (selectedTab && selectedContent) {
-        selectedTab.classList.add('active');
-        selectedContent.classList.add('active');
-    }
-    // Special handling for recommendations tab
-    if (tabId === 'recommendations') {
-        const recommendationsContainer = document.getElementById('recommendations-container');
-        const loadingElement = document.getElementById('loading');
-        if (recommendationsContainer && loadingElement) {
-            if (recommendationsContainer.innerHTML === '') {
-                // If no recommendations loaded yet, show loading indicator
-                loadingElement.style.display = 'block';
-                recommendationsContainer.style.display = 'none';
-            }
+// Toggle between simple and detailed views
+function toggleDetailedView(showDetailed) {
+    const simpleView = document.getElementById('simple-view');
+    const detailedView = document.getElementById('detailed-view');
+    if (simpleView && detailedView) {
+        if (showDetailed) {
+            simpleView.style.display = 'none';
+            detailedView.style.display = 'block';
         }
-    }
-}
-// Setup header buttons
-function setupHeaderButtons() {
-    const refreshBtn = document.getElementById('refresh-btn');
-    const settingsBtn = document.getElementById('settings-btn');
-    if (refreshBtn) {
-        refreshBtn.addEventListener('click', () => {
-            const activeTab = document.querySelector('.tab.active');
-            if (activeTab) {
-                const tabId = activeTab.getAttribute('data-tab');
-                if (tabId === 'recommendations') {
-                    refreshRecommendations();
-                }
-                else if (tabId === 'home') {
-                    refreshHomeDashboard();
-                }
-            }
-        });
-    }
-    if (settingsBtn) {
-        settingsBtn.addEventListener('click', () => {
-            showPreferences();
-        });
-    }
-}
-// Function to refresh the recommendations
-function refreshRecommendations() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const recommendationsContainer = document.getElementById('recommendations-container');
-        const loadingElement = document.getElementById('loading');
-        const errorElement = document.getElementById('error');
-        if (recommendationsContainer && loadingElement && errorElement) {
-            recommendationsContainer.style.display = 'none';
-            loadingElement.style.display = 'block';
-            errorElement.style.display = 'none';
-            try {
-                chrome.runtime.sendMessage({ action: 'isCheckoutPage' }, (response) => __awaiter(this, void 0, void 0, function* () {
-                    if (response && response.isCheckout) {
-                        yield getRecommendations(response.merchant, response.amount);
-                    }
-                    else {
-                        yield simulateRecommendations();
-                    }
-                }));
-            }
-            catch (error) {
-                console.error('Error refreshing recommendations:', error);
-                showError('Error refreshing recommendations');
-            }
+        else {
+            simpleView.style.display = 'block';
+            detailedView.style.display = 'none';
         }
-    });
-}
-// Function to refresh the home dashboard data
-function refreshHomeDashboard() {
-    // This would typically call an API to get updated stats
-    // For now, let's just show a notification
-    showNotification('Dashboard refreshed', 'success');
-}
-// Setup preferences navigation
-function setupPreferencesNavigation() {
-    const preferencesEl = document.getElementById('preferences');
-    const showPreferencesBtn = document.getElementById('settings-btn'); // Now using the header button
-    const preferencesBackBtn = document.getElementById('preferences-back');
-    const preferencesForm = document.getElementById('preferences-form');
-    if (preferencesBackBtn) {
-        preferencesBackBtn.addEventListener('click', hidePreferences);
-    }
-    if (preferencesForm) {
-        preferencesForm.addEventListener('submit', savePreferences);
-    }
-}
-// Show preferences tab
-function showPreferences() {
-    const recommendationsEl = document.getElementById('recommendations-container');
-    const preferencesEl = document.getElementById('preferences-container');
-    if (recommendationsEl && preferencesEl) {
-        recommendationsEl.style.display = 'none';
-        preferencesEl.style.display = 'block';
-        // Load saved preferences
-        loadPreferences();
-    }
-}
-// Hide preferences tab and show recommendations
-function hidePreferences() {
-    const recommendationsEl = document.getElementById('recommendations-container');
-    const preferencesEl = document.getElementById('preferences-container');
-    if (recommendationsEl && preferencesEl) {
-        recommendationsEl.style.display = 'block';
-        preferencesEl.style.display = 'none';
-    }
-}
-// Load saved preferences from storage
-function loadPreferences() {
-    chrome.storage.sync.get(['cardPreferences'], (result) => {
-        const preferences = result.cardPreferences || {};
-        // Populate dropdown for default card
-        const defaultCardSelect = document.getElementById('defaultCard');
-        if (defaultCardSelect) {
-            defaultCardSelect.value = preferences.defaultCard || '';
-        }
-        // Populate checkboxes for enabled cards
-        const enabledCards = preferences.enabledCards || [];
-        document.querySelectorAll('.card-checkbox').forEach((checkbox) => {
-            const cardCheckbox = checkbox;
-            cardCheckbox.checked = enabledCards.includes(cardCheckbox.value);
-        });
-    });
-}
-// Save preferences
-function savePreferences(e) {
-    return __awaiter(this, void 0, void 0, function* () {
-        e.preventDefault();
-        // Get all selected issuers
-        const issuerCheckboxes = document.querySelectorAll('input[name="issuer"]:checked');
-        const preferredIssuers = Array.from(issuerCheckboxes).map(checkbox => checkbox.value);
-        // Get all selected networks
-        const networkCheckboxes = document.querySelectorAll('input[name="network"]:checked');
-        const preferredNetworks = Array.from(networkCheckboxes).map(checkbox => checkbox.value);
-        // Get max annual fee
-        const maxFeeInput = document.getElementById('max-annual-fee');
-        const maxAnnualFee = maxFeeInput.value ? parseInt(maxFeeInput.value, 10) : null;
-        // Save to storage
-        const preferences = {
-            preferredIssuers,
-            preferredNetworks,
-            maxAnnualFee
-        };
-        yield new Promise((resolve) => {
-            chrome.storage.sync.set(preferences, () => {
-                resolve();
-            });
-        });
-        // Show notification and hide preferences
-        showNotification('Preferences saved', 'success');
-        hidePreferences();
-        // Refresh active content
-        const activeTab = document.querySelector('.tab.active');
-        if (activeTab) {
-            const tabId = activeTab.getAttribute('data-tab');
-            if (tabId === 'recommendations') {
-                refreshRecommendations();
-            }
-        }
-    });
-}
-// Load user preferences from storage
-function loadUserPreferences() {
-    return __awaiter(this, void 0, void 0, function* () {
-        return new Promise((resolve) => {
-            chrome.storage.sync.get({
-                preferredIssuers: [],
-                preferredNetworks: [],
-                maxAnnualFee: null
-            }, (items) => {
-                resolve(items);
-            });
-        });
-    });
-}
-// Update the preferences form with saved values
-function updatePreferencesForm(preferences) {
-    // Update issuer checkboxes
-    const issuerCheckboxes = document.querySelectorAll('input[name="issuer"]');
-    issuerCheckboxes.forEach(checkbox => {
-        checkbox.checked = preferences.preferredIssuers.includes(checkbox.value);
-    });
-    // Update network checkboxes
-    const networkCheckboxes = document.querySelectorAll('input[name="network"]');
-    networkCheckboxes.forEach(checkbox => {
-        checkbox.checked = preferences.preferredNetworks.includes(checkbox.value);
-    });
-    // Update max annual fee
-    const maxFeeInput = document.getElementById('max-annual-fee');
-    if (preferences.maxAnnualFee !== null) {
-        maxFeeInput.value = preferences.maxAnnualFee.toString();
-    }
-    else {
-        maxFeeInput.value = '';
     }
 }
 // Get recommendations from backend via background script
 function getRecommendations(merchant, amount) {
     return __awaiter(this, void 0, void 0, function* () {
-        const recommendationsContainer = document.getElementById('recommendations-container');
-        const loadingElement = document.getElementById('loading');
-        const errorElement = document.getElementById('error');
-        if (recommendationsContainer && loadingElement && errorElement) {
-            recommendationsContainer.style.display = 'none';
-            loadingElement.style.display = 'block';
-            errorElement.style.display = 'none';
+        const simpleView = document.getElementById('simple-view');
+        const detailedView = document.getElementById('detailed-view');
+        const loadingEl = document.getElementById('loading');
+        if (simpleView && detailedView && loadingEl) {
+            simpleView.style.display = 'none';
+            detailedView.style.display = 'none';
+            loadingEl.style.display = 'block';
             try {
-                // Load user preferences
-                const preferences = yield loadUserPreferences();
                 // Send message to background script to get recommendations
                 chrome.runtime.sendMessage({
                     action: 'getRecommendations',
                     merchant,
-                    amount,
-                    preferences
+                    amount
                 }, (response) => {
                     if (response && response.success && response.recommendations) {
                         renderRecommendations(response.recommendations, merchant, amount);
@@ -748,144 +581,226 @@ function getRecommendations(merchant, amount) {
 // Simulate recommendations for demo
 function simulateRecommendations() {
     return __awaiter(this, void 0, void 0, function* () {
-        const recommendationsContainer = document.getElementById('recommendations-container');
-        const loadingElement = document.getElementById('loading');
-        const errorElement = document.getElementById('error');
-        if (recommendationsContainer && loadingElement && errorElement) {
-            try {
-                const demoMerchant = 'Amazon';
-                const demoAmount = 40.50;
-                // Load user preferences
-                const preferences = yield loadUserPreferences();
+        const demoMerchant = 'Amazon';
+        const demoAmount = 40.50;
+        // Show loading first
+        const simpleView = document.getElementById('simple-view');
+        const detailedView = document.getElementById('detailed-view');
+        const loadingEl = document.getElementById('loading');
+        if (simpleView && detailedView && loadingEl) {
+            simpleView.style.display = 'none';
+            detailedView.style.display = 'none';
+            loadingEl.style.display = 'block';
+            // Demo delay for loading effect
+            setTimeout(() => {
                 // Send message to background script to get recommendations
                 chrome.runtime.sendMessage({
                     action: 'getRecommendations',
                     merchant: demoMerchant,
-                    amount: demoAmount,
-                    preferences
+                    amount: demoAmount
                 }, (response) => {
                     if (response && response.success && response.recommendations) {
                         renderRecommendations(response.recommendations, demoMerchant, demoAmount);
                     }
                     else {
-                        showError('Unable to get recommendations');
+                        // If backend fails, use some fallback recommendations
+                        const fallbackRecs = [
+                            {
+                                name: 'Wells Fargo Active Cash',
+                                cashback_percentage: 2,
+                                cashback_amount: 0.81,
+                                category: 'General',
+                                benefits: ['Extended warranty', 'Purchase protection', 'Return protection']
+                            },
+                            {
+                                name: 'Citi Double Cash',
+                                cashback_percentage: 2,
+                                cashback_amount: 0.81,
+                                category: 'General'
+                            },
+                            {
+                                name: 'Chase Freedom Unlimited',
+                                cashback_percentage: 1.5,
+                                cashback_amount: 0.61,
+                                category: 'General'
+                            },
+                            {
+                                name: 'American Express Blue Cash',
+                                cashback_percentage: 1,
+                                cashback_amount: 0.41,
+                                category: 'Online Shopping'
+                            }
+                        ];
+                        renderRecommendations(fallbackRecs, demoMerchant, demoAmount);
                     }
                 });
-            }
-            catch (error) {
-                console.error('Error getting recommendations:', error);
-                showError('Error getting recommendations');
-            }
+            }, 800);
         }
     });
 }
 // Render recommendations in the UI
 function renderRecommendations(recommendations, merchant, amount) {
-    var _a, _b;
-    const recommendationsEl = document.getElementById('recommendations-container');
-    const loadingElement = document.getElementById('loading');
-    const errorElement = document.getElementById('error');
-    if (recommendationsEl && loadingElement && errorElement) {
-        // Hide loading indicator
-        loadingElement.style.display = 'none';
-        errorElement.style.display = 'none';
-        // Clear recommendations container
-        recommendationsEl.innerHTML = '';
-        if (!recommendations || !recommendations.length) {
-            showError('No recommendations found');
-            return;
-        }
+    const simpleView = document.getElementById('simple-view');
+    const detailedView = document.getElementById('detailed-view');
+    const loadingEl = document.getElementById('loading');
+    if (!recommendations || recommendations.length === 0) {
+        showError('No recommendations found');
+        return;
+    }
+    if (simpleView && detailedView && loadingEl) {
+        loadingEl.style.display = 'none';
         // Sort recommendations by cashback percentage (descending)
         recommendations.sort((a, b) => b.cashback_percentage - a.cashback_percentage);
-        let html = '<div class="recommendations-container">';
-        // Display the best recommendation prominently
-        const bestRec = recommendations[0];
-        html += `
-      <div class="best-card">
-        <h3>Best Card for this Purchase</h3>
-        <div class="card ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardClass)(bestRec.name)}">
-          <div class="card-info">
-            <h4>${bestRec.name}</h4>
-            <p class="cashback">${bestRec.cashback_percentage}% cashback</p>
-            <p class="category">${bestRec.category || 'General Purchase'}</p>
-          </div>
-        </div>
-      </div>
-    `;
-        // Display other recommendations
-        if (recommendations.length > 1) {
-            html += '<div class="other-cards"><h3>Other Options</h3><div class="cards-grid">';
-            for (let i = 1; i < Math.min(recommendations.length, 4); i++) {
-                const rec = recommendations[i];
-                html += `
-          <div class="card-small ${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardClass)(rec.name)}">
-            <div class="card-info-small">
-              <h5>${rec.name}</h5>
-              <p class="cashback-small">${rec.cashback_percentage}%</p>
-            </div>
-          </div>
-        `;
-            }
-            html += '</div></div>';
-        }
-        html += `
-      <div class="action-buttons">
-        <button id="useCardBtn" class="primary-button">Use ${bestRec.name}</button>
-        <button id="editPrefsBtn" class="secondary-button">Edit Preferences</button>
-      </div>
-    `;
-        html += '</div>';
-        recommendationsEl.innerHTML = html;
-        // Add event listeners
-        (_a = document.getElementById('useCardBtn')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
-            fillCardDetails(bestRec.name);
-        });
-        (_b = document.getElementById('editPrefsBtn')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
-            showPreferences();
-        });
+        // Get the best recommendation
+        const bestCard = recommendations[0];
+        // Update simple view
+        updateSimpleView(simpleView, bestCard, recommendations.slice(1));
+        // Update detailed view
+        updateDetailedView(detailedView, recommendations);
+        // Show simple view first
+        simpleView.style.display = 'block';
+        detailedView.style.display = 'none';
     }
 }
-// Show loading indicator
-function showLoading() {
-    const recommendationsContainer = document.getElementById('recommendations-container');
-    const loadingElement = document.getElementById('loading');
-    const errorElement = document.getElementById('error');
-    if (recommendationsContainer && loadingElement && errorElement) {
-        recommendationsContainer.style.display = 'none';
-        errorElement.style.display = 'none';
-        loadingElement.style.display = 'block';
+// Update the simple view with card data
+function updateSimpleView(simpleView, bestCard, alternativeCards) {
+    // Update main card
+    const cardImageEl = simpleView.querySelector('.card-image');
+    if (cardImageEl) {
+        // Clear existing classes that might affect the card appearance
+        cardImageEl.className = 'card-image';
+        // Use actual card image
+        const cardImg = document.createElement('img');
+        cardImg.src = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardImageUrl)(bestCard.name);
+        cardImg.alt = bestCard.name;
+        // Clear any existing content and add image
+        cardImageEl.innerHTML = '';
+        cardImageEl.appendChild(cardImg);
+        // Add selected indicator
+        const indicatorDiv = document.createElement('div');
+        indicatorDiv.className = 'selected-indicator';
+        indicatorDiv.textContent = '✓';
+        cardImageEl.appendChild(indicatorDiv);
+        // Add card class for any remaining styling
+        cardImageEl.classList.add((0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardClass)(bestCard.name));
+    }
+    // Update cashback amount
+    const cashbackEl = simpleView.querySelector('.cashback-amount');
+    if (cashbackEl) {
+        cashbackEl.textContent = `$${bestCard.cashback_amount.toFixed(2)} cash back`;
+    }
+    // Update card name
+    const cardNameEl = simpleView.querySelector('.card-name');
+    if (cardNameEl) {
+        cardNameEl.textContent = bestCard.name;
+    }
+    // Update alternative cards
+    const thumbnailsContainer = simpleView.querySelector('.card-thumbnails');
+    if (thumbnailsContainer) {
+        // Clear existing thumbnails
+        thumbnailsContainer.innerHTML = '';
+        // Add up to 3 alternative cards
+        const maxThumbnails = Math.min(alternativeCards.length, 3);
+        for (let i = 0; i < maxThumbnails; i++) {
+            const card = alternativeCards[i];
+            const thumbnail = document.createElement('div');
+            thumbnail.className = `card-thumbnail`;
+            // Add image to thumbnail
+            const thumbImg = document.createElement('img');
+            thumbImg.src = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardImageUrl)(card.name);
+            thumbImg.alt = card.name;
+            thumbImg.style.width = '100%';
+            thumbImg.style.height = '100%';
+            thumbImg.style.objectFit = 'cover';
+            thumbnail.appendChild(thumbImg);
+            thumbnailsContainer.appendChild(thumbnail);
+        }
+        // Add "+X" indicator if there are more cards
+        if (alternativeCards.length > 3) {
+            const moreCards = document.createElement('div');
+            moreCards.className = 'more-cards';
+            moreCards.textContent = `+${alternativeCards.length - 3}`;
+            thumbnailsContainer.appendChild(moreCards);
+        }
+    }
+}
+// Update the detailed view with card data
+function updateDetailedView(detailedView, recommendations) {
+    // Clear existing card details
+    const detailsContainer = detailedView.querySelector('.card-detail');
+    if (!detailsContainer)
+        return;
+    // Get the first (best) card
+    const bestCard = recommendations[0];
+    // Update card image
+    const cardImageEl = detailedView.querySelector('.card-image');
+    if (cardImageEl) {
+        // Clear existing classes
+        cardImageEl.className = 'card-image';
+        // Use actual card image
+        const cardImg = document.createElement('img');
+        cardImg.src = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardImageUrl)(bestCard.name);
+        cardImg.alt = bestCard.name;
+        // Clear any existing content and add image
+        cardImageEl.innerHTML = '';
+        cardImageEl.appendChild(cardImg);
+        // Add selected indicator
+        const indicatorDiv = document.createElement('div');
+        indicatorDiv.className = 'selected-indicator';
+        indicatorDiv.textContent = '✓';
+        cardImageEl.appendChild(indicatorDiv);
+    }
+    // Update cashback amount
+    const cashbackEl = detailedView.querySelector('.cashback-amount');
+    if (cashbackEl) {
+        cashbackEl.textContent = `$${bestCard.cashback_amount.toFixed(2)}`;
+    }
+    // Update cashback percentage
+    const percentEl = detailedView.querySelector('.cashback-percent');
+    if (percentEl) {
+        percentEl.textContent = `${bestCard.cashback_percentage}% cash back`;
+    }
+    // Update card name
+    const cardNameEl = detailedView.querySelector('.card-name');
+    if (cardNameEl) {
+        cardNameEl.textContent = bestCard.name;
+    }
+    // Update benefits
+    const benefitsEl = detailedView.querySelector('.card-benefits');
+    if (benefitsEl && bestCard.benefits) {
+        benefitsEl.innerHTML = bestCard.benefits.join(', ') +
+            ' <a href="#" class="read-more">read more ›</a>';
+    }
+    else if (benefitsEl) {
+        benefitsEl.innerHTML = 'Extended warranty, Purchase protection' +
+            ' <a href="#" class="read-more">read more ›</a>';
     }
 }
 // Show error message
 function showError(message) {
-    const recommendationsContainer = document.getElementById('recommendations-container');
-    const loadingElement = document.getElementById('loading');
-    const errorElement = document.getElementById('error');
-    if (recommendationsContainer && loadingElement && errorElement) {
-        recommendationsContainer.style.display = 'none';
-        loadingElement.style.display = 'none';
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-    }
-}
-// Setup preferences container event listeners
-function setupPreferencesContainer() {
-    const preferencesEl = document.getElementById('preferences-container');
-    if (!preferencesEl)
-        return;
-    // Add save button listener
-    const saveBtn = document.getElementById('save-preferences');
-    if (saveBtn) {
-        saveBtn.addEventListener('click', (e) => {
-            savePreferences(e);
-        });
-    }
-    // Add back button listener
-    const backBtn = document.getElementById('back-to-recommendations');
-    if (backBtn) {
-        backBtn.addEventListener('click', () => {
-            hidePreferences();
-        });
+    const simpleView = document.getElementById('simple-view');
+    const detailedView = document.getElementById('detailed-view');
+    const loadingEl = document.getElementById('loading');
+    if (simpleView && detailedView && loadingEl) {
+        simpleView.style.display = 'block';
+        detailedView.style.display = 'none';
+        loadingEl.style.display = 'none';
+        // Create an error message inside simple view
+        const container = simpleView.querySelector('.popup-container');
+        if (container) {
+            container.innerHTML = `
+        <button class="close-button">&times;</button>
+        <div style="padding: 40px 20px; text-align: center; color: #F44336;">
+          <div style="font-size: 24px; margin-bottom: 8px;">😕</div>
+          <div>${message}</div>
+        </div>
+      `;
+            // Re-attach close button listener
+            const closeBtn = container.querySelector('.close-button');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => window.close());
+            }
+        }
     }
 }
 

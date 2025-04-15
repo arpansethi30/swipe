@@ -14,6 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   findFormFields: () => (/* binding */ findFormFields),
 /* harmony export */   getCardClass: () => (/* binding */ getCardClass),
 /* harmony export */   getCardDetails: () => (/* binding */ getCardDetails),
+/* harmony export */   getCardImageUrl: () => (/* binding */ getCardImageUrl),
 /* harmony export */   testBackendConnection: () => (/* binding */ testBackendConnection)
 /* harmony export */ });
 // Shared utility functions
@@ -30,23 +31,61 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
  * Get CSS class for card styling based on card name
  */
 function getCardClass(cardName) {
-    const lowerCaseName = (cardName || '').toLowerCase();
-    if (lowerCaseName.includes('wells fargo')) {
+    const name = cardName.toLowerCase();
+    if (name.includes('wells fargo') || name.includes('wellsfargo')) {
         return 'wells-fargo';
     }
-    else if (lowerCaseName.includes('citi')) {
+    else if (name.includes('citi') || name.includes('citibank')) {
         return 'citi';
     }
-    else if (lowerCaseName.includes('chase')) {
+    else if (name.includes('chase') || name.includes('freedom') || name.includes('sapphire')) {
         return 'chase';
     }
-    else if (lowerCaseName.includes('amex') || lowerCaseName.includes('american express')) {
+    else if (name.includes('amex') || name.includes('american express')) {
         return 'amex';
     }
-    else if (lowerCaseName.includes('discover')) {
+    else if (name.includes('discover')) {
         return 'discover';
     }
+    else if (name.includes('capital one') || name.includes('capitalOne')) {
+        return 'capital-one';
+    }
+    else if (name.includes('bilt')) {
+        return 'bilt';
+    }
     return '';
+}
+/**
+ * Get card image URL based on card name
+ */
+function getCardImageUrl(cardName) {
+    const name = cardName.toLowerCase();
+    if (name.includes('wells fargo') || name.includes('wellsfargo') || name.includes('active cash')) {
+        return 'https://www.wellsfargo.com/assets/images/photography/product-photography/credit-cards/wf_propel_american_express_card_600x337.png';
+    }
+    else if (name.includes('citi') || name.includes('citibank')) {
+        return 'https://www.citi.com/CRD/images/card-images/citi-double-cash-credit-card.jpg';
+    }
+    else if (name.includes('freedom') || name.includes('flex')) {
+        return 'https://creditcards.chase.com/K-Marketplace/images/cards/cardart_freedom_flex.png';
+    }
+    else if (name.includes('chase') || name.includes('sapphire')) {
+        return 'https://creditcards.chase.com/K-Marketplace/images/cards/cardart_sapphirepreferred.png';
+    }
+    else if (name.includes('amex') || name.includes('american express')) {
+        return 'https://icm.aexp-static.com/Internet/Acquisition/US_en/AppContent/OneSite/category/cardarts/blue-cash-everyday.png';
+    }
+    else if (name.includes('discover')) {
+        return 'https://www.discover.com/content/dam/discover/en_us/credit-cards/card-art/discover-it-card-img.png';
+    }
+    else if (name.includes('capital one') || name.includes('capitalOne')) {
+        return 'https://ecm.capitalone.com/WCM/card/products/quicksilver-card-art.png';
+    }
+    else if (name.includes('bilt')) {
+        return 'https://www.biltrewards.com/static/media/card-front.fca8eb64.png';
+    }
+    // Default card image if no match
+    return 'https://www.creditcardinsider.com/wp-content/uploads/2019/09/generic-credit-card.png';
 }
 /**
  * Debug logger that also outputs to console
@@ -620,7 +659,7 @@ function showRecommendationPopup() {
             const popup = createRecommendationPopup();
             // Create header for branding
             const header = document.createElement('div');
-            header.style.backgroundColor = '#0066FF';
+            header.style.backgroundColor = '#000000';
             header.style.color = 'white';
             header.style.padding = '12px 16px';
             header.style.display = 'flex';
@@ -712,26 +751,13 @@ function showRecommendationPopup() {
             cardImage.style.position = 'relative';
             cardImage.style.overflow = 'hidden';
             cardImage.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
-            // Set card background based on card type
-            const cardClass = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardClass)(bestCard.name);
-            if (cardClass === 'wells-fargo') {
-                cardImage.style.background = 'linear-gradient(135deg, #b71c1c 0%, #7f0000 100%)';
-            }
-            else if (cardClass === 'citi') {
-                cardImage.style.backgroundColor = '#222';
-            }
-            else if (cardClass === 'chase') {
-                cardImage.style.background = 'linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%)';
-            }
-            else if (cardClass === 'amex') {
-                cardImage.style.backgroundColor = '#006fcf';
-            }
-            else if (cardClass === 'discover') {
-                cardImage.style.background = 'linear-gradient(135deg, #ff6f00 0%, #e65100 100%)';
-            }
-            else {
-                cardImage.style.backgroundColor = '#f0f0f0';
-            }
+            // Add card image
+            const cardImg = document.createElement('img');
+            cardImg.src = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardImageUrl)(bestCard.name);
+            cardImg.style.width = '100%';
+            cardImg.style.height = '100%';
+            cardImg.style.objectFit = 'cover';
+            cardImage.appendChild(cardImg);
             // Add checkmark indicator
             const selectedIndicator = document.createElement('div');
             selectedIndicator.style.position = 'absolute';
@@ -822,26 +848,13 @@ function showRecommendationPopup() {
                     thumbnail.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
                     thumbnail.style.cursor = 'pointer';
                     thumbnail.style.transition = 'transform 0.2s ease';
-                    // Set card background based on card type
-                    const cardClass = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardClass)(card.name);
-                    if (cardClass === 'wells-fargo') {
-                        thumbnail.style.background = 'linear-gradient(135deg, #b71c1c 0%, #7f0000 100%)';
-                    }
-                    else if (cardClass === 'citi') {
-                        thumbnail.style.backgroundColor = '#222';
-                    }
-                    else if (cardClass === 'chase') {
-                        thumbnail.style.background = 'linear-gradient(135deg, #1e88e5 0%, #0d47a1 100%)';
-                    }
-                    else if (cardClass === 'amex') {
-                        thumbnail.style.backgroundColor = '#006fcf';
-                    }
-                    else if (cardClass === 'discover') {
-                        thumbnail.style.background = 'linear-gradient(135deg, #ff6f00 0%, #e65100 100%)';
-                    }
-                    else {
-                        thumbnail.style.backgroundColor = '#f0f0f0';
-                    }
+                    // Add card image
+                    const thumbImg = document.createElement('img');
+                    thumbImg.src = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.getCardImageUrl)(card.name);
+                    thumbImg.style.width = '100%';
+                    thumbImg.style.height = '100%';
+                    thumbImg.style.objectFit = 'cover';
+                    thumbnail.appendChild(thumbImg);
                     // Add tooltip with card name and cashback
                     thumbnail.title = `${card.name}: $${card.cashback.toFixed(2)} cashback`;
                     // Add hover effect
@@ -883,16 +896,6 @@ function showRecommendationPopup() {
                 alternativeCards.appendChild(seeAll);
                 contentContainer.appendChild(alternativeCards);
             }
-            // Add marketing message
-            const marketingMessage = document.createElement('div');
-            marketingMessage.style.backgroundColor = '#f8f9fa';
-            marketingMessage.style.padding = '10px 12px';
-            marketingMessage.style.borderRadius = '6px';
-            marketingMessage.style.fontSize = '12px';
-            marketingMessage.style.color = '#666';
-            marketingMessage.style.margin = '16px 0';
-            marketingMessage.innerHTML = '<strong>Swipe tip:</strong> Using the recommended card will save you <strong>$27.30</strong> more per year on average';
-            contentContainer.appendChild(marketingMessage);
             // Add "pay with selected card" button
             const payButton = document.createElement('button');
             payButton.style.display = 'flex';
@@ -943,14 +946,6 @@ function showRecommendationPopup() {
         Pay with ${bestCard.name}
       `;
             contentContainer.appendChild(payButton);
-            // Add "Powered by" footer
-            const footer = document.createElement('div');
-            footer.style.fontSize = '11px';
-            footer.style.color = '#999';
-            footer.style.textAlign = 'center';
-            footer.style.marginTop = '12px';
-            footer.textContent = 'Powered by Swipe Credit Card Recommender';
-            contentContainer.appendChild(footer);
             // Add container to popup
             popup.appendChild(contentContainer);
             // Add to page
