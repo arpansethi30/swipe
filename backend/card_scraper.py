@@ -2,6 +2,7 @@ import os
 import json
 import requests
 import logging
+import time
 from bs4 import BeautifulSoup
 from datetime import datetime
 
@@ -17,10 +18,101 @@ class CardScraper:
         self.data_dir = os.path.join(os.path.dirname(__file__), 'data')
         if not os.path.exists(self.data_dir):
             os.makedirs(self.data_dir)
-        self.cards_file = os.path.join(self.data_dir, 'cards.json')
-        self.offers_file = os.path.join(self.data_dir, 'card_offers.json')
-        self.last_updated_file = os.path.join(self.data_dir, 'last_updated.txt')
+            
+        self.cards_file = os.path.join(self.data_dir, 'credit_cards.json')
+        self.cache_file = os.path.join(self.data_dir, 'card_cache.json')
+        self.cache_expiry = 24 * 60 * 60  # 24 hours in seconds
         self.user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
+    
+    def get_card_data(self, force_refresh=False):
+        """Get credit card data, either from cache or by fetching fresh data"""
+        # Check if we have a recent cache
+        if not force_refresh and os.path.exists(self.cache_file):
+            try:
+                with open(self.cache_file, 'r') as f:
+                    cache_data = json.load(f)
+                    
+                # Check cache expiry
+                current_time = time.time()
+                if current_time - cache_data.get('timestamp', 0) < self.cache_expiry:
+                    logger.info("Using cached card data")
+                    return cache_data.get('cards', [])
+            except Exception as e:
+                logger.error(f"Error reading cache: {str(e)}")
+        
+        # Cache is expired or doesn't exist, load from source
+        cards = self._load_cards_from_file()
+        
+        # Save to cache for future use
+        try:
+            with open(self.cache_file, 'w') as f:
+                json.dump({
+                    'timestamp': time.time(),
+                    'cards': cards
+                }, f, indent=2)
+        except Exception as e:
+            logger.error(f"Error writing cache: {str(e)}")
+            
+        return cards
+    
+    def _load_cards_from_file(self):
+        """Load card data from our JSON file"""
+        try:
+            if os.path.exists(self.cards_file):
+                with open(self.cards_file, 'r') as f:
+                    cards = json.load(f)
+                logger.info(f"Loaded {len(cards)} cards from file")
+                return cards
+            else:
+                logger.warning(f"Cards file not found: {self.cards_file}")
+                return self._get_default_cards()
+        except Exception as e:
+            logger.error(f"Error loading cards from file: {str(e)}")
+            return self._get_default_cards()
+    
+    def _get_default_cards(self):
+        """Fallback with a small set of default cards if file loading fails"""
+        return [
+            {
+                "name": "Chase Freedom Unlimited",
+                "issuer": "Chase",
+                "network": "Visa",
+                "annual_fee": 0,
+                "categories": {
+                    "dining": 3,
+                    "drugstores": 3,
+                    "travel": 5,
+                    "other": 1.5
+                }
+            },
+            {
+                "name": "Citi Double Cash",
+                "issuer": "Citi",
+                "network": "Mastercard",
+                "annual_fee": 0,
+                "categories": {
+                    "other": 2
+                }
+            },
+            {
+                "name": "Wells Fargo Active Cash",
+                "issuer": "Wells Fargo",
+                "network": "Visa",
+                "annual_fee": 0,
+                "categories": {
+                    "other": 2
+                }
+            },
+            {
+                "name": "Capital One Quicksilver",
+                "issuer": "Capital One",
+                "network": "Mastercard",
+                "annual_fee": 0,
+                "categories": {
+                    "other": 1.5
+                }
+            }
+        ]
     
     def fetch_card_data(self):
         """Fetch credit card data from various sources and compile them"""

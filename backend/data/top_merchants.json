@@ -1,0 +1,242 @@
+{
+  "amazon.com": {
+    "name": "Amazon",
+    "category": "online_shopping",
+    "confidence": "high"
+  },
+  "smile.amazon.com": {
+    "name": "Amazon",
+    "category": "online_shopping",
+    "confidence": "high"
+  },
+  "walmart.com": {
+    "name": "Walmart",
+    "category": "groceries",
+    "confidence": "high"
+  },
+  "grocery.walmart.com": {
+    "name": "Walmart Grocery",
+    "category": "groceries",
+    "confidence": "high"
+  },
+  "target.com": {
+    "name": "Target",
+    "category": "shopping",
+    "confidence": "high"
+  },
+  "bestbuy.com": {
+    "name": "Best Buy",
+    "category": "electronics",
+    "confidence": "high"
+  },
+  "costco.com": {
+    "name": "Costco",
+    "category": "wholesale_clubs",
+    "confidence": "high"
+  },
+  "ebay.com": {
+    "name": "eBay",
+    "category": "online_shopping",
+    "confidence": "high"
+  },
+  "doordash.com": {
+    "name": "DoorDash",
+    "category": "dining",
+    "confidence": "high"
+  },
+  "ubereats.com": {
+    "name": "Uber Eats",
+    "category": "dining",
+    "confidence": "high"
+  },
+  "grubhub.com": {
+    "name": "Grubhub",
+    "category": "dining",
+    "confidence": "high"
+  },
+  "instacart.com": {
+    "name": "Instacart",
+    "category": "groceries",
+    "confidence": "high"
+  },
+  "kroger.com": {
+    "name": "Kroger",
+    "category": "groceries",
+    "confidence": "high"
+  },
+  "safeway.com": {
+    "name": "Safeway",
+    "category": "groceries",
+    "confidence": "high"
+  },
+  "netflix.com": {
+    "name": "Netflix",
+    "category": "streaming",
+    "confidence": "high"
+  },
+  "hulu.com": {
+    "name": "Hulu",
+    "category": "streaming",
+    "confidence": "high"
+  },
+  "disneyplus.com": {
+    "name": "Disney+",
+    "category": "streaming",
+    "confidence": "high"
+  },
+  "spotify.com": {
+    "name": "Spotify",
+    "category": "streaming",
+    "confidence": "high"
+  },
+  "apple.com": {
+    "name": "Apple",
+    "category": "electronics",
+    "confidence": "high"
+  },
+  "store.steampowered.com": {
+    "name": "Steam",
+    "category": "entertainment",
+    "confidence": "high"
+  },
+  "etsy.com": {
+    "name": "Etsy",
+    "category": "online_shopping",
+    "confidence": "high"
+  },
+  "homedepot.com": {
+    "name": "Home Depot",
+    "category": "home_improvement",
+    "confidence": "high"
+  },
+  "lowes.com": {
+    "name": "Lowe's",
+    "category": "home_improvement",
+    "confidence": "high"
+  },
+  "starbucks.com": {
+    "name": "Starbucks",
+    "category": "dining",
+    "confidence": "high"
+  },
+  "uber.com": {
+    "name": "Uber",
+    "category": "transit",
+    "confidence": "high"
+  },
+  "lyft.com": {
+    "name": "Lyft",
+    "category": "transit",
+    "confidence": "high"
+  },
+  "airbnb.com": {
+    "name": "Airbnb",
+    "category": "travel",
+    "confidence": "high"
+  },
+  "expedia.com": {
+    "name": "Expedia",
+    "category": "travel",
+    "confidence": "high"
+  },
+  "booking.com": {
+    "name": "Booking.com",
+    "category": "travel",
+    "confidence": "high"
+  },
+  "delta.com": {
+    "name": "Delta Air Lines",
+    "category": "travel",
+    "confidence": "high"
+  },
+  "southwest.com": {
+    "name": "Southwest Airlines",
+    "category": "travel",
+    "confidence": "high"
+  },
+  "marriott.com": {
+    "name": "Marriott",
+    "category": "travel",
+    "confidence": "high"
+  },
+  "hilton.com": {
+    "name": "Hilton",
+    "category": "travel",
+    "confidence": "high"
+  },
+  "cvs.com": {
+    "name": "CVS",
+    "category": "drugstores",
+    "confidence": "high"
+  },
+  "walgreens.com": {
+    "name": "Walgreens",
+    "category": "drugstores",
+    "confidence": "high"
+  },
+  "macys.com": {
+    "name": "Macy's",
+    "category": "department_stores",
+    "confidence": "high"
+  },
+  "nordstrom.com": {
+    "name": "Nordstrom",
+    "category": "department_stores",
+    "confidence": "high"
+  },
+  "wayfair.com": {
+    "name": "Wayfair",
+    "category": "home_improvement",
+    "confidence": "high"
+  },
+  "ikea.com": {
+    "name": "IKEA",
+    "category": "home_improvement",
+    "confidence": "high"
+  },
+  "chewy.com": {
+    "name": "Chewy",
+    "category": "pet_supplies",
+    "confidence": "high"
+  },
+  "petco.com": {
+    "name": "Petco",
+    "category": "pet_supplies",
+    "confidence": "high"
+  },
+  "gamestop.com": {
+    "name": "GameStop",
+    "category": "entertainment",
+    "confidence": "high"
+  },
+  "sephora.com": {
+    "name": "Sephora",
+    "category": "beauty",
+    "confidence": "high"
+  },
+  "ulta.com": {
+    "name": "Ulta Beauty",
+    "category": "beauty",
+    "confidence": "high"
+  },
+  "shell.com": {
+    "name": "Shell",
+    "category": "gas",
+    "confidence": "high"
+  },
+  "exxon.com": {
+    "name": "Exxon",
+    "category": "gas",
+    "confidence": "high"
+  },
+  "whole-foods.com": {
+    "name": "Whole Foods",
+    "category": "groceries",
+    "confidence": "high"
+  },
+  "wholefoodsmarket.com": {
+    "name": "Whole Foods",
+    "category": "groceries",
+    "confidence": "high"
+  }
+} 

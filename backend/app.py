@@ -102,6 +102,15 @@ def get_merchant_categories():
         logger.error(f"Error getting merchant categories: {str(e)}", exc_info=True)
         return jsonify({"error": "Failed to retrieve merchant categories"}), 500
 
+@app.route('/api/top-merchants', methods=['GET'])
+def get_top_merchants():
+    """Return list of top merchant domains"""
+    try:
+        return jsonify(recommender.top_merchants)
+    except Exception as e:
+        logger.error(f"Error getting top merchants: {str(e)}", exc_info=True)
+        return jsonify({"error": "Failed to retrieve top merchants"}), 500
+
 @app.route('/api/quarterly-categories', methods=['GET'])
 def get_quarterly_categories():
     """Return current quarterly bonus categories for various cards"""

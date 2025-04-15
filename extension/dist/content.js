@@ -514,8 +514,9 @@ function getPurchaseAmount() {
     if (bodyMatches && bodyMatches[1]) {
         return parseFloat(bodyMatches[1].replace(/,/g, ''));
     }
-    // Default to 75.25 (our test page amount) if we can't find anything
-    return 75.25;
+    // Return 0 if we can't detect an amount
+    console.log('Could not detect purchase amount, defaulting to 0');
+    return 0;
 }
 // Fill credit card details in the form fields
 function fillCardDetails(cardName) {
@@ -528,57 +529,90 @@ function fillCardDetails(cardName) {
         let filledCount = 0;
         // Fill in card number
         if (fields.cardNumberField) {
-            // Remove spaces for card input
-            fields.cardNumberField.value = cardDetails.cardNumber.replace(/\s/g, '');
-            fields.cardNumberField.dispatchEvent(new Event('input', { bubbles: true }));
-            fields.cardNumberField.dispatchEvent(new Event('change', { bubbles: true }));
-            filledCount++;
+            const cleanCardNumber = cardDetails.cardNumber.replace(/\s/g, '');
+            // Only update if the field doesn't already have the correct value
+            if (fields.cardNumberField.value !== cleanCardNumber) {
+                fields.cardNumberField.value = cleanCardNumber;
+                fields.cardNumberField.dispatchEvent(new Event('input', { bubbles: true }));
+                fields.cardNumberField.dispatchEvent(new Event('change', { bubbles: true }));
+                filledCount++;
+            }
         }
         // Fill in card name
         if (fields.cardNameField) {
-            fields.cardNameField.value = cardDetails.cardName;
-            fields.cardNameField.dispatchEvent(new Event('input', { bubbles: true }));
-            fields.cardNameField.dispatchEvent(new Event('change', { bubbles: true }));
-            filledCount++;
+            // Only update if the field doesn't already have the correct value
+            if (fields.cardNameField.value !== cardDetails.cardName) {
+                fields.cardNameField.value = cardDetails.cardName;
+                fields.cardNameField.dispatchEvent(new Event('input', { bubbles: true }));
+                fields.cardNameField.dispatchEvent(new Event('change', { bubbles: true }));
+                filledCount++;
+            }
         }
         // Handle expiry date fields
         let expiryFilled = false;
         // Try separate month/year fields first
         if (fields.expiryMonthField && fields.expiryYearField) {
+            let monthUpdated = false;
+            let yearUpdated = false;
             // Handle select elements
             if (fields.expiryMonthField instanceof HTMLSelectElement) {
-                fields.expiryMonthField.value = cardDetails.expiryMonth;
+                if (fields.expiryMonthField.value !== cardDetails.expiryMonth) {
+                    fields.expiryMonthField.value = cardDetails.expiryMonth;
+                    monthUpdated = true;
+                }
             }
             else {
-                fields.expiryMonthField.value = cardDetails.expiryMonth;
+                if (fields.expiryMonthField.value !== cardDetails.expiryMonth) {
+                    fields.expiryMonthField.value = cardDetails.expiryMonth;
+                    monthUpdated = true;
+                }
             }
             if (fields.expiryYearField instanceof HTMLSelectElement) {
-                fields.expiryYearField.value = cardDetails.expiryYear;
+                if (fields.expiryYearField.value !== cardDetails.expiryYear) {
+                    fields.expiryYearField.value = cardDetails.expiryYear;
+                    yearUpdated = true;
+                }
             }
             else {
-                fields.expiryYearField.value = cardDetails.expiryYear;
+                if (fields.expiryYearField.value !== cardDetails.expiryYear) {
+                    fields.expiryYearField.value = cardDetails.expiryYear;
+                    yearUpdated = true;
+                }
             }
-            // Trigger events
-            fields.expiryMonthField.dispatchEvent(new Event('change', { bubbles: true }));
-            fields.expiryYearField.dispatchEvent(new Event('change', { bubbles: true }));
-            filledCount++;
+            // Only trigger events if values were updated
+            if (monthUpdated) {
+                fields.expiryMonthField.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            if (yearUpdated) {
+                fields.expiryYearField.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+            if (monthUpdated || yearUpdated) {
+                filledCount++;
+            }
             expiryFilled = true;
         }
         // Try combined MM/YY field if separate fields weren't filled
         if (!expiryFilled && fields.expiryField) {
             // Format as MM/YY
             const shortYear = cardDetails.expiryYear.slice(-2);
-            fields.expiryField.value = `${cardDetails.expiryMonth}/${shortYear}`;
-            fields.expiryField.dispatchEvent(new Event('input', { bubbles: true }));
-            fields.expiryField.dispatchEvent(new Event('change', { bubbles: true }));
-            filledCount++;
+            const formattedExpiry = `${cardDetails.expiryMonth}/${shortYear}`;
+            // Only update if the field doesn't already have the correct value
+            if (fields.expiryField.value !== formattedExpiry) {
+                fields.expiryField.value = formattedExpiry;
+                fields.expiryField.dispatchEvent(new Event('input', { bubbles: true }));
+                fields.expiryField.dispatchEvent(new Event('change', { bubbles: true }));
+                filledCount++;
+            }
         }
         // Fill in CVC
         if (fields.cvcField) {
-            fields.cvcField.value = cardDetails.cvc;
-            fields.cvcField.dispatchEvent(new Event('input', { bubbles: true }));
-            fields.cvcField.dispatchEvent(new Event('change', { bubbles: true }));
-            filledCount++;
+            // Only update if the field doesn't already have the correct value
+            if (fields.cvcField.value !== cardDetails.cvc) {
+                fields.cvcField.value = cardDetails.cvc;
+                fields.cvcField.dispatchEvent(new Event('input', { bubbles: true }));
+                fields.cvcField.dispatchEvent(new Event('change', { bubbles: true }));
+                filledCount++;
+            }
         }
         // Show notification to user
         const result = {
@@ -586,7 +620,9 @@ function fillCardDetails(cardName) {
             filledCount,
             message: filledCount > 0
                 ? `Successfully filled ${filledCount} card fields with ${cardName}`
-                : 'No credit card fields found on this page.'
+                : filledCount === 0 && Object.values(fields).some(Boolean)
+                    ? 'Card details already filled correctly'
+                    : 'No credit card fields found on this page.'
         };
         // Display visual notification
         showNotification(result.message, result.success);

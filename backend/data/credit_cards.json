@@ -1,0 +1,280 @@
+[
+  {
+    "name": "Chase Freedom Unlimited",
+    "issuer": "Chase",
+    "network": "Visa",
+    "annual_fee": 0,
+    "categories": {
+      "dining": 3,
+      "drugstores": 3,
+      "travel": 5,
+      "other": 1.5
+    },
+    "benefits": [
+      "No annual fee",
+      "No minimum redemption amount",
+      "Purchase protection",
+      "Extended warranty"
+    ],
+    "intro_offer": "$200 bonus after spending $500 in first 3 months"
+  },
+  {
+    "name": "Chase Freedom Flex",
+    "issuer": "Chase",
+    "network": "Mastercard",
+    "annual_fee": 0,
+    "categories": {
+      "dining": 3,
+      "drugstores": 3,
+      "travel": 5,
+      "other": 1,
+      "quarterly_bonus": 5
+    },
+    "benefits": [
+      "No annual fee",
+      "Cell phone protection",
+      "Purchase protection",
+      "Extended warranty"
+    ],
+    "intro_offer": "$200 bonus after spending $500 in first 3 months"
+  },
+  {
+    "name": "Chase Sapphire Preferred",
+    "issuer": "Chase",
+    "network": "Visa",
+    "annual_fee": 95,
+    "categories": {
+      "dining": 3,
+      "online_groceries": 3,
+      "streaming": 3,
+      "travel": 2,
+      "other": 1
+    },
+    "benefits": [
+      "Travel and purchase protections",
+      "No foreign transaction fees",
+      "1:1 point transfers to airlines and hotels",
+      "$50 annual credit for hotel stays"
+    ],
+    "intro_offer": "60,000 bonus points after spending $4,000 in first 3 months"
+  },
+  {
+    "name": "Chase Sapphire Reserve",
+    "issuer": "Chase",
+    "network": "Visa",
+    "annual_fee": 550,
+    "categories": {
+      "travel": 3,
+      "dining": 3,
+      "other": 1
+    },
+    "benefits": [
+      "$300 annual travel credit",
+      "Priority Pass Select airport lounge access",
+      "Global Entry/TSA PreCheck credit",
+      "No foreign transaction fees",
+      "50% more value when redeeming points for travel"
+    ],
+    "intro_offer": "60,000 bonus points after spending $4,000 in first 3 months"
+  },
+  {
+    "name": "Citi Double Cash",
+    "issuer": "Citi",
+    "network": "Mastercard",
+    "annual_fee": 0,
+    "categories": {
+      "other": 2
+    },
+    "benefits": [
+      "No annual fee",
+      "1% cash back when you buy + 1% when you pay",
+      "Lost wallet service",
+      "Citi Entertainment access"
+    ],
+    "intro_offer": "0% intro APR on balance transfers for 18 months"
+  },
+  {
+    "name": "American Express Blue Cash Preferred",
+    "issuer": "American Express",
+    "network": "American Express",
+    "annual_fee": 95,
+    "categories": {
+      "groceries": 6,
+      "streaming": 6,
+      "transit": 3,
+      "gas": 3,
+      "other": 1
+    },
+    "benefits": [
+      "Purchase protection",
+      "Return protection",
+      "Car rental loss and damage insurance",
+      "Global Assist Hotline"
+    ],
+    "intro_offer": "$350 statement credit after spending $3,000 in first 6 months"
+  },
+  {
+    "name": "American Express Gold Card",
+    "issuer": "American Express",
+    "network": "American Express",
+    "annual_fee": 250,
+    "categories": {
+      "restaurants": 4,
+      "groceries": 4,
+      "travel": 3,
+      "other": 1
+    },
+    "benefits": [
+      "$120 dining credit ($10/month)",
+      "$120 Uber Cash ($10/month)",
+      "No foreign transaction fees",
+      "Baggage insurance"
+    ],
+    "intro_offer": "60,000 Membership Rewards points after spending $4,000 in first 6 months"
+  },
+  {
+    "name": "Capital One Venture",
+    "issuer": "Capital One",
+    "network": "Visa",
+    "annual_fee": 95,
+    "categories": {
+      "travel": 2,
+      "other": 2
+    },
+    "benefits": [
+      "No foreign transaction fees",
+      "Global Entry/TSA PreCheck credit",
+      "Travel accident insurance",
+      "Extended warranty"
+    ],
+    "intro_offer": "75,000 miles after spending $4,000 in first 3 months"
+  },
+  {
+    "name": "Capital One Quicksilver",
+    "issuer": "Capital One",
+    "network": "Mastercard",
+    "annual_fee": 0,
+    "categories": {
+      "other": 1.5
+    },
+    "benefits": [
+      "No annual fee",
+      "No foreign transaction fees",
+      "Travel accident insurance",
+      "Extended warranty"
+    ],
+    "intro_offer": "$200 cash bonus after spending $500 in first 3 months"
+  },
+  {
+    "name": "Discover it Cash Back",
+    "issuer": "Discover",
+    "network": "Discover",
+    "annual_fee": 0,
+    "categories": {
+      "quarterly_bonus": 5,
+      "other": 1
+    },
+    "benefits": [
+      "No annual fee",
+      "First year cashback match",
+      "Free FICO score",
+      "No foreign transaction fees"
+    ],
+    "intro_offer": "Cashback match for first year"
+  },
+  {
+    "name": "Wells Fargo Active Cash",
+    "issuer": "Wells Fargo",
+    "network": "Visa",
+    "annual_fee": 0,
+    "categories": {
+      "other": 2
+    },
+    "benefits": [
+      "No annual fee",
+      "Cell phone protection",
+      "Visa Signature benefits",
+      "Roadside dispatch"
+    ],
+    "intro_offer": "$200 cash rewards bonus after spending $1,000 in first 3 months"
+  },
+  {
+    "name": "Bank of America Customized Cash",
+    "issuer": "Bank of America",
+    "network": "Visa",
+    "annual_fee": 0,
+    "categories": {
+      "choice_category": 3,
+      "groceries": 2,
+      "wholesale_clubs": 2,
+      "other": 1
+    },
+    "benefits": [
+      "No annual fee",
+      "Choose your 3% category",
+      "Higher rewards for BoA Preferred Rewards members",
+      "Free FICO score"
+    ],
+    "intro_offer": "$200 online cash rewards bonus after spending $1,000 in first 90 days"
+  },
+  {
+    "name": "Apple Card",
+    "issuer": "Goldman Sachs",
+    "network": "Mastercard",
+    "annual_fee": 0,
+    "categories": {
+      "apple": 3,
+      "apple_services": 3,
+      "other": 1,
+      "apple_pay": 2
+    },
+    "benefits": [
+      "No annual fee",
+      "No foreign transaction fees",
+      "Daily Cash rewards",
+      "Titanium physical card"
+    ],
+    "intro_offer": "No current intro offer"
+  },
+  {
+    "name": "Amazon Prime Rewards Visa",
+    "issuer": "Chase",
+    "network": "Visa",
+    "annual_fee": 0,
+    "categories": {
+      "amazon": 5,
+      "whole_foods": 5,
+      "restaurants": 2,
+      "gas": 2,
+      "drugstores": 2,
+      "other": 1
+    },
+    "benefits": [
+      "No annual fee (Prime membership required)",
+      "No foreign transaction fees",
+      "Travel and purchase protections",
+      "Visa Signature benefits"
+    ],
+    "intro_offer": "$100 Amazon gift card instantly upon approval"
+  },
+  {
+    "name": "Costco Anywhere Visa",
+    "issuer": "Citi",
+    "network": "Visa",
+    "annual_fee": 0,
+    "categories": {
+      "gas": 4,
+      "travel": 3,
+      "restaurants": 3,
+      "costco": 2,
+      "other": 1
+    },
+    "benefits": [
+      "No annual fee (Costco membership required)",
+      "Worldwide car rental insurance",
+      "Worldwide travel accident insurance",
+      "Damage and theft protection"
+    ],
+    "intro_offer": "No current intro offer"
+  }
+] 

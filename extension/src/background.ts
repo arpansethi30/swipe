@@ -180,10 +180,14 @@ async function handleGetRecommendations(
     const data = await response.json();
     console.log('Received recommendations:', data);
     
-    // Send response back
+    // Send response back with enhanced data from backend
     sendResponse({
       success: true,
-      recommendations: data.recommendations || []
+      recommendations: data.recommendations || [],
+      merchant: data.merchant || merchant,
+      confidence: data.confidence || "low",
+      amount: amount,
+      merchant_categories: data.merchant_categories || []
     });
   } catch (error: any) {
     console.error('Error getting recommendations:', error);
@@ -201,28 +205,14 @@ async function handleGetRecommendations(
         name: 'Citi Double Cash',
         issuer: 'Citi',
         rewardPercentage: 2,
-        explanation: '2% on all purchases',
+        explanation: '2% cashback on all purchases',
         cashback: amount * 0.02
-      },
-      {
-        name: 'Discover it Cash Back',
-        issuer: 'Discover',
-        rewardPercentage: 1.5,
-        explanation: '1.5% on all purchases',
-        cashback: amount * 0.015
-      },
-      {
-        name: 'American Express Blue Cash Preferred',
-        issuer: 'American Express',
-        rewardPercentage: 6,
-        explanation: '6% at U.S. supermarkets',
-        cashback: amount * 0.06
       },
       {
         name: 'Wells Fargo Active Cash',
         issuer: 'Wells Fargo',
         rewardPercentage: 2,
-        explanation: '2% cash back on all purchases',
+        explanation: '2% cashback on all purchases',
         cashback: amount * 0.02
       }
     ];
@@ -230,7 +220,10 @@ async function handleGetRecommendations(
     sendResponse({
       success: true,
       recommendations: dummyRecommendations,
-      error: `Using demo data: ${error.message}`
+      merchant: merchant,
+      confidence: "low",
+      amount: amount,
+      merchant_categories: ["other"]
     });
   }
 }

@@ -370,6 +370,13 @@ const mainContentEl = document.getElementById('main-content');
 const showPreferencesBtn = document.getElementById('show-preferences');
 const preferencesBackBtn = document.getElementById('preferences-back');
 const preferencesForm = document.getElementById('preferences-form');
+// Track if a recommendation request is in progress
+let isRequestInProgress = false;
+// Track the last request parameters to avoid duplicate requests
+let lastRequestParams = {
+    merchant: '',
+    amount: 0
+};
 // Function to get active tab information
 function getActiveTab() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -552,10 +559,23 @@ function getRecommendations(merchant, amount) {
         const simpleView = document.getElementById('simple-view');
         const detailedView = document.getElementById('detailed-view');
         const loadingEl = document.getElementById('loading');
+        // Skip if a request is already in progress or if it's a duplicate request
+        if (isRequestInProgress) {
+            console.log('Skipping duplicate request - a request is already in progress');
+            return;
+        }
+        // Check if this is the same as the last request
+        if (lastRequestParams.merchant === merchant && lastRequestParams.amount === amount) {
+            console.log('Skipping duplicate request - same parameters as last request');
+            return;
+        }
         if (simpleView && detailedView && loadingEl) {
             simpleView.style.display = 'none';
             detailedView.style.display = 'none';
             loadingEl.style.display = 'block';
+            // Set flags
+            isRequestInProgress = true;
+            lastRequestParams = { merchant, amount };
             try {
                 // Send message to background script to get recommendations
                 chrome.runtime.sendMessage({
@@ -563,6 +583,8 @@ function getRecommendations(merchant, amount) {
                     merchant,
                     amount
                 }, (response) => {
+                    // Reset flag
+                    isRequestInProgress = false;
                     if (response && response.success && response.recommendations) {
                         renderRecommendations(response.recommendations, merchant, amount);
                     }
@@ -572,6 +594,8 @@ function getRecommendations(merchant, amount) {
                 });
             }
             catch (error) {
+                // Reset flag
+                isRequestInProgress = false;
                 console.error('Error getting recommendations:', error);
                 showError('Error getting recommendations');
             }
@@ -583,6 +607,11 @@ function simulateRecommendations() {
     return __awaiter(this, void 0, void 0, function* () {
         const demoMerchant = 'Amazon';
         const demoAmount = 40.50;
+        // Skip if a request is already in progress
+        if (isRequestInProgress) {
+            console.log('Skipping simulation - a request is already in progress');
+            return;
+        }
         // Show loading first
         const simpleView = document.getElementById('simple-view');
         const detailedView = document.getElementById('detailed-view');
@@ -591,6 +620,9 @@ function simulateRecommendations() {
             simpleView.style.display = 'none';
             detailedView.style.display = 'none';
             loadingEl.style.display = 'block';
+            // Set flag
+            isRequestInProgress = true;
+            lastRequestParams = { merchant: demoMerchant, amount: demoAmount };
             // Demo delay for loading effect
             setTimeout(() => {
                 // Send message to background script to get recommendations
@@ -599,6 +631,8 @@ function simulateRecommendations() {
                     merchant: demoMerchant,
                     amount: demoAmount
                 }, (response) => {
+                    // Reset flag
+                    isRequestInProgress = false;
                     if (response && response.success && response.recommendations) {
                         renderRecommendations(response.recommendations, demoMerchant, demoAmount);
                     }

@@ -11,6 +11,14 @@ const showPreferencesBtn = document.getElementById('show-preferences') as HTMLEl
 const preferencesBackBtn = document.getElementById('preferences-back') as HTMLElement;
 const preferencesForm = document.getElementById('preferences-form') as HTMLFormElement;
 
+// Track if a recommendation request is in progress
+let isRequestInProgress = false;
+// Track the last request parameters to avoid duplicate requests
+let lastRequestParams = {
+  merchant: '',
+  amount: 0
+};
+
 // Interface for user preferences
 interface UserPreferences {
   preferredIssuers: string[];
@@ -216,10 +224,26 @@ async function getRecommendations(merchant: string, amount: number) {
   const detailedView = document.getElementById('detailed-view');
   const loadingEl = document.getElementById('loading');
   
+  // Skip if a request is already in progress or if it's a duplicate request
+  if (isRequestInProgress) {
+    console.log('Skipping duplicate request - a request is already in progress');
+    return;
+  }
+  
+  // Check if this is the same as the last request
+  if (lastRequestParams.merchant === merchant && lastRequestParams.amount === amount) {
+    console.log('Skipping duplicate request - same parameters as last request');
+    return;
+  }
+  
   if (simpleView && detailedView && loadingEl) {
     simpleView.style.display = 'none';
     detailedView.style.display = 'none';
     loadingEl.style.display = 'block';
+    
+    // Set flags
+    isRequestInProgress = true;
+    lastRequestParams = { merchant, amount };
     
     try {
       // Send message to background script to get recommendations
@@ -228,6 +252,9 @@ async function getRecommendations(merchant: string, amount: number) {
         merchant,
         amount
       }, (response) => {
+        // Reset flag
+        isRequestInProgress = false;
+        
         if (response && response.success && response.recommendations) {
           renderRecommendations(response.recommendations, merchant, amount);
         } else {
@@ -235,6 +262,8 @@ async function getRecommendations(merchant: string, amount: number) {
         }
       });
     } catch (error) {
+      // Reset flag
+      isRequestInProgress = false;
       console.error('Error getting recommendations:', error);
       showError('Error getting recommendations');
     }
@@ -246,6 +275,12 @@ async function simulateRecommendations() {
   const demoMerchant = 'Amazon';
   const demoAmount = 40.50;
   
+  // Skip if a request is already in progress
+  if (isRequestInProgress) {
+    console.log('Skipping simulation - a request is already in progress');
+    return;
+  }
+  
   // Show loading first
   const simpleView = document.getElementById('simple-view');
   const detailedView = document.getElementById('detailed-view');
@@ -256,6 +291,10 @@ async function simulateRecommendations() {
     detailedView.style.display = 'none';
     loadingEl.style.display = 'block';
     
+    // Set flag
+    isRequestInProgress = true;
+    lastRequestParams = { merchant: demoMerchant, amount: demoAmount };
+    
     // Demo delay for loading effect
     setTimeout(() => {
       // Send message to background script to get recommendations
@@ -264,6 +303,9 @@ async function simulateRecommendations() {
         merchant: demoMerchant,
         amount: demoAmount
       }, (response) => {
+        // Reset flag
+        isRequestInProgress = false;
+        
         if (response && response.success && response.recommendations) {
           renderRecommendations(response.recommendations, demoMerchant, demoAmount);
         } else {

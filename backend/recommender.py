@@ -22,8 +22,24 @@ class CardRecommender:
         self.merchant_categories_file = os.path.join(self.data_dir, 'merchant_categories.json')
         self.merchant_categories = self._load_merchant_categories()
         
+        # Load top merchants file for exact domain matching
+        self.top_merchants_file = os.path.join(self.data_dir, 'top_merchants.json')
+        self.top_merchants = self._load_top_merchants()
+        
         # Quarterly bonus categories
         self.quarterly_categories = self._get_quarterly_categories()
+    
+    def _load_top_merchants(self):
+        """Load curated list of top merchant domains"""
+        if os.path.exists(self.top_merchants_file):
+            try:
+                with open(self.top_merchants_file, 'r') as f:
+                    return json.load(f)
+            except Exception as e:
+                logger.error(f"Error loading top merchants: {str(e)}")
+        
+        # Return empty dict if file doesn't exist or has errors
+        return {}
     
     def _load_merchant_categories(self):
         """Load merchant category mappings"""
@@ -101,6 +117,20 @@ class CardRecommender:
     
     def determine_merchant_categories(self, merchant_name):
         """Determine the categories of a merchant based on its name"""
+        # Extract domain for exact matching
+        domain = self._extract_domain(merchant_name)
+        confidence = "low"
+        
+        # First try exact domain matching with our top merchants list
+        if domain and domain in self.top_merchants:
+            merchant_info = self.top_merchants[domain]
+            confidence = merchant_info.get("confidence", "medium")
+            return {
+                "categories": [merchant_info["category"]],
+                "name": merchant_info["name"],
+                "confidence": confidence
+            }
+        
         # Convert to lowercase for case-insensitive matching
         merchant_lower = merchant_name.lower()
         
@@ -155,13 +185,59 @@ class CardRecommender:
         if not matching_categories:
             matching_categories.append("other")
         
-        return matching_categories
+        return {
+            "categories": matching_categories,
+            "name": merchant_name,
+            "confidence": "medium" if len(matching_categories) > 0 else "low"
+        }
+    
+    def _extract_domain(self, merchant_string):
+        """Extract domain from a merchant name that might be a URL or contain a domain"""
+        # Check if it looks like a domain/URL
+        if "." in merchant_string:
+            # Try to handle URLs
+            if "://" in merchant_string:
+                try:
+                    # Extract domain from URL
+                    parts = merchant_string.split('/')
+                    if len(parts) >= 3:
+                        domain_part = parts[2].lower()
+                        return self._clean_domain(domain_part)
+                except:
+                    pass
+            
+            # Check if it's just a domain name
+            if "www." in merchant_string or ".com" in merchant_string or ".org" in merchant_string:
+                return self._clean_domain(merchant_string)
+        
+        return None
+    
+    def _clean_domain(self, domain):
+        """Clean up a domain name for standard comparison"""
+        domain = domain.lower().strip()
+        # Remove protocol
+        if "://" in domain:
+            domain = domain.split('://', 1)[1]
+        # Remove www.
+        if domain.startswith('www.'):
+            domain = domain[4:]
+        # Remove path
+        if '/' in domain:
+            domain = domain.split('/', 1)[0]
+        # Remove port
+        if ':' in domain:
+            domain = domain.split(':', 1)[0]
+        
+        return domain
     
     def get_recommendations(self, merchant, amount, user_preferences=None):
         """Get card recommendations for a specific merchant and purchase amount"""
         try:
             # Get merchant categories
-            categories = self.determine_merchant_categories(merchant)
+            merchant_result = self.determine_merchant_categories(merchant)
+            categories = merchant_result["categories"]
+            merchant_name = merchant_result["name"]
+            confidence = merchant_result["confidence"]
             
             # Get card data
             cards = self.scraper.get_card_data()
@@ -202,161 +278,150 @@ class CardRecommender:
                     best_category = "quarterly_bonus"
                     explanation = f"5% cash back on quarterly bonus categories (currently: {', '.join(self.quarterly_categories['chase_freedom'])})"
                 
-                # Calculate cashback value
-                point_value = card.get("point_value", 0.01)
-                raw_points = (amount * best_reward_percentage) / 100
-                cashback_value = raw_points * point_value
+                # Citi Dividend
+                elif "citi dividend" in card_name_lower and any(cat in categories for cat in self.quarterly_categories["citi_dividend"]):
+                    best_reward_percentage = 5
+                    best_category = "quarterly_bonus"
+                    explanation = f"5% cash back on quarterly bonus categories (currently: {', '.join(self.quarterly_categories['citi_dividend'])})"
                 
-                # Adjust for annual fee (prorated daily for comparison purposes)
-                annual_fee = card.get("annual_fee", 0)
-                daily_fee_cost = annual_fee / 365 if annual_fee > 0 else 0
+                # Calculate cashback amount
+                cashback_amount = round(amount * (best_reward_percentage / 100), 2)
                 
-                # Create recommendation object
-                recommendation = {
-                    "id": card.get("external_id", ""),
-                    "name": card.get("name", ""),
+                # Add score to results
+                card_scores.append({
+                    "name": card.get("name", "Unknown Card"),
                     "issuer": card.get("issuer", ""),
                     "network": card.get("network", ""),
-                    "image": card.get("image", ""),
-                    "url": card.get("url", ""),
-                    "annual_fee": annual_fee,
                     "reward_percentage": best_reward_percentage,
-                    "cashback": round(cashback_value, 2),
-                    "best_category": best_category,
+                    "reward_category": best_category,
                     "explanation": explanation,
-                    "score": cashback_value - daily_fee_cost,  # Score includes fee adjustment
-                    "intro_offer": card.get("intro_offer", ""),
-                    "bonus_value": card.get("bonus_value", 0)
-                }
-                
-                card_scores.append(recommendation)
+                    "cashback": cashback_amount,
+                    "annual_fee": card.get("annual_fee", 0)
+                })
             
-            # Sort by score (highest first)
-            card_scores.sort(key=lambda x: x["score"], reverse=True)
-            
-            # Handle user preferences if provided
+            # Apply user preferences if provided
             if user_preferences:
                 card_scores = self._apply_user_preferences(card_scores, user_preferences)
             
-            # Create response
-            response = {
-                "merchant": merchant,
-                "merchant_categories": categories,
-                "amount": amount,
-                "recommendations": card_scores[:5]  # Return top 5 recommendations
-            }
+            # Sort by cashback amount (descending)
+            card_scores.sort(key=lambda x: x["cashback"], reverse=True)
             
-            return response
+            # Return results
+            return {
+                "success": True,
+                "merchant": merchant_name,
+                "merchant_categories": categories,
+                "confidence": confidence,
+                "amount": amount,
+                "recommendations": card_scores
+            }
             
         except Exception as e:
-            logger.error(f"Error getting recommendations: {str(e)}")
+            logger.error(f"Error getting recommendations: {str(e)}", exc_info=True)
+            
             # Return fallback recommendations
-            return {
-                "merchant": merchant,
-                "merchant_categories": ["other"],
-                "amount": amount,
-                "recommendations": self._get_fallback_recommendations(amount)
-            }
+            return self._get_fallback_recommendations(amount)
     
     def _apply_user_preferences(self, card_scores, user_preferences):
-        """Apply user preferences to card scoring"""
-        if not user_preferences:
-            return card_scores
+        """Apply user preferences to filter or adjust card scores"""
+        filtered_scores = []
         
-        # Get user's preferred issuers, networks, annual fee range
-        preferred_issuers = user_preferences.get("preferred_issuers", [])
-        preferred_networks = user_preferences.get("preferred_networks", [])
-        max_annual_fee = user_preferences.get("max_annual_fee", float('inf'))
-        
-        # Adjust scores based on preferences
         for card in card_scores:
-            # Adjust for issuer preference
-            if preferred_issuers and card["issuer"] in preferred_issuers:
-                card["score"] += 0.5  # Bonus for preferred issuer
+            # Filter by preferred issuers
+            if "preferred_issuers" in user_preferences and user_preferences["preferred_issuers"]:
+                if card["issuer"] not in user_preferences["preferred_issuers"]:
+                    continue
             
-            # Adjust for network preference
-            if preferred_networks and card["network"] in preferred_networks:
-                card["score"] += 0.5  # Bonus for preferred network
+            # Filter by preferred networks
+            if "preferred_networks" in user_preferences and user_preferences["preferred_networks"]:
+                if card["network"] not in user_preferences["preferred_networks"]:
+                    continue
             
-            # Penalize cards with annual fees higher than user's max
-            if card["annual_fee"] > max_annual_fee:
-                card["score"] -= 10  # Significant penalty to push these cards down
+            # Filter by annual fee
+            if "max_annual_fee" in user_preferences and user_preferences["max_annual_fee"] is not None:
+                if card["annual_fee"] > user_preferences["max_annual_fee"]:
+                    continue
+            
+            # If it passes all filters, add it to results
+            filtered_scores.append(card)
         
-        # Re-sort by adjusted score
-        card_scores.sort(key=lambda x: x["score"], reverse=True)
-        
-        return card_scores
+        # If no cards passed the filters, return original list
+        return filtered_scores if filtered_scores else card_scores
     
     def _get_fallback_recommendations(self, amount):
-        """Generate fallback recommendations if something fails"""
-        # Basic fallback recommendations with popular general-purpose cards
-        recommendations = [
-            {
-                "id": "fallback-1",
-                "name": "Citi Double Cash Card",
-                "issuer": "Citibank",
-                "network": "Mastercard",
-                "image": "citibank_citi_double_cash_card.png",
-                "annual_fee": 0,
-                "reward_percentage": 2.0,
-                "cashback": round(amount * 0.02, 2),
-                "best_category": "other",
-                "explanation": "2% cash back on all purchases (1% when you buy + 1% when you pay)",
-                "score": amount * 0.02,
-                "intro_offer": "$200 cash back after spending $1,500 in the first 6 months",
-                "bonus_value": 200
-            },
-            {
-                "id": "fallback-2",
-                "name": "Chase Freedom Unlimited",
-                "issuer": "Chase",
-                "network": "Visa",
-                "image": "chase_chase_freedom_unlimited.png",
-                "annual_fee": 0,
-                "reward_percentage": 1.5,
-                "cashback": round(amount * 0.015, 2),
-                "best_category": "other",
-                "explanation": "1.5% cash back on all purchases",
-                "score": amount * 0.015,
-                "intro_offer": "$200 bonus after spending $500 in the first 3 months",
-                "bonus_value": 200
-            },
-            {
-                "id": "fallback-3",
-                "name": "Capital One Quicksilver Cash",
-                "issuer": "Capital One",
-                "network": "Visa",
-                "image": "capital_one_quicksilver_cash.png",
-                "annual_fee": 0,
-                "reward_percentage": 1.5,
-                "cashback": round(amount * 0.015, 2),
-                "best_category": "other",
-                "explanation": "1.5% cash back on all purchases",
-                "score": amount * 0.015,
-                "intro_offer": "$200 cash bonus after spending $500 in the first 3 months",
-                "bonus_value": 200
-            }
-        ]
+        """Get fallback recommendations when there's an error"""
+        cashback_2percent = round(amount * 0.02, 2)
+        cashback_1_5percent = round(amount * 0.015, 2)
+        cashback_1percent = round(amount * 0.01, 2)
         
-        return recommendations
+        return {
+            "success": True,
+            "merchant": "Unknown",
+            "merchant_categories": ["other"],
+            "confidence": "low",
+            "amount": amount,
+            "recommendations": [
+                {
+                    "name": "Citi Double Cash",
+                    "issuer": "Citi",
+                    "network": "Mastercard",
+                    "reward_percentage": 2,
+                    "reward_category": "all_purchases",
+                    "explanation": "2% back on all purchases (1% when you buy, 1% when you pay)",
+                    "cashback": cashback_2percent,
+                    "annual_fee": 0
+                },
+                {
+                    "name": "Chase Freedom Unlimited",
+                    "issuer": "Chase",
+                    "network": "Visa",
+                    "reward_percentage": 1.5,
+                    "reward_category": "all_purchases",
+                    "explanation": "1.5% back on all purchases",
+                    "cashback": cashback_1_5percent,
+                    "annual_fee": 0
+                },
+                {
+                    "name": "Capital One Quicksilver",
+                    "issuer": "Capital One",
+                    "network": "Visa",
+                    "reward_percentage": 1.5,
+                    "reward_category": "all_purchases",
+                    "explanation": "1.5% back on all purchases",
+                    "cashback": cashback_1_5percent,
+                    "annual_fee": 0
+                },
+                {
+                    "name": "Discover it Miles",
+                    "issuer": "Discover",
+                    "network": "Discover",
+                    "reward_percentage": 1.5,
+                    "reward_category": "all_purchases",
+                    "explanation": "1.5 miles per dollar on all purchases (worth 1.5% cash back)",
+                    "cashback": cashback_1_5percent,
+                    "annual_fee": 0
+                }
+            ]
+        }
     
     def get_card_details(self, card_id):
         """Get detailed information about a specific card"""
         try:
+            # Get all cards
             cards = self.scraper.get_card_data()
             
-            # Find card by id
-            matching_cards = [card for card in cards if card.get("external_id") == card_id]
+            # Find card by ID/name
+            for card in cards:
+                if card.get("id") == card_id or card.get("name").lower() == card_id.lower():
+                    return {
+                        "success": True,
+                        "card": card
+                    }
             
-            if matching_cards:
-                return matching_cards[0]
-            else:
-                logger.warning(f"Card with ID {card_id} not found")
-                return None
-                
+            return {"success": False, "error": "Card not found"}
         except Exception as e:
-            logger.error(f"Error getting card details: {str(e)}")
-            return None
+            logger.error(f"Error getting card details: {str(e)}", exc_info=True)
+            return {"success": False, "error": str(e)}
 
 # Test the recommender if run directly
 if __name__ == "__main__":
